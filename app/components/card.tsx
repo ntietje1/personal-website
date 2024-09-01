@@ -10,7 +10,13 @@ interface ExperienceCardProps {
 const Card: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   className,
   children,
-}) => <div className={`p-4 rounded-lg shadow-lg ${className}`}>{children}</div>;
+}) => (
+  <div
+    className={`p-4 rounded-lg shadow-lg backdrop-blur ${className} transition-transform transform hover:scale-101`}
+  >
+    {children}
+  </div>
+);
 
 const CardHeader: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   className,
@@ -28,7 +34,7 @@ const CardContent: React.FC<
   <div className={`mt-0 ${className}`}>{children}</div>
 );
 
-export default function ExperienceCard({
+export function ExperienceCard({
   date,
   title,
   company,
@@ -46,26 +52,28 @@ export default function ExperienceCard({
       <div className="flex-grow relative">
         <div className="absolute left-0 -top-4 -bottom-4 w-px bg-purple-400 m-0" />{" "}
         {/* -top-10 */}
-        <Card className="relative ml-6 bg-white/10 border-purple-400 flex-grow">
-          <div className="absolute -left-9 top-10 w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center">
+        <div className="relative ml-6">
+          <div className="absolute -left-9 top-10 w-6 h-6 rounded-full bg-purple-400 flex items-center justify-center z-10">
             {/* <BriefcaseIcon className="w-4 h-4 text-purple-900" /> */}
           </div>
-          <CardHeader>
-            <CardTitle className="text-xl font-bold text-purple-200">
-              {title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-purple-100 mb-2 italic">{company}</p>
-            <ul className="list-disc list-inside text-purple-200">
-              {responsibilities.map((responsibility, idx) => (
-                <li key={idx} className="mb-1">
-                  {responsibility}
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+          <Card className="bg-white/10 border-purple-400 flex-grow">
+            <CardHeader>
+              <CardTitle className="text-xl font-bold text-white">
+                {title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-purple-50 mb-2 text-l italic">{company}</p>
+              <ul className="list-disc list-inside text-purple-50">
+                {responsibilities.map((responsibility, idx) => (
+                  <li key={idx} className="mb-1">
+                    {responsibility}
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
@@ -84,3 +92,47 @@ export function ExperienceCardStack({
     </div>
   );
 }
+
+interface CenteredIconCardProps {
+  icon: React.ReactNode;
+  title: string;
+  body: string;
+  className?: string;
+}
+
+export const CenteredIconCard: React.FC<CenteredIconCardProps> = ({
+  icon,
+  title,
+  body,
+  className,
+}) => {
+  return (
+    <Card
+      className={`relative bg-white/10 border-purple-400 w-1/2 h-1/2 items-center justify-center ${className}`}
+    >
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-1/8 w-12 h-12 flex items-center justify-center">
+        {icon}
+      </div>
+      <CardHeader>
+        <CardTitle className="text-xl font-bold text-white text-center mt-8">
+          {title}
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p className="text-purple-50 text-center whitespace-pre-line">{body}</p>
+      </CardContent>
+    </Card>
+  );
+};
+
+export const CenteredIconCardRow: React.FC<{
+  props: CenteredIconCardProps[];
+}> = ({ props }) => {
+  return (
+    <div className="flex flex-row gap-4">
+      {props.map((prop, index) => (
+        <CenteredIconCard key={index} {...prop} />
+      ))}
+    </div>
+  );
+};
