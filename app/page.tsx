@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloudArrowDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloudArrowDown,
+  faBriefcase,
+} from "@fortawesome/free-solid-svg-icons";
 import headshot from "../public/images/headshot.jpg";
-import { ExperienceCardStack } from "./components/card";
+import education from "../public/images/education_light.png";
+import { ExperienceCardStack, CenteredIconCardRow } from "./components/card";
 
 export default function Page() {
   return (
@@ -39,6 +43,31 @@ export default function Page() {
           </a>
         </div>
       </div>
+      <div className="pt-12 sm:w-7/8 md:w-6/8 lg:w-7/8 mx-auto max-w-7xl">
+        <CenteredIconCardRow
+          props={[
+            {
+              icon: <FontAwesomeIcon icon={faBriefcase} className="w-8 h-8" />,
+              title: "Experience",
+              body: `2+ years\nSoftware Engineering Experience\nFull-Stack, Back-End, and Mobile App Development`,
+            },
+            {
+              icon: (
+                <Image
+                  src={education}
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="w-9 h-9"
+                />
+              ),
+              title: "Education",
+              body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science and Chemical Engineering`,
+            },
+          ]}
+        ></CenteredIconCardRow>
+      </div>
+
       <div className="pt-12">
         <ExperienceCardStack
           experiences={[
