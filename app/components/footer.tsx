@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
 function ArrowIcon() {
   return (
     <svg
@@ -12,7 +16,7 @@ function ArrowIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export default function Footer() {
@@ -24,10 +28,10 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="/rss"
+            href="https://github.com/ntietje1"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
+            <FontAwesomeIcon icon={faGithub} className="w-5 h-5" />
+            <p className="ml-2 h-7">GitHub</p>
           </a>
         </li>
         <li>
@@ -35,10 +39,10 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/vercel/next.js"
+            href="https://www.linkedin.com/in/nicholas-tietje/"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">github</p>
+            <FontAwesomeIcon icon={faLinkedin} className="w-5 h-5" />
+            <p className="ml-2 h-7">LinkedIn</p>
           </a>
         </li>
         <li>
@@ -46,16 +50,16 @@ export default function Footer() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://vercel.com/templates/next.js/portfolio-starter-kit"
+            href="mailto:tietje.n@northeastern.edu"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">view source</p>
+            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
+            <p className="ml-2 h-7">Email</p>
           </a>
         </li>
       </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
+      {/* <p className="mt-8 text-neutral-600 dark:text-neutral-300">
         © {new Date().getFullYear()} MIT Licensed
-      </p>
+      </p> */}
     </footer>
-  )
+  );
 }
