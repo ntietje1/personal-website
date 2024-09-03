@@ -48,16 +48,16 @@ export default function RootLayout({
       lang="en"
       className={cx(
         "text-black bg-white dark:text-white dark:bg-black",
-        GeistSans.variable,
+        GeistMono.variable,
         GeistMono.variable
       )}
     >
       <body className="antialiased">
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-700 text-white">
-          <main className="flex-auto min-w-0 mt-6 flex flex-col px-4 md:px-6">
-            <NavMenu />
-            {children}
-            <Footer />
+          <main className="flex-auto min-w-0 flex flex-col items-center justify-center">
+            {/* <NavMenu /> */}
+            <div className="w-full lg:w-1/2"> {children} </div> 
+            {/* <Footer /> */}
             <Analytics />
             <SpeedInsights />
           </main>
@@ -66,3 +66,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

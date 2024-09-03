@@ -7,8 +7,11 @@ import {
 import headshot from "../public/images/headshot.jpg";
 import education from "../public/images/education_light.png";
 import { ExperienceCardStack, CenteredIconCardRow } from "./components/card";
+import ContactMenu from "./components/contact";
+import Home from "./app_page";
 
 export default function Page() {
+  return (<Home />);
   return (
     <section className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 gap-8">
       <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8">
@@ -27,6 +30,7 @@ export default function Page() {
             I'm Nick, a Software Engineering Intern at State Street and a
             fourth-year student at Northeastern University.
           </p>
+          <ContactMenu />
           <a
             href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
             target="_blank"
