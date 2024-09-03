@@ -2,7 +2,7 @@ import "./global.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Navbar } from "./components/nav";
+import NavMenu from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
@@ -55,7 +55,7 @@ export default function RootLayout({
       <body className="antialiased">
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-700 text-white">
           <main className="flex-auto min-w-0 mt-6 flex flex-col px-4 md:px-6">
-            <Navbar />
+            <NavMenu />
             {children}
             <Footer />
             <Analytics />
