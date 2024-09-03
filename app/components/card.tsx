@@ -12,7 +12,8 @@ const Card: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   children,
 }) => (
   <div
-    className={`p-4 rounded-lg shadow-lg backdrop-blur ${className} transition-transform transform hover:scale-101`}
+    className={`p-4 rounded-lg shadow-lg backdrop-blur ${className}`}
+    style={{ backgroundColor: 'rgba(255, 255, 255, 0.10)' }}
   >
     {children}
   </div>
