@@ -2,6 +2,8 @@
 // import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
+import Link from "next/link";
+
 // function ArrowIcon() {
 //   return (
 //     <svg
@@ -24,35 +26,46 @@ export default function Footer(): React.ReactElement {
     <footer className="max-w-md pb-16 text-sm text-slate-500 sm:pb-0">
       <p>
         Built with{" "}
-        <a
+        <Link
           href="https://nextjs.org/"
-          className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Next.js (opens in a new tab)"
+          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
         >
           Next.js
-        </a>{" "}
+        </Link>
+        ,
+        <Link
+          href="https://react.dev/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="React.js (opens in a new tab)"
+          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
+        >
+          {" "}
+          React.js
+        </Link>{" "}
         and{" "}
-        <a
+        <Link
           href="https://tailwindcss.com/"
-          className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Tailwind CSS (opens in a new tab)"
+          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
         >
           Tailwind CSS
-        </a>
+        </Link>
         , deployed with{" "}
-        <a
+        <Link
           href="https://vercel.com/"
-          className="font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300"
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Vercel (opens in a new tab)"
+          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
         >
           Vercel
-        </a>
+        </Link>
         .{" "}
       </p>
     </footer>

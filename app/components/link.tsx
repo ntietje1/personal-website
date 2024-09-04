@@ -22,11 +22,25 @@ export function ArrowIcon() {
   );
 }
 
+export const LinkWithArrowNoAnchor: React.FC<LinkProps> = ({
+  children,
+  className,
+}) => {
+  return (
+    <div
+      className={`inline-flex items-baseline leading-tight text-slate-200 group-hover:text-purple-400 focus-visible:text-purple-300 group text-base ${className}`}
+    >
+      <div className="pr-1">{children}</div>
+      <ArrowIcon />
+    </div>
+  );
+};
+
 export const LinkWithArrow: React.FC<LinkProps> = ({ children, ...props }) => {
   return (
     <a
       {...props}
-      className="inline-flex items-baseline leading-tight text-slate-200 group-hover:text-teal-300 focus-visible:text-teal-300 group text-base"
+      className="inline-flex items-baseline leading-tight text-slate-200 group-hover:text-purple-400 focus-visible:text-purple-300 group text-base"
     >
       <div className="pr-1">{children}</div>
       <ArrowIcon />
@@ -38,7 +52,7 @@ export const Link: React.FC<LinkProps> = ({ children, ...props }) => {
   return (
     <a
       {...props}
-      className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+      className="inline-flex items-baseline leading-tight text-slate-200 hover:text-purple-300 focus-visible:text-purple-300 group text-base"
     >
       {children}
     </a>
