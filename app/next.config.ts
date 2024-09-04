@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   webpack: (config, { isServer }) => {
     // Modify the optimization.minimize option
     config.optimization.minimize = false;
+    config.optimization.minimizer = [];
 
     // Return the modified config
     return config;
