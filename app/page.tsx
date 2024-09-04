@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import headshot from "../public/images/headshot.jpg";
 import education from "../public/images/education_light.png";
-import { ExperienceCardStack, CenteredIconCardRow } from "./components/card";
+import { ExperienceCardStack, CenteredIconCardRow, ProjectCardStack } from "./components/card";
 import ContactMenu from "./components/contact";
 import NavMenu from "./components/nav";
 import Footer from "./components/footer";
@@ -192,6 +192,48 @@ export default function Page() {
                 Projects
               </h2>
             </div>
+            <div>
+              <ProjectCardStack
+                projects={[
+                  {
+                    title: "LifeLinked",
+                    description: "Description here",
+                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
+                    imageSrc: "https://via.placeholder.com/150",
+                    imageAlt: "Placeholder",
+                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
+                    installs: "800+"
+                  },
+   {
+                    title: "LifeLinked",
+                    description: "Description here",
+                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
+                    imageSrc: "https://via.placeholder.com/150",
+                    imageAlt: "Placeholder",
+                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
+                    installs: "800+"
+                  },
+                     {
+                    title: "LifeLinked",
+                    description: "Description here",
+                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
+                    imageSrc: "https://via.placeholder.com/150",
+                    imageAlt: "Placeholder",
+                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
+                    installs: "800+"
+                  },
+   {
+                    title: "LifeLinked",
+                    description: "Description here",
+                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
+                    imageSrc: "https://via.placeholder.com/150",
+                    imageAlt: "Placeholder",
+                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
+                    installs: "800+"
+                  }
+                ]}
+              />
+              </div>
           </section>
           <Footer />
         </main>
