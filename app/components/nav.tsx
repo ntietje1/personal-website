@@ -20,7 +20,6 @@ export default function NavMenu(): React.ReactElement {
 
         if (mostIntersectingEntry) {
           setActiveSection(mostIntersectingEntry.target.id);
-          console.log("NEW ACTIVE: ", mostIntersectingEntry.target.id);
         }
       },
       { rootMargin: "0% -20% -75% 0%", threshold: [0.1, 0.2, 0.00] }
