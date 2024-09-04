@@ -34,10 +34,10 @@ export default function Page() {
                 className="rounded-full border-2 border-white/50"
               />
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-purple-50 sm:text-5xl">
               <a href="/">Nick Tietje</a>
             </h1>
-            <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
+            <h2 className="mt-3 text-lg font-medium tracking-tight text-purple-50 sm:text-xl">
               Software Engineer
             </h2>
             <p className="mt-4 max-w-xs leading-normal">
@@ -54,8 +54,8 @@ export default function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="About me"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-purple-500/25 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 About
               </h2>
             </div>
@@ -79,6 +79,30 @@ export default function Page() {
                 at State Street and a fourth-year student at Northeastern
                 University.
               </p>
+                    <div className="pt-12 sm:w-7/8 md:w-6/8 lg:w-7/8 mx-auto max-w-7xl">
+        <CenteredIconCardRow
+          props={[
+            {
+              icon: <FontAwesomeIcon icon={faBriefcase} className="w-8 h-8" />,
+              title: "Experience",
+              body: `2+ years\nSoftware Engineering Experience\nFull-Stack, Back-End, and Mobile App Development`,
+            },
+            {
+              icon: (
+                <Image
+                  src={education}
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="w-9 h-9"
+                />
+              ),
+              title: "Education",
+              body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science and Chemical Engineering`,
+            },
+          ]}
+        ></CenteredIconCardRow>
+      </div>
             </div>
           </section>
           <section
@@ -86,8 +110,8 @@ export default function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="Work experience"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-purple-500/25 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 Experience
               </h2>
             </div>
@@ -187,8 +211,8 @@ export default function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="Projects"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-purple-500/25 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 Projects
               </h2>
             </div>
@@ -199,7 +223,7 @@ export default function Page() {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150",
+                    imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
                     installs: "800+"
@@ -208,7 +232,7 @@ export default function Page() {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150",
+                    imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
                     installs: "800+"
@@ -217,7 +241,7 @@ export default function Page() {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150",
+                    imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
                     installs: "800+"
@@ -226,7 +250,7 @@ export default function Page() {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150",
+                    imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
                     installs: "800+"
