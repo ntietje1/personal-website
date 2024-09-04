@@ -1,18 +1,38 @@
-// import Link from "next/link";
-
-// const navItems = {
-//   "/": {
-//     name: "about",
-//   },
-//   "/experience": {
-//     name: "experience",
-//   },
-//   "/projects": {
-//     name: "projects",
-//   },
-// };
+'use client'
+import React, { useEffect, useState } from "react";
 
 export default function NavMenu(): React.ReactElement {
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let maxRatio = 0;
+        let mostIntersectingEntry;
+
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            mostIntersectingEntry = entry;
+          }
+        });
+
+        if (mostIntersectingEntry) {
+          setActiveSection(mostIntersectingEntry.target.id);
+          console.log("NEW ACTIVE: ", mostIntersectingEntry.target.id);
+        }
+      },
+      { rootMargin: "0% -20% -75% 0%", threshold: [0.1, 0.2, 0.00] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <nav className="nav hidden lg:block" aria-label="In-page jump links">
       <ul className="mt-16 w-max">
@@ -22,8 +42,18 @@ export default function NavMenu(): React.ReactElement {
               className="group flex items-center py-3"
               href={`#${item.toLowerCase()}`}
             >
-              <span className="nav-indicator mr-4 h-px w-8 bg-purple-500 transition-all group-hover:w-16 group-hover:bg-purple-200 group-focus-visible:w-16 group-focus-visible:bg-purple-200 motion-reduce:transition-none"></span>
-              <span className="nav-text text-xs font-bold uppercase tracking-widest text-purple-400 group-hover:text-purple-200 group-focus-visible:text-purple-200">
+              <span
+                className={`nav-indicator h-1 mr-4 transition-all group-hover:w-16 group-hover:bg-purple-200 group-focus-visible:w-16 group-focus-visible:bg-purple-200 motion-reduce:transition-none ${
+                  activeSection === item.toLowerCase()
+                    ? "w-16 bg-purple-200"
+                    : "w-8 bg-purple-500"
+                }`}
+              ></span>
+              <span
+                className={`nav-text text-xs font-bold uppercase tracking-widest  group-hover:text-purple-200 group-focus-visible:text-purple-200 ${
+                  activeSection === item.toLowerCase() ? "text-purple-200" : "text-purple-400"
+                }`}
+              >
                 {item}
               </span>
             </a>
@@ -31,23 +61,5 @@ export default function NavMenu(): React.ReactElement {
         ))}
       </ul>
     </nav>
-    // <header className="w-full py-2 px-4 sm:px-1 lg:px-2 flex justify-between items-center border-b border-white/10">
-    //   <div className="text-2xl font-bold">Nick Tietje</div>
-    //   <nav>
-    //     <ul className="flex space-x-4">
-    //       {Object.entries(navItems).map(([path, { name }]) => {
-    //         return (
-    //           <Link
-    //             key={path}
-    //             href={path}
-    //             className="text-xl font-medium hover:text-purple-200 transition-colors hover:shadow-lg transition-shadow"
-    //           >
-    //             {name}
-    //           </Link>
-    //         );
-    //       })}
-    //     </ul>
-    //   </nav>
-    // </header>
   );
 }
