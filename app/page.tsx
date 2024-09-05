@@ -6,7 +6,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import headshot from "../public/images/headshot.jpg";
 import education from "../public/images/education_light.png";
-import { ExperienceCardStack, CenteredIconCardRow, ProjectCardStack } from "./components/card";
+import {
+  ExperienceCardStack,
+  CenteredIconCardRow,
+  ProjectCardStack,
+} from "./components/card";
 import ContactMenu from "./components/contact";
 import NavMenu from "./components/nav";
 import Footer from "./components/footer";
@@ -31,7 +35,7 @@ export default function Page() {
                 alt=""
                 width={200}
                 height={200}
-                className="rounded-full border-2 border-white/50"
+                className="rounded-full border-2 border-purple-200/50"
               />
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-purple-50 sm:text-5xl">
@@ -48,7 +52,7 @@ export default function Page() {
           <ContactMenu />
         </header>
         {/* Right side */}
-        <main id="content" className="pt-24 lg:w-2/3 lg:py-24">
+        <main id="content" className="pt-30 lg:w-2/3 lg:py-24">
           <section
             id="about"
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
@@ -79,30 +83,35 @@ export default function Page() {
                 at State Street and a fourth-year student at Northeastern
                 University.
               </p>
-                    <div className="pt-12 sm:w-7/8 md:w-6/8 lg:w-7/8 mx-auto max-w-7xl">
-        <CenteredIconCardRow
-          props={[
-            {
-              icon: <FontAwesomeIcon icon={faBriefcase} className="w-8 h-8" />,
-              title: "Experience",
-              body: `2+ years\nSoftware Engineering Experience\nFull-Stack, Back-End, and Mobile App Development`,
-            },
-            {
-              icon: (
-                <Image
-                  src={education}
-                  alt=""
-                  width={200}
-                  height={200}
-                  className="w-9 h-9"
-                />
-              ),
-              title: "Education",
-              body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science and Chemical Engineering`,
-            },
-          ]}
-        ></CenteredIconCardRow>
-      </div>
+              <div className="pt-12 sm:w-7/8 md:w-6/8 lg:w-7/8 mx-auto max-w-7xl">
+                <CenteredIconCardRow
+                  props={[
+                    {
+                      icon: (
+                        <FontAwesomeIcon
+                          icon={faBriefcase}
+                          className="w-8 h-8"
+                        />
+                      ),
+                      title: "Experience",
+                      body: `2+ years\nSoftware Engineering Experience\nFull-Stack, Back-End, and Mobile App Development`,
+                    },
+                    {
+                      icon: (
+                        <Image
+                          src={education}
+                          alt=""
+                          width={200}
+                          height={200}
+                          className="w-9 h-9"
+                        />
+                      ),
+                      title: "Education",
+                      body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science and Chemical Engineering`,
+                    },
+                  ]}
+                ></CenteredIconCardRow>
+              </div>
             </div>
           </section>
           <section
@@ -139,10 +148,10 @@ export default function Page() {
                   {
                     date: "Feb 2024 – Jul 2024",
                     title: "Undergraduate Researcher",
-                    company: "CoMoChEng at Northeastern University",
+                    company: "Northeastern University",
                     link: "https://rmg.mit.edu/",
                     responsibilities: [
-                      "Contributed to RMG-Py, an open-source scientific software by implementing code optimizations and feature development",
+                      "Contributed to RMG-Py, an open-source computational modeling software, by developing features and code optimizations",
                       "Led migration of output file format to YAML, improving cross-application interoperability",
                       "Implemented efficient string and file handling techniques, achieving up to 50% reduction in execution time",
                     ],
@@ -193,7 +202,6 @@ export default function Page() {
                   },
                 ]}
               />
-
               <div className="mt-12">
                 <LinkWithArrow
                   href="/resume.pdf"
@@ -226,157 +234,42 @@ export default function Page() {
                     imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+"
+                    installs: "800+",
                   },
-   {
+                  {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
                     imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+"
+                    installs: "800+",
                   },
-                     {
+                  {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
                     imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+"
+                    installs: "800+",
                   },
-   {
+                  {
                     title: "LifeLinked",
                     description: "Description here",
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
                     imageSrc: "https://via.placeholder.com/150x100",
                     imageAlt: "Placeholder",
                     skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+"
-                  }
+                    installs: "800+",
+                  },
                 ]}
               />
-              </div>
+            </div>
           </section>
           <Footer />
         </main>
       </div>
     </div>
-  );
-  return (
-    <section className="flex-1 flex flex-col items-center justify-center p-4 md:p-8 gap-8">
-      <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8">
-        <div className="w-full max-w-md">
-          <Image
-            src={headshot}
-            alt=""
-            width={400}
-            height={400}
-            className="rounded-full mx-auto border-4 border-white/50"
-          />
-        </div>
-        <div className="w-full max-w-md space-y-6 text-center md:text-left">
-          <h1 className="text-4xl font-bold text-white">Nick Tietje</h1>
-          <p className="text-xl text-purple-100">
-            I'm Nick, a Software Engineering Intern at State Street and a
-            fourth-year student at Northeastern University.
-          </p>
-          <ContactMenu />
-          <a
-            href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center"
-          >
-            <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
-              <FontAwesomeIcon
-                icon={faCloudArrowDown}
-                className="w-5 h-5 mr-2"
-              />
-              <span>Download Resume</span>
-            </button>
-          </a>
-        </div>
-      </div>
-      <div className="pt-12 sm:w-7/8 md:w-6/8 lg:w-7/8 mx-auto max-w-7xl">
-        <CenteredIconCardRow
-          props={[
-            {
-              icon: <FontAwesomeIcon icon={faBriefcase} className="w-8 h-8" />,
-              title: "Experience",
-              body: `2+ years\nSoftware Engineering Experience\nFull-Stack, Back-End, and Mobile App Development`,
-            },
-            {
-              icon: (
-                <Image
-                  src={education}
-                  alt=""
-                  width={200}
-                  height={200}
-                  className="w-9 h-9"
-                />
-              ),
-              title: "Education",
-              body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science and Chemical Engineering`,
-            },
-          ]}
-        ></CenteredIconCardRow>
-      </div>
-
-      {/* <div className="pt-12">
-        <ExperienceCardStack
-          experiences={[
-            {
-              date: "Jul 2024 – Present",
-              title: "Software Engineer Intern",
-              company: "State Street",
-              responsibilities: [
-                "Architected and implemented a scalable notification management system as a full-stack SaaS product for State Street, enhancing communication efficiency of 3000+ users across multiple departments",
-                "Collaborated with cross-functional teams to gather requirements, ensuring alignment with diverse user needs and strict financial industry compliance standards",
-              ],
-            },
-            {
-              date: "Feb 2024 – Jul 2024",
-              title: "Undergraduate Researcher",
-              company:
-                "Computational Modeling in Chemical Engineering at Northeastern University",
-              responsibilities: [
-                "Contributed to RMG-Py, an open-source scientific software by implementing code optimizations and feature development",
-                "Led migration of output file format to YAML, improving cross-application interoperability",
-                "Implemented efficient string and file handling techniques, achieving up to 50% reduction in execution time",
-              ],
-            },
-            {
-              date: "Jan 2024 – May 2024",
-              title: "Khoury Teaching Assistant",
-              company: "Northeastern University",
-              responsibilities: [
-                "Mentored cohort of 250+ students in CS 3200 Database Design, providing technical support via Piazza and office hours",
-                "Evaluated assignments, labs, and exams, offering constructive feedback to enhance student learning outcomes",
-              ],
-            },
-            {
-              date: "Jul 2023 – Dec 2023",
-              title: "Inks and Coatings Engineering Intern",
-              company: "Nano-C, Inc.",
-              responsibilities: [
-                "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
-                "Developed novel chemical separation and purification methods to drive product refinement",
-              ],
-            },
-            {
-              date: "Sep 2022 – May 2023",
-              title: "FYELIC Teaching Assistant",
-              company: "Northeastern University",
-              responsibilities: [
-                "Guided 200+ students in C++ programming and electrical prototyping for the Cornerstone of Engineering course",
-                "Managed and maintained advanced fabrication equipment including 3D printers, laser-cutters, and woodworking machinery",
-              ],
-            },
-          ]}
-        />
-      </div> */}
-    </section>
   );
 }
