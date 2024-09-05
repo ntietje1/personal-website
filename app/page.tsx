@@ -27,7 +27,7 @@ export default function Page() {
       </a>
       <div className="lg:flex lg:justify-between lg:gap-4">
         {/* Left side */}
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/3 lg:flex-col lg:justify-between lg:py-24">
+        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/3 lg:flex-col lg:justify-between lg:py-24 pb-4">
           <div>
             <div className="w-full max-w-md pb-6">
               <Image
@@ -41,11 +41,11 @@ export default function Page() {
             <h1 className="text-4xl font-bold tracking-tight text-purple-50 sm:text-5xl">
               <a href="/">Nick Tietje</a>
             </h1>
-            <h2 className="mt-3 text-lg font-medium tracking-tight text-purple-50 sm:text-xl">
+            <h2 className="mt-3 text-lg font-semibold tracking-tight text-purple-50 sm:text-xl">
               Software Engineer
             </h2>
-            <p className="mt-4 max-w-xs leading-normal">
-              I build all sorts of software.
+            <p className="mt-4 max-w-xs font-normal leading-normal text-purple-50/90 sm:text-lg">
+              I build web and mobile apps that make life easier.
             </p>
             <NavMenu />
           </div>
@@ -58,32 +58,33 @@ export default function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="About me"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-purple-500/25 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 About
               </h2>
             </div>
-            <div className="max-w-4xl mx-auto pt-2 pb-8">
-              <p>
-                I'm Nick, a Software Engineering Intern at State Street and a
-                fourth-year student at Northeastern University. I'm Nick, a
-                Software Engineering Intern at State Street and a fourth-year
-                student at Northeastern University. I'm Nick, a Software
-                Engineering Intern at State Street and a fourth-year student at
-                Northeastern University. I'm Nick, a Software Engineering Intern
-                at State Street and a fourth-year student at Northeastern
-                University. I'm Nick, a Software Engineering Intern at State
-                Street and a fourth-year student at Northeastern University. I'm
-                Nick, a Software Engineering Intern at State Street and a
-                fourth-year student at Northeastern University. I'm Nick, a
-                Software Engineering Intern at State Street and a fourth-year
-                student at Northeastern University. I'm Nick, a Software
-                Engineering Intern at State Street and a fourth-year student at
-                Northeastern University. I'm Nick, a Software Engineering Intern
-                at State Street and a fourth-year student at Northeastern
-                University.
+            <div className="max-w-4xl mx-auto pt-2 pb-8 font-medium text-lg text-purple-50/85">
+              <p className="pb-2 ">
+                Three years ago, I was a Chemical Engineering student who had
+                never written a line of code. Today, I'm a Software Engineering
+                Intern at State Street, while completing both my B.S. in
+                Computer Science and Chemical Engineering at Northeastern
+                University and my M.S. in Computer Science.
               </p>
-              <div className="pt-12 sm:w-7/8 md:w-6/8 lg:w-7/8 mx-auto max-w-7xl">
+              <p className="pb-2">
+                I love building tools that I find useful, then sharing them with
+                the rest of the world. In my free time, I've released a mobile
+                app for tracking Magic: The Gathering games that is quickly
+                approaching 1000 installs. I've also contributed to open-source
+                projects like RMG-Py, a computational modeling software used by
+                researchers at MIT and Northeastern University.
+              </p>
+              <p className="pb-2">
+                When I'm not at the computer, you can find me playing board
+                games, reading, biking, or trying out new recipes in the
+                kitchen.
+              </p>
+              {/* <div className="pt-12 px-4 mx-auto">
                 <CenteredIconCardRow
                   props={[
                     {
@@ -107,11 +108,11 @@ export default function Page() {
                         />
                       ),
                       title: "Education",
-                      body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science and Chemical Engineering`,
+                      body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science & Chemical Engineering`,
                     },
                   ]}
                 ></CenteredIconCardRow>
-              </div>
+              </div> */}
             </div>
           </section>
           <section
@@ -119,7 +120,7 @@ export default function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="Work experience"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-purple-500/25 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 Experience
               </h2>
@@ -219,7 +220,7 @@ export default function Page() {
             className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
             aria-label="Projects"
           >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-purple-500/25 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
               <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 Projects
               </h2>

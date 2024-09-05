@@ -2,33 +2,52 @@
 import React, { useState } from "react";
 import { LinkWithArrowNoAnchor, ArrowIcon } from "./link";
 
-const Card: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
-  className,
-  children,
-}) => (
-  <div
-    className={`p-4 rounded-lg shadow-lg backdrop-blur ${className}`}
-    style={{ backgroundColor: "rgba(255, 255, 255, 0.10)" }}
-  >
-    {children}
-  </div>
-);
+interface HoverableCardProps {
+  children: React.ReactNode;
+  className?: string;
+}
 
-const CardHeader: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
-  className,
-  children,
-}) => <div className={`mb-0 ${className}`}>{children}</div>;
+export function HoverableCard({ children, className }: HoverableCardProps) {
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
 
-const CardTitle: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
-  className,
-  children,
-}) => <h2 className={`text-2xl font-bold ${className}`}>{children}</h2>;
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCursorPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
 
-const CardContent: React.FC<
-  React.PropsWithChildren<{ className?: string }>
-> = ({ className, children }) => (
-  <div className={`mt-0 ${className}`}>{children}</div>
-);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const gradientStyle = isHovered
+    ? {
+        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(163, 66, 255, 0.11), rgba(156, 116, 194, 0.08))`,
+      }
+    : {};
+
+  return (
+    <div
+      className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div
+        style={gradientStyle}
+        className="absolute -inset-x-4 -inset-y-4 z-0 hidden p-4 transition-all bg-white/4 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-bg"
+      ></div>
+      {children}
+    </div>
+  );
+}
 
 interface ExperienceCardProps {
   date: string;
@@ -116,53 +135,6 @@ export function ExperienceCardStack({
       {experiences.map((experience, index) => (
         <ExperienceCard key={index} {...experience} />
       ))}
-    </div>
-  );
-}
-
-interface HoverableCardProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export function HoverableCard({ children, className }: HoverableCardProps) {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setCursorPos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const gradientStyle = isHovered
-    ? {
-        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(163, 66, 255, 0.11), rgba(156, 116, 194, 0.08))`,
-      }
-    : {};
-
-  return (
-    <div
-      className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div
-        style={gradientStyle}
-        className="absolute -inset-x-4 -inset-y-4 z-0 hidden p-4 transition-all bg-white/4 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-bg"
-      ></div>
-      {children}
     </div>
   );
 }
@@ -270,39 +242,35 @@ interface CenteredIconCardProps {
   icon: React.ReactNode;
   title: string;
   body: string;
-  className?: string;
 }
 
-export const CenteredIconCard: React.FC<CenteredIconCardProps> = ({
-  icon,
-  title,
-  body,
-  className,
-}) => {
+export function CenteredIconCard({ icon, title, body }: CenteredIconCardProps) {
   return (
-    <Card
-      className={`relative bg-white/10 border-purple-400 w-1/2 h-1/2 items-center justify-center ${className}`}
-    >
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-1/8 w-12 h-12 flex items-center justify-center">
-        {icon}
+    <HoverableCard className="mx-2">
+      <div className={`relative items-center justify-center`}>
+        <div className="absolute top-0 left-1/2 pb-8 transform -translate-x-1/2 translate-y-1/8 w-12 h-12 flex items-center justify-center">
+          {icon}
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-white text-center mt-8">
+            {title}
+          </h2>
+        </div>
+        <div>
+          <p className="text-purple-50/90 text-center text-sm whitespace-pre-line">
+            {body}
+          </p>
+        </div>
       </div>
-      <CardHeader>
-        <CardTitle className="text-xl font-bold text-white text-center mt-8">
-          {title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-purple-50 text-center whitespace-pre-line">{body}</p>
-      </CardContent>
-    </Card>
+    </HoverableCard>
   );
-};
+}
 
 export const CenteredIconCardRow: React.FC<{
   props: CenteredIconCardProps[];
 }> = ({ props }) => {
   return (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-col gap-10 sm:flex-row">
       {props.map((prop, index) => (
         <CenteredIconCard key={index} {...prop} />
       ))}
