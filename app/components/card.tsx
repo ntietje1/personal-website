@@ -1,6 +1,6 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { LinkWithArrowNoAnchor, ArrowIcon } from "./link";
-
 
 const Card: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   className,
@@ -29,8 +29,6 @@ const CardContent: React.FC<
 > = ({ className, children }) => (
   <div className={`mt-0 ${className}`}>{children}</div>
 );
-
-
 
 interface ExperienceCardProps {
   date: string;
@@ -66,16 +64,16 @@ export function ExperienceCard({
             {/* <BriefcaseIcon className="w-4 h-4 text-purple-900" /> */}
           </div>
 
-          <HoverableCard className="mt-10 ml-6 pb-4">
+          <HoverableCard className="mt-6 ml-6">
             <a
               href={link}
               target="_blank"
               rel="noreferrer noopener"
               aria-label={`${title} at ${company} (opens in a new tab)`}
               className="flex"
-              >
+            >
               <div className="z-10 sm:col-span-8">
-                <h3 className="font-medium leading-snug">
+                <h3 className="font-semibold leading-snug">
                   <LinkWithArrowNoAnchor>
                     {title} · <span className="inline-block">{company}</span>
                   </LinkWithArrowNoAnchor>
@@ -100,15 +98,13 @@ export function ExperienceCard({
                   ))}
                 </ul>
               </div>
- </a>
+            </a>
           </HoverableCard>
-          </div>
         </div>
-        </div>
-    
+      </div>
+    </div>
   );
 }
-
 
 export function ExperienceCardStack({
   experiences,
@@ -130,16 +126,47 @@ interface HoverableCardProps {
 }
 
 export function HoverableCard({ children, className }: HoverableCardProps) {
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setCursorPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const gradientStyle = isHovered
+    ? {
+        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(163, 66, 255, 0.11), rgba(156, 116, 194, 0.08))`,
+      }
+    : {};
+
   return (
-    <div className={`relative flex group/link group transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}>
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-purple-500/10 lg:group-hover:backdrop-blur lg:group-hover:shadow-[inset_0_1px_1px_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg">
-      </div>
+    <div
+      className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div
+        style={gradientStyle}
+        className="absolute -inset-x-4 -inset-y-4 z-0 hidden p-4 transition-all bg-white/4 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-bg"
+      ></div>
       {children}
     </div>
   );
 }
 
-      
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -161,75 +188,69 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <HoverableCard className="mt-12">
-  <a
-            href={link}
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label={`${title} (opens in a new tab)`}
-            className="flex"
-          >
-      <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
-        <div className="rounded border-3 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
-          <img
-            alt={imageAlt}
-            loading="lazy"
-            width="100%"
-            height="auto"
-            decoding="async"
-            style={{ color: "transparent" }}
-            src={imageSrc}
-          />
+      <a
+        href={link}
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label={`${title} (opens in a new tab)`}
+        className="flex"
+      >
+        <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
+          <div className="rounded border-3 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
+            <img
+              alt={imageAlt}
+              loading="lazy"
+              width="100%"
+              height="auto"
+              decoding="async"
+              style={{ color: "transparent" }}
+              src={imageSrc}
+            />
+          </div>
         </div>
-      </div>
-      <div className="pl-4 w-3/4 z-10">
-        <div className="pb-2 pt-2">
-          <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
-            <div className="z-10 sm:col-span-8">
-              <h3 className="font-medium leading-snug">
-                <LinkWithArrowNoAnchor>
-                  {title}
-                </LinkWithArrowNoAnchor>
-              </h3>
-              <ul className="list-disc list-inside text-purple-50">
-                <div className="mt-2 text-sm">
-                  {description}
-                </div>
-                <div className="relative mt-2 inline-flex items-center text-sm font-medium text-purple-50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="mr-1 h-4 w-4"
-                    aria-hidden="true"
-                  >
-                    <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
-                    <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
-                  </svg>
-                  <span>{installs}</span>
-                </div>
-              </ul>
-              <ul
-                className="mt-2 flex flex-wrap"
-                aria-label="Technologies used"
-              >
-                {skills.map((tech) => (
-                  <li key={tech} className="mr-1.5 mt-2">
-                    <div className="flex items-center rounded-full bg-purple-400/10 px-3 py-1 text-xs font-medium leading-5 text-purple-300">
-                      {tech}
-                    </div>
-                  </li>
-                ))}
-              </ul>
+        <div className="pl-4 w-3/4 z-10">
+          <div className="pb-2 pt-2">
+            <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
+              <div className="z-10 sm:col-span-8">
+                <h3 className="font-medium leading-snug">
+                  <LinkWithArrowNoAnchor>{title}</LinkWithArrowNoAnchor>
+                </h3>
+                <ul className="list-disc list-inside text-purple-50">
+                  <div className="mt-2 text-sm">{description}</div>
+                  <div className="relative mt-2 inline-flex items-center text-sm font-medium text-purple-50">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="mr-1 h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
+                      <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
+                    </svg>
+                    <span>{installs}</span>
+                  </div>
+                </ul>
+                <ul
+                  className="mt-2 flex flex-wrap"
+                  aria-label="Technologies used"
+                >
+                  {skills.map((tech) => (
+                    <li key={tech} className="mr-1.5 mt-2">
+                      <div className="flex items-center rounded-full bg-purple-400/10 px-3 py-1 text-xs font-medium leading-5 text-purple-300">
+                        {tech}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </a>
+      </a>
     </HoverableCard>
   );
 }
-
-
 
 export function ProjectCardStack({
   projects,
