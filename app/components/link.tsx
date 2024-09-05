@@ -24,7 +24,7 @@ export function ArrowIcon() {
   );
 }
 
-export const LinkWithArrowNoAnchor: React.FC<LinkProps> = ({
+export const LinkWithArrow: React.FC<LinkProps> = ({
   children,
   className,
 }) => {
@@ -38,17 +38,6 @@ export const LinkWithArrowNoAnchor: React.FC<LinkProps> = ({
   );
 };
 
-export const LinkWithArrow: React.FC<LinkProps> = ({ children, ...props }) => {
-  return (
-    <a
-      {...props}
-      className="inline-flex items-baseline leading-tight text-slate-200 group-hover:text-purple-400 focus-visible:text-purple-300 text-base"
-    >
-      <div className="pr-1">{children}</div>
-      <ArrowIcon />
-    </a>
-  );
-};
 
 export const Link: React.FC<LinkProps> = ({ children, ...props }) => {
   return (

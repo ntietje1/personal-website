@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { LinkWithArrowNoAnchor, ArrowIcon } from "./link";
+import { LinkWithArrow, ArrowIcon } from "./link";
+import { StaticImageData } from "next/image";
 
 interface HoverableCardProps {
   children: React.ReactNode;
@@ -29,7 +30,7 @@ export function HoverableCard({ children, className }: HoverableCardProps) {
 
   const gradientStyle = isHovered
     ? {
-        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(163, 66, 255, 0.11), rgba(156, 116, 194, 0.08))`,
+        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 80, 240, 0.12), rgba(156, 160, 230, 0.16))`,
       }
     : {};
 
@@ -42,7 +43,7 @@ export function HoverableCard({ children, className }: HoverableCardProps) {
     >
       <div
         style={gradientStyle}
-        className="absolute -inset-x-4 -inset-y-4 z-0 hidden p-4 transition-all bg-white/4 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-bg"
+        className="absolute -inset-x-4 -inset-y-4 z-0 hidden p-4 transition-all bg-white/7 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-bg"
       ></div>
       {children}
     </div>
@@ -69,7 +70,7 @@ export function ExperienceCard({
   return (
     <div className="mb-8 flex pl-32">
       <div className="text-right flex-shrink-0 relative top-1.5">
-        <div className="absolute right-8 top-16 pt-2">
+        <div className="absolute right-6 top-12 pt-2">
           <span className="text-purple-300 font-semibold whitespace-nowrap">
             {date}
           </span>
@@ -83,7 +84,7 @@ export function ExperienceCard({
             {/* <BriefcaseIcon className="w-4 h-4 text-purple-900" /> */}
           </div>
 
-          <HoverableCard className="mt-6 ml-6">
+          <HoverableCard className="mt-6 ml-7">
             <a
               href={link}
               target="_blank"
@@ -93,9 +94,9 @@ export function ExperienceCard({
             >
               <div className="z-10 sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
-                  <LinkWithArrowNoAnchor>
+                  <LinkWithArrow>
                     {title} · <span className="inline-block">{company}</span>
-                  </LinkWithArrowNoAnchor>
+                  </LinkWithArrow>
                 </h3>
                 <ul className="list-disc list-inside text-purple-50">
                   {responsibilities.map((responsibility, idx) => (
@@ -139,27 +140,31 @@ export function ExperienceCardStack({
   );
 }
 
+import Image from 'next/image';
+
 interface ProjectCardProps {
   title: string;
-  description: string;
+  descriptions: string[];
   link: string;
-  imageSrc: string;
+  imageSrc: string | StaticImageData;
   imageAlt: string;
   skills: string[];
-  installs: string;
+  children?: React.ReactNode;
+  className?: string;
 }
 
 export function ProjectCard({
   title,
-  description,
+  descriptions,
   link,
   imageSrc,
   imageAlt,
   skills,
-  installs,
+  children,
+  className
 }: ProjectCardProps) {
   return (
-    <HoverableCard className="mt-12">
+    <HoverableCard className={`mt-12 ${className}`}>
       <a
         href={link}
         target="_blank"
@@ -169,15 +174,26 @@ export function ProjectCard({
       >
         <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
           <div className="rounded border-3 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
-            <img
-              alt={imageAlt}
-              loading="lazy"
-              width="100%"
-              height="auto"
-              decoding="async"
-              style={{ color: "transparent" }}
-              src={imageSrc}
-            />
+            {typeof imageSrc === 'string' ? (
+              <img
+                alt={imageAlt}
+                loading="lazy"
+                width="100%"
+                height="auto"
+                decoding="async"
+                style={{ color: "transparent" }}
+                src={imageSrc}
+              />
+            ) : (
+              <Image
+                alt={imageAlt}
+                src={imageSrc}
+                layout="responsive"
+                width={200}
+                height={100}
+                objectFit="cover"
+              />
+            )}
           </div>
         </div>
         <div className="pl-4 w-3/4 z-10">
@@ -185,23 +201,15 @@ export function ProjectCard({
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
               <div className="z-10 sm:col-span-8">
                 <h3 className="font-medium leading-snug">
-                  <LinkWithArrowNoAnchor>{title}</LinkWithArrowNoAnchor>
+                  <LinkWithArrow>{title}</LinkWithArrow>
                 </h3>
                 <ul className="list-disc list-inside text-purple-50">
-                  <div className="mt-2 text-sm">{description}</div>
-                  <div className="relative mt-2 inline-flex items-center text-sm font-medium text-purple-50">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="mr-1 h-4 w-4"
-                      aria-hidden="true"
-                    >
-                      <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
-                      <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
-                    </svg>
-                    <span>{installs}</span>
-                  </div>
+                  {descriptions.map((responsibility, idx) => (
+                    <div key={idx} className="mt-2 text-sm">
+                      {responsibility}
+                    </div>
+                  ))}
+                  {children}
                 </ul>
                 <ul
                   className="mt-2 flex flex-wrap"

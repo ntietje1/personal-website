@@ -21,48 +21,48 @@ export const metadata: Metadata = {
     url: baseUrl,
     siteName: "Nick Tietje's Portfolio",
     locale: "en_US",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
-
-const cx = (...classes) => classes.filter(Boolean).join(" ");
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html
-      lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-black",
-        GeistMono.variable,
-        GeistMono.variable
-      )}
-    >
-      <body className="antialiased">
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-purple-950 via-indigo-950 to-purple-900 text-white">
-          <main className="min-w-0 flex flex-col items-center">
-            {/* <NavMenu /> */}
-            {children}
-            {/* <Footer /> */}
-            <Analytics />
-            <SpeedInsights />
-          </main>
-        </div>
-      </body>
-    </html>
-  );
-}
+        type: "website",
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+    };
+    
+    const cx = (...classes) => classes.filter(Boolean).join(" ");
+    
+    export default function RootLayout({
+      children,
+    }: {
+      children: React.ReactNode;
+    }) {
+      return (
+        <html
+          lang="en"
+          className={cx(
+            "text-black bg-white dark:text-white dark:bg-black",
+            GeistMono.variable,
+            GeistMono.variable
+          )}
+        >
+          <body className="antialiased">
+            <div className="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/mesh_gradient.png')" }}>
+              <main className="min-w-0 flex flex-col items-center">
+                {/* <NavMenu /> */}
+                {children}
+                {/* <Footer /> */}
+                <Analytics />
+                <SpeedInsights />
+              </main>
+            </div>
+          </body>
+        </html>
+      );
+    }

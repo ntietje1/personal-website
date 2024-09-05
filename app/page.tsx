@@ -1,20 +1,16 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCloudArrowDown,
-  faBriefcase,
-} from "@fortawesome/free-solid-svg-icons";
 import headshot from "../public/images/headshot.jpg";
-import education from "../public/images/education_light.png";
 import {
   ExperienceCardStack,
-  CenteredIconCardRow,
   ProjectCardStack,
 } from "./components/card";
 import ContactMenu from "./components/contact";
 import NavMenu from "./components/nav";
 import Footer from "./components/footer";
 import { Link, LinkWithArrow } from "./components/link";
+import lifelinked_preview from "../public/images/lifelinked_preview.png";
+import huskerly_preview from "../public/images/huskerly_preview.png";
+import portfolio_preview from "../public/images/portfolio_preview.png";
 
 export default function Page() {
   return (
@@ -55,7 +51,7 @@ export default function Page() {
         <main id="content" className="pt-30 lg:w-2/3 lg:py-24">
           <section
             id="about"
-            className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
             aria-label="About me"
           >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
@@ -63,7 +59,7 @@ export default function Page() {
                 About
               </h2>
             </div>
-            <div className="max-w-4xl mx-auto pt-2 pb-8 font-medium text-lg text-purple-50/85">
+            <div className="max-w-4xl mx-auto mt-8 pb-8 font-medium text-lg text-gray-200">
               <p className="pb-2 ">
                 Three years ago, I was a Chemical Engineering student who had
                 never written a line of code. Today, I'm a Software Engineering
@@ -84,40 +80,11 @@ export default function Page() {
                 games, reading, biking, or trying out new recipes in the
                 kitchen.
               </p>
-              {/* <div className="pt-12 px-4 mx-auto">
-                <CenteredIconCardRow
-                  props={[
-                    {
-                      icon: (
-                        <FontAwesomeIcon
-                          icon={faBriefcase}
-                          className="w-8 h-8"
-                        />
-                      ),
-                      title: "Experience",
-                      body: `2+ years\nSoftware Engineering Experience\nFull-Stack, Back-End, and Mobile App Development`,
-                    },
-                    {
-                      icon: (
-                        <Image
-                          src={education}
-                          alt=""
-                          width={200}
-                          height={200}
-                          className="w-9 h-9"
-                        />
-                      ),
-                      title: "Education",
-                      body: `Northeastern University\nM.S. in Computer Science\nB.S. in Computer Science & Chemical Engineering`,
-                    },
-                  ]}
-                ></CenteredIconCardRow>
-              </div> */}
             </div>
           </section>
           <section
             id="experience"
-            className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
             aria-label="Work experience"
           >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
@@ -203,21 +170,24 @@ export default function Page() {
                   },
                 ]}
               />
-              <div className="mt-12">
-                <LinkWithArrow
+              <div className="mt-12 -ml-3 group group/link">
+                <LinkWithArrow>
+                  <a
                   href="/resume.pdf"
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label="View Full Resume (opens in a new tab)"
-                >
-                  View Full Resume
+                  className="font-semibold text-lg"
+                  >
+                    View Full Resume
+                    </a>
                 </LinkWithArrow>
               </div>
             </div>
           </section>
           <section
             id="projects"
-            className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
             aria-label="Projects"
           >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
@@ -229,44 +199,62 @@ export default function Page() {
               <ProjectCardStack
                 projects={[
                   {
-                    title: "LifeLinked",
-                    description: "Description here",
+                    title: "LifeLinked: A MTG Life Tracking App",
+                    descriptions: ["Engineered and launched a cross-platform mobile app, attracting over 500 active users across Google Play and App Store", "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms", "Adhered to Android/iOS design and quality standards by performing beta testing and applying clean architecture techniques"],
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150x100",
-                    imageAlt: "Placeholder",
-                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+",
+                    imageSrc: lifelinked_preview,
+                    imageAlt: "LifeLinked",
+                    skills: ["Kotlin", "Android", "Compose Multiplatform", "Gradle", "Ktor", "Koin", "Android Studio", "XCode", "S3", "Lambda", "API Gateway"],
+                    children: (
+                  <div className="relative mt-3 inline-flex items-center text-sm font-medium text-purple-50">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="mr-1 h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
+                      <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
+                    </svg>
+                    <span>{"800+"}</span>
+                  </div>
+                    )
                   },
                   {
-                    title: "LifeLinked",
-                    description: "Description here",
-                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150x100",
-                    imageAlt: "Placeholder",
-                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+",
+                    title: "Huskerly: A Real-Time Messaging App",
+                    descriptions: ["Architected and developed a feature-rich real-time messaging platform with organization management, channels, direct messaging, and OAuth 2.0 authentication", "Designed and deployed a microservice-based cloud application with Kubernetes on AWS EKS to efficiently handle varying workloads and ensure high availability and reliability"],
+                    link: "https://github.com/kennybc/huskerly-microservices",
+                    imageSrc: huskerly_preview,
+                    imageAlt: "Huskerly",
+                    skills: ["Python", "Javascript", "React", "RESTful APIs", "Websockets", "MySQL", "Terraform", "Kubernetes", "EKS", "RDS", "DynamoDB", "S3"],
+                    // installs: "800+",
                   },
                   {
-                    title: "LifeLinked",
-                    description: "Description here",
-                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150x100",
-                    imageAlt: "Placeholder",
-                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+",
-                  },
-                  {
-                    title: "LifeLinked",
-                    description: "Description here",
-                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: "https://via.placeholder.com/150x100",
-                    imageAlt: "Placeholder",
-                    skills: ["Kotlin", "Android", "Compose Multiplatform"],
-                    installs: "800+",
+                    title: "My Personal Portfolio: nicktietje.com",
+                    descriptions: ["Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS hosted with Vercel", "Implemented responsive design and accessibility features to ensure optimal user experience across all devices and screen readers"],
+                    link: "",
+                    imageSrc: portfolio_preview,
+                    imageAlt: "Portfolio",
+                    skills: ["Typescript", "React", "Next.js", "Tailwind CSS"],
+                    children: (<div></div>)
                   },
                 ]}
               />
             </div>
+              <div className="mt-12 -ml-3 group group/link">
+                <LinkWithArrow>
+                  <a
+                  href="https://github.com/ntietje1"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="View All My Projects (opens in a new tab)"
+                  className="font-semibold text-lg"
+                  >
+                    View All Projects
+                  </a>
+                </LinkWithArrow>
+              </div>
           </section>
           <Footer />
         </main>
