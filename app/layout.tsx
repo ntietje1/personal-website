@@ -53,7 +53,7 @@ export default function RootLayout({
       )}
     >
       <body className="antialiased">
-        <div className="flex flex-col min-h-screen bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-700 text-white">
+        <div className="flex flex-col min-h-screen bg-gradient-to-br from-purple-950 via-indigo-950 to-purple-900 text-white">
           <main className="min-w-0 flex flex-col items-center">
             {/* <NavMenu /> */}
             {children}
