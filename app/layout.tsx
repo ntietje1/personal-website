@@ -4,19 +4,23 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
+import Head from "next/head";
+import next from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Nick Tietje's Portfolio",
-    template: "%s | Nick Tietje's Portfolio",
+    default: "Nick Tietje",
+    template: "%s | Nick Tietje",
   },
-  description: "Welcome to my personal portfolio website :)",
+  description:
+    "Nick Tietje is a software engineer who builds innovative software products for the web and mobile",
   openGraph: {
-    title: "Nick Tietje's Portfolio",
-    description: "Welcome to my personal portfolio website :)",
+    title: "Nick Tietje",
+    description:
+      "Nick Tietje is a software engineer who builds innovative software products for the web and mobile",
     url: baseUrl,
-    siteName: "Nick Tietje's Portfolio",
+    siteName: "Nick Tietje",
     locale: "en_US",
     type: "website",
   },
@@ -49,6 +53,9 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className="antialiased">
         <div
           className="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat"
