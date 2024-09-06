@@ -1,15 +1,12 @@
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpg";
-import {
-  ExperienceCardStack,
-  ProjectCardStack,
-} from "./components/card";
+import { ExperienceCardStack, ProjectCardStack } from "./components/card";
 import ContactMenu from "./components/contact";
 import NavMenu from "./components/nav";
 import Footer from "./components/footer";
 import { Link, LinkWithArrow } from "./components/link";
-import lifelinked_preview from "../public/images/lifelinked_preview.png";
-import huskerly_preview from "../public/images/huskerly_preview.png";
+import lifelinked_preview from "../public/images/lifelinked_preview.jpg";
+import huskerly_preview from "../public/images/huskerly_preview.jpg";
 import portfolio_preview from "../public/images/portfolio_preview.png";
 
 export default function Page() {
@@ -41,7 +38,7 @@ export default function Page() {
               Software Engineer
             </h2>
             <p className="mt-4 max-w-xs font-normal leading-normal text-purple-50/90 sm:text-lg">
-              I build web and mobile apps that make life easier.
+              Building the next generation of web and mobile experiences.
             </p>
             <NavMenu />
           </div>
@@ -68,17 +65,16 @@ export default function Page() {
                 University and my M.S. in Computer Science.
               </p>
               <p className="pb-2">
-                I love building tools that I find useful, then sharing them with
-                the rest of the world. In my free time, I've released a mobile
-                app for tracking Magic: The Gathering games that is quickly
-                approaching 1000 installs. I've also contributed to open-source
-                projects like RMG-Py, a computational modeling software used by
+                I love creating practical tools and sharing them with the world.
+                In my free time, I've released a mobile app for tracking Magic:
+                The Gathering games, which is quickly approaching 1000 installs.
+                I've also contributed to open-source projects like RMG-Py, a
+                computational modeling software used and developed by
                 researchers at MIT and Northeastern University.
               </p>
               <p className="pb-2">
-                When I'm not at the computer, you can find me playing board
-                games, reading, biking, or trying out new recipes in the
-                kitchen.
+                Beyond coding, I'm an avid board gamer, reader, cyclist, and
+                amateur chef, always seeking new challenges and experiences.
               </p>
             </div>
           </section>
@@ -170,17 +166,17 @@ export default function Page() {
                   },
                 ]}
               />
-              <div className="mt-12 -ml-3 group group/link">
+              <div className="mt-12 ml-3 group group/link">
                 <LinkWithArrow>
                   <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="View Full Resume (opens in a new tab)"
-                  className="font-semibold text-lg"
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="View Full Resume (opens in a new tab)"
+                    className="font-semibold text-lg"
                   >
                     View Full Resume
-                    </a>
+                  </a>
                 </LinkWithArrow>
               </div>
             </div>
@@ -200,61 +196,117 @@ export default function Page() {
                 projects={[
                   {
                     title: "LifeLinked: A MTG Life Tracking App",
-                    descriptions: ["Engineered and launched a cross-platform mobile app, attracting over 500 active users across Google Play and App Store", "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms", "Adhered to Android/iOS design and quality standards by performing beta testing and applying clean architecture techniques"],
+                    descriptions: [
+                      "Engineered and launched a cross-platform mobile app, attracting over 500 active users across Google Play and App Store",
+                      "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms",
+                      "Adhered to Android/iOS design and quality standards by performing beta testing and applying clean architecture techniques",
+                    ],
                     link: "https://github.com/ntietje1/MTG_Life_Total_App",
                     imageSrc: lifelinked_preview,
                     imageAlt: "LifeLinked",
-                    skills: ["Kotlin", "Android", "Compose Multiplatform", "Gradle", "Ktor", "Koin", "Android Studio", "XCode", "S3", "Lambda", "API Gateway"],
+                    skills: [
+                      "Kotlin",
+                      "Android",
+                      "Compose Multiplatform",
+                      "Gradle",
+                      "Ktor",
+                      "Koin",
+                      "Android Studio",
+                      "XCode",
+                      "S3",
+                      "Lambda",
+                      "API Gateway",
+                    ],
                     children: (
-                  <div className="relative mt-3 inline-flex items-center text-sm font-medium text-purple-50">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="mr-1 h-4 w-4"
-                      aria-hidden="true"
-                    >
-                      <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
-                      <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
-                    </svg>
-                    <span>{"800+"}</span>
-                  </div>
-                    )
+                      <div className="flex">
+                        <div className="relative mt-3 inline-flex items-center text-sm font-medium text-purple-50">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="mr-1 h-4 w-4"
+                            aria-hidden="true"
+                          >
+                            <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
+                            <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
+                          </svg>
+                          <span>{"800+"}</span>
+                        </div>
+                        {/* <div className="mt-3 flex space-x-2 ml-4">
+                          <img
+                            src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+                            alt="Get it on Android"
+                            className="h-12 -mt-2 -mb-2"
+                          />
+
+                          <a
+                            href="https://apps.apple.com/us/app/lifelinked-mtg-life-counter/id6503708612"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img
+                              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                              alt="Get it on iOS"
+                              className="h-8"
+                            />
+                          </a>
+                        </div> */}
+                      </div>
+                    ),
                   },
                   {
                     title: "Huskerly: A Real-Time Messaging App",
-                    descriptions: ["Architected and developed a feature-rich real-time messaging platform with organization management, channels, direct messaging, and OAuth 2.0 authentication", "Designed and deployed a microservice-based cloud application with Kubernetes on AWS EKS to efficiently handle varying workloads and ensure high availability and reliability"],
+                    descriptions: [
+                      "Architected and developed a feature-rich real-time messaging platform with organization management, channels, direct messaging, and OAuth 2.0 authentication",
+                      "Designed and deployed a microservice-based cloud application with Kubernetes on AWS EKS to efficiently handle varying workloads and ensure high availability and reliability",
+                    ],
                     link: "https://github.com/kennybc/huskerly-microservices",
                     imageSrc: huskerly_preview,
                     imageAlt: "Huskerly",
-                    skills: ["Python", "Javascript", "React", "RESTful APIs", "Websockets", "MySQL", "Terraform", "Kubernetes", "EKS", "RDS", "DynamoDB", "S3"],
+                    skills: [
+                      "Python",
+                      "Javascript",
+                      "React",
+                      "RESTful APIs",
+                      "Websockets",
+                      "MySQL",
+                      "Terraform",
+                      "Kubernetes",
+                      "EKS",
+                      "RDS",
+                      "DynamoDB",
+                      "S3",
+                    ],
                     // installs: "800+",
                   },
                   {
                     title: "My Personal Portfolio: nicktietje.com",
-                    descriptions: ["Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS hosted with Vercel", "Implemented responsive design and accessibility features to ensure optimal user experience across all devices and screen readers"],
+                    descriptions: [
+                      "Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS hosted with Vercel",
+                      "Implemented responsive design and accessibility features to ensure optimal user experience across all devices and screen readers",
+                    ],
                     link: "",
                     imageSrc: portfolio_preview,
                     imageAlt: "Portfolio",
                     skills: ["Typescript", "React", "Next.js", "Tailwind CSS"],
-                    children: (<div></div>)
+                    children: <div></div>,
                   },
                 ]}
               />
             </div>
-              <div className="mt-12 -ml-3 group group/link">
-                <LinkWithArrow>
-                  <a
+            <div className="mt-12 ml-3 group group/link">
+              <LinkWithArrow>
+                <a
                   href="https://github.com/ntietje1"
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label="View All My Projects (opens in a new tab)"
                   className="font-semibold text-lg"
-                  >
-                    View All Projects
-                  </a>
-                </LinkWithArrow>
-              </div>
+                >
+                  View All Projects
+                </a>
+              </LinkWithArrow>
+            </div>
           </section>
           <Footer />
         </main>
