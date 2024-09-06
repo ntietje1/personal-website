@@ -30,7 +30,7 @@ export function HoverableCard({ children, className }: HoverableCardProps) {
 
   const gradientStyle = isHovered
     ? {
-        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 80, 240, 0.12), rgba(156, 160, 230, 0.16))`,
+        background: `radial-gradient(circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 100, 200, 0.12), rgba(156, 160, 255, 0.12))`,
       }
     : {};
 
@@ -140,7 +140,7 @@ export function ExperienceCardStack({
   );
 }
 
-import Image from 'next/image';
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -161,7 +161,7 @@ export function ProjectCard({
   imageAlt,
   skills,
   children,
-  className
+  className,
 }: ProjectCardProps) {
   return (
     <HoverableCard className={`mt-12 ${className}`}>
@@ -173,8 +173,8 @@ export function ProjectCard({
         className="flex"
       >
         <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
-          <div className="rounded border-3 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
-            {typeof imageSrc === 'string' ? (
+          <div className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1">
+            {typeof imageSrc === "string" ? (
               <img
                 alt={imageAlt}
                 loading="lazy"
