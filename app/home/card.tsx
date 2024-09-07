@@ -1,7 +1,7 @@
 import HoverableCard from "../components/card";
 import { LinkWithArrow } from "../components/link";
-import { StaticImageData } from "next/image";
-import Image from "next/image";
+import { StaticImageData } from "next/legacy/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 interface ExperienceCardProps {

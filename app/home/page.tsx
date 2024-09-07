@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import headshot from "../../public/images/headshot.jpg";
 import { ExperienceCardStack, ProjectCardStack } from "./card";
 import ContactMenu from "./contact";
