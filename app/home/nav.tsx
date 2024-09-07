@@ -1,7 +1,12 @@
 'use client'
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-export default function NavMenu(): React.ReactElement {
+interface NavMenuProps {
+  className?: string;
+}
+
+export default function NavMenu({ className }: NavMenuProps): React.ReactElement {
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
@@ -33,11 +38,11 @@ export default function NavMenu(): React.ReactElement {
   }, []);
 
   return (
-    <nav className="nav hidden lg:block" aria-label="In-page jump links">
-      <ul className="mt-16 w-max">
+    <nav className={`nav hidden lg:block ${className}`} aria-label="In-page jump links">
+      <ul className="w-max">
         {["About", "Experience", "Projects"].map((item) => (
           <li key={item}>
-            <a
+            <Link
               className="group flex items-center py-3"
               href={`#${item.toLowerCase()}`}
             >
@@ -55,7 +60,7 @@ export default function NavMenu(): React.ReactElement {
               >
                 {item}
               </span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

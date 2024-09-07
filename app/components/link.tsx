@@ -39,13 +39,3 @@ export const LinkWithArrow: React.FC<LinkProps> = ({
 };
 
 
-export const Link: React.FC<LinkProps> = ({ children, ...props }) => {
-  return (
-    <a
-      {...props}
-      className="inline-flex items-baseline leading-tight text-slate-200 hover:text-purple-300 focus-visible:text-purple-300 text-base"
-    >
-      {children}
-    </a>
-  );
-};
