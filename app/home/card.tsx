@@ -23,7 +23,7 @@ export function ExperienceCard({
 }: ExperienceCardProps) {
   return (
     <div className="mb-8 flex pl-32">
-      <div className="text-right flex-shrink-0 relative top-1.5">
+      <div className="text-right flex-shrink-0 relative top-1.5 pl-6">
         <div className="absolute right-6 top-12 pt-2">
           <span className="text-purple-300 font-semibold whitespace-nowrap">
             {date}
@@ -52,7 +52,7 @@ export function ExperienceCard({
                     {title} · <span className="inline-block">{company}</span>
                   </LinkWithArrow>
                 </h3>
-                <ul className="list-disc list-inside text-purple-50">
+                <ul className="list-disc list-inside text-purple-50/80">
                   {responsibilities.map((responsibility, idx) => (
                     <div key={idx} className="mt-2 text-sm">
                       {responsibility}
@@ -157,14 +157,14 @@ export function ProjectCard({
           <div className="pb-2 pt-2">
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
               <div className="z-10 sm:col-span-8">
-                <h3 className="font-medium leading-snug">
+                <h3 className="font-semibold leading-snug">
                   <LinkWithArrow>{title}</LinkWithArrow>
                 </h3>
-                <ul className="list-disc list-inside text-purple-50">
+                <ul className="list-disc list-inside text-purple-50/75">
                   {descriptions.map((responsibility, idx) => (
                     <div key={idx} className="mt-2 text-sm">
                       {responsibility}
-                    </div>
+                  </div>
                   ))}
                   {children}
                 </ul>
