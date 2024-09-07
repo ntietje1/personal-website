@@ -11,27 +11,22 @@
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@react-pdf-viewer/core": "^3.12.0",
-    "@react-pdf-viewer/default-layout": "^3.12.0",
-    "@react-pdf-viewer/toolbar": "^3.12.0",
-    "@react-pdf-viewer/zoom": "^3.12.0",
-    "@tailwindcss/postcss": "4.0.0-alpha.13",
-    "@types/node": "20.11.17",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
     "geist": "1.2.2",
     "next": "14.2.0-canary.62",
     "next-mdx-remote": "^4.4.1",
-    "postcss": "^8.4.45",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-pdf": "^9.1.0",
-    "sugar-high": "^0.6.1",
-    "tailwindcss": "4.0.0-alpha.13",
-    "typescript": "5.3.3"
+    "sugar-high": "^0.6.1"
   },
   "devDependencies": {
+    "@types/node": "20.11.17",
     "@types/react": "18.2.55",
-    "@types/react-dom": "18.2.19"
+    "@types/react-dom": "18.2.19",
+    "typescript": "5.3.3",
+    "postcss": "^8.4.45",
+    "@tailwindcss/postcss": "4.0.0-alpha.13",
+    "tailwindcss": "4.0.0-alpha.13"
   }
 }

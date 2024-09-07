@@ -173,7 +173,7 @@ export default function Page() {
               />
               <div className="mt-12 ml-3 group group/link">
                 <LinkWithArrow>
-                  <Link href="/resume"            
+                  <Link href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"            
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="View Full Resume (opens in a new tab)"
