@@ -1,7 +1,7 @@
 import HoverableCard from "../components/card";
 import { LinkWithArrow } from "../components/link";
-import { StaticImageData } from "next/legacy/image";
-import Image from "next/legacy/image";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ExperienceCardProps {
@@ -142,11 +142,14 @@ export function ProjectCard({
               <Image
                 alt={imageAlt}
                 src={imageSrc}
-                layout="responsive"
                 width={200}
                 height={100}
-                objectFit="cover"
-              />
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover"
+                }} />
             )}
           </div>
         </div>

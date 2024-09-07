@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import headshot from "../../public/images/headshot.jpg";
 import { ExperienceCardStack, ProjectCardStack } from "./card";
 import ContactMenu from "./contact";
@@ -30,7 +30,10 @@ export default function Page() {
                 width={200}
                 height={200}
                 className="rounded-full border-2 border-purple-200/50"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
   
             <h1>
