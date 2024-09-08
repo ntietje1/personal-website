@@ -290,7 +290,7 @@ export default function Page() {
                       "Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS,  hosted with Vercel",
                       "Implemented responsive design and accessibility features to ensure optimal user experience across all devices and screen readers",
                     ],
-                    link: "",
+                    link: "https://github.com/ntietje1/personal-website/",
                     imageSrc: portfolio_preview,
                     imageAlt: "Portfolio",
                     skills: ["Typescript", "React", "Next.js", "Tailwind CSS"],
