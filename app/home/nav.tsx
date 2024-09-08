@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -6,7 +6,9 @@ interface NavMenuProps {
   className?: string;
 }
 
-export default function NavMenu({ className }: NavMenuProps): React.ReactElement {
+export default function NavMenu({
+  className,
+}: NavMenuProps): React.ReactElement {
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export default function NavMenu({ className }: NavMenuProps): React.ReactElement
           setActiveSection(mostIntersectingEntry.target.id);
         }
       },
-      { rootMargin: "0% -20% -75% 0%", threshold: [0.1, 0.2, 0.00] }
+      { rootMargin: "0% -20% -75% 0%", threshold: [0.1, 0.2, 0.0] }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -38,7 +40,10 @@ export default function NavMenu({ className }: NavMenuProps): React.ReactElement
   }, []);
 
   return (
-    <nav className={`nav hidden lg:block ${className}`} aria-label="In-page jump links">
+    <nav
+      className={`nav hidden lg:block ${className}`}
+      aria-label="In-page jump links"
+    >
       <ul className="w-max">
         {["About", "Experience", "Projects"].map((item) => (
           <li key={item}>
@@ -55,7 +60,9 @@ export default function NavMenu({ className }: NavMenuProps): React.ReactElement
               ></span>
               <span
                 className={`nav-text text-xs font-bold uppercase tracking-widest  group-hover:text-purple-200 group-focus-visible:text-purple-200 ${
-                  activeSection === item.toLowerCase() ? "text-purple-200" : "text-purple-400"
+                  activeSection === item.toLowerCase()
+                    ? "text-purple-200"
+                    : "text-purple-400"
                 }`}
               >
                 {item}
