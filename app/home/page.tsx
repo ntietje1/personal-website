@@ -44,9 +44,9 @@ export default function Page() {
           <p className="mt-4 max-w-xs font-normal leading-normal text-purple-50/90 sm:text-lg">
             Building the next generation of web and mobile experiences.
           </p>
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full w-full">
             <NavMenu className="pt-6" />
-            <ContactMenu className="lg:pt-4 lg:mt-auto lg:-ml-4" />
+            <ContactMenu className="lg:pt-4 lg:mt-auto lg:-ml-1" />
           </div>
         </header>
         {/* Right side */}
@@ -57,17 +57,17 @@ export default function Page() {
             aria-label="About me"
           >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
+              <h2 className="text-md font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 About
               </h2>
             </div>
             <div className="max-w-4xl mx-auto mt-8 pb-8 lg:ml-10 font-medium text-lg text-gray-200">
               <p className="pb-2">
-                Three years ago, I was a Chemical Engineering student who had
-                never written a line of code. Today, I'm a Software Engineering
-                Intern at State Street, while completing both my B.S. in
-                Computer Science and Chemical Engineering at Northeastern
-                University and my M.S. in Computer Science.
+                Three years ago, I was a Chemical Engineering student. Today,
+                I'm a Software Engineering Intern at State Street, while
+                completing both my B.S. in Computer Science and Chemical
+                Engineering as well as my M.S. in Computer Science at
+                Northeastern University.
               </p>
               <p className="pb-2">
                 I love creating practical tools and sharing them with the world.
@@ -89,7 +89,7 @@ export default function Page() {
             aria-label="Work experience"
           >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
+              <h2 className="text-md font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 Experience
               </h2>
             </div>
@@ -192,7 +192,7 @@ export default function Page() {
             aria-label="Projects"
           >
             <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
+              <h2 className="text-md font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
                 Projects
               </h2>
             </div>
@@ -287,7 +287,7 @@ export default function Page() {
                   {
                     title: "My Personal Portfolio: nicktietje.com",
                     descriptions: [
-                      "Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS hosted with Vercel",
+                      "Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS,  hosted with Vercel",
                       "Implemented responsive design and accessibility features to ensure optimal user experience across all devices and screen readers",
                     ],
                     link: "",
