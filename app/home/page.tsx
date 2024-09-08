@@ -15,7 +15,7 @@ export default function Page() {
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-8 font-sans md:px-12 md:py-16 lg:px-24 lg:py-0">
       <div className="lg:flex lg:justify-between lg:gap-4">
         {/* Left side */}
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/3 lg:flex-col lg:justify-between lg:pt-24 lg:pb-6 pb-4">
+        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:min-w-64 lg:flex-col lg:justify-between lg:pt-24 lg:pb-6 pb-4">
           <div className="w-full max-w-md pb-6">
             <Image
               src={headshot}
@@ -46,11 +46,11 @@ export default function Page() {
           </p>
           <div className="flex flex-col h-full">
             <NavMenu className="pt-6" />
-            <ContactMenu className="lg:pt-4 lg:mt-auto" />
+            <ContactMenu className="lg:pt-4 lg:mt-auto lg:-ml-4" />
           </div>
         </header>
         {/* Right side */}
-        <main id="content" className="pt-30 lg:w-2/3 lg:py-24">
+        <main id="content" className="pt-30 lg:pt-24">
           <section
             id="about"
             className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
@@ -61,8 +61,8 @@ export default function Page() {
                 About
               </h2>
             </div>
-            <div className="max-w-4xl mx-auto mt-8 pb-8 font-medium text-lg text-gray-200">
-              <p className="pb-2 ">
+            <div className="max-w-4xl mx-auto mt-8 pb-8 lg:ml-10 font-medium text-lg text-gray-200">
+              <p className="pb-2">
                 Three years ago, I was a Chemical Engineering student who had
                 never written a line of code. Today, I'm a Software Engineering
                 Intern at State Street, while completing both my B.S. in
@@ -313,7 +313,7 @@ export default function Page() {
               </LinkWithArrow>
             </div>
           </section>
-          <Footer />
+          <Footer className="mb-6 pl-3" />
         </main>
       </div>
     </div>

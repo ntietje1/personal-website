@@ -1,8 +1,12 @@
-import Link from "next/link"
+import Link from "next/link";
 
-export default function Footer(): React.ReactElement {
+interface FooterProps {
+  className?: string;
+}
+
+export default function Footer({ className }: FooterProps): React.ReactElement {
   return (
-    <footer className="pb-16 mt-2 text-sm text-slate-500 sm:pb-0">
+    <footer className={`mt-2 text-sm ${className} text-slate-500`}>
       <p>
         Built with{" "}
         <Link
@@ -48,6 +52,5 @@ export default function Footer(): React.ReactElement {
         .{" "}
       </p>
     </footer>
-
   );
 }
