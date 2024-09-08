@@ -6,7 +6,10 @@ interface HoverableCardProps {
   className?: string;
 }
 
-export default function HoverableCard({ children, className }: HoverableCardProps) {
+export default function HoverableCard({
+  children,
+  className,
+}: HoverableCardProps) {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -41,13 +44,12 @@ export default function HoverableCard({ children, className }: HoverableCardProp
     >
       <div
         style={gradientStyle}
-        className="absolute -inset-x-4 -inset-y-4 z-0 hidden p-4 transition-all bg-white/7 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:shadow-bg"
+        className="absolute -inset-x-4 -inset-y-4 z-0 p-4 transition-all bg-white/7 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6"
       ></div>
       {children}
     </div>
   );
 }
-
 
 // interface CenteredIconCardProps {
 //   icon: React.ReactNode;
