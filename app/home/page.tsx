@@ -13,44 +13,41 @@ import portfolio_preview from "../../public/images/portfolio_preview.png";
 export default function Page() {
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-8 font-sans md:px-12 md:py-16 lg:px-24 lg:py-0">
-      {/* <a
-        href="#content"
-        className="absolute left-0 top-0 block -translate-x-full rounded bg-gradient-to-br from-teal-400 via-blue-500 to-purple-600 px-4 py-3 text-sm font-bold uppercase tracking-widest text-white focus-visible:translate-x-0"
-      >
-        Skip to Content
-      </a> */}
       <div className="lg:flex lg:justify-between lg:gap-4">
         {/* Left side */}
         <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/3 lg:flex-col lg:justify-between lg:pt-24 lg:pb-6 pb-4">
-          
-            <div className="w-full max-w-md pb-6">
-              <Image
-                src={headshot}
-                alt=""
-                width={200}
-                height={200}
-                className="rounded-full border-2 border-purple-200/50"
-                style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
-            </div>
-  
-            <h1>
-              <Link href="/" className="text-4xl font-bold tracking-tight text-purple-50 sm:text-5xl">
-                Nick Tietje
-              </Link>
-            </h1>
-            <h2 className="mt-3 text-lg font-semibold tracking-tight text-purple-50 sm:text-xl">
-              Software Engineer
-            </h2>
-            <p className="mt-4 max-w-xs font-normal leading-normal text-purple-50/90 sm:text-lg">
-              Building the next generation of web and mobile experiences.
-            </p>
-            <div className="flex flex-col h-full">
-              <NavMenu className="pt-6"/>
-              <ContactMenu className="lg:pt-4 lg:mt-auto"/>
-            </div>
+          <div className="w-full max-w-md pb-6">
+            <Image
+              src={headshot}
+              alt=""
+              width={200}
+              height={200}
+              className="rounded-full border-2 border-purple-200/50"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
+          </div>
+
+          <h1>
+            <Link
+              href="/"
+              className="text-4xl font-bold tracking-tight text-purple-50 sm:text-5xl"
+            >
+              Nick Tietje
+            </Link>
+          </h1>
+          <h2 className="mt-3 text-lg font-semibold tracking-tight text-purple-50 sm:text-xl">
+            Software Engineer
+          </h2>
+          <p className="mt-4 max-w-xs font-normal leading-normal text-purple-50/90 sm:text-lg">
+            Building the next generation of web and mobile experiences.
+          </p>
+          <div className="flex flex-col h-full">
+            <NavMenu className="pt-6" />
+            <ContactMenu className="lg:pt-4 lg:mt-auto" />
+          </div>
         </header>
         {/* Right side */}
         <main id="content" className="pt-30 lg:w-2/3 lg:py-24">
@@ -176,11 +173,13 @@ export default function Page() {
               />
               <div className="mt-12 ml-3 group group/link">
                 <LinkWithArrow>
-                  <Link href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"            
+                  <Link
+                    href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
                     target="_blank"
                     rel="noreferrer noopener"
                     aria-label="View Full Resume (opens in a new tab)"
-                    className="font-semibold text-lg">
+                    className="font-semibold text-lg"
+                  >
                     View Full Resume
                   </Link>
                 </LinkWithArrow>

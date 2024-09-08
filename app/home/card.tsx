@@ -86,15 +86,13 @@ export function ExperienceCardStack({
   experiences: ExperienceCardProps[];
 }) {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl min-w-xl">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
       {experiences.map((experience, index) => (
         <ExperienceCard key={index} {...experience} />
       ))}
     </div>
   );
 }
-
-
 
 interface ProjectCardProps {
   title: string;
@@ -148,8 +146,9 @@ export function ProjectCard({
                 style={{
                   width: "100%",
                   height: "auto",
-                  objectFit: "cover"
-                }} />
+                  objectFit: "cover",
+                }}
+              />
             )}
           </div>
         </div>
@@ -164,7 +163,7 @@ export function ProjectCard({
                   {descriptions.map((responsibility, idx) => (
                     <div key={idx} className="mt-2 text-sm">
                       {responsibility}
-                  </div>
+                    </div>
                   ))}
                   {children}
                 </ul>
@@ -195,7 +194,7 @@ export function ProjectCardStack({
   projects: ProjectCardProps[];
 }) {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl min-w-xl">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
       {projects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
