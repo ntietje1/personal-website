@@ -97,7 +97,27 @@ export default function Page() {
               <ExperienceCardStack
                 experiences={[
                   {
-                    date: "Jul 2024 – Present",
+                    date: "Oct 2024 – Present",
+                    title: "Software Engineer Intern",
+                    company: "Northeastern University",
+                    link: "https://gitmarks.org/",
+                    responsibilities: [
+                      "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
+                      "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
+                      "Engineered classroom creation workflow with role-based access control and secure, time-sensitive invite links, streamlining course setup and student onboarding",
+                    ],
+                    skills: [
+                      "Go",
+                      "Fiber",
+                      "REST APIs",
+                      "PostgreSQL",
+                      "React",
+                      "Typescript",
+                      "Docker",
+                    ],
+                  },
+                  {
+                    date: "Jul 2024 – Sept 2024",
                     title: "Software Engineer Intern",
                     company: "State Street",
                     link: "https://www.statestreet.com/us/en/individual",
@@ -258,6 +278,26 @@ export default function Page() {
                         </div> */}
                       </div>
                     ),
+                  },
+                  {
+                    title: "Marks: A GitHub-Integrated Educational Platform",
+                    descriptions: [
+                      "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
+                      "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
+                      "Engineered classroom creation workflow with role-based access control and secure, time-sensitive invite links, streamlining course setup and student onboarding",
+                    ],
+                    link: "https://gitmarks.org/",
+                    imageSrc: "https://gitmarks.org/icons/site_logo.png",
+                    imageAlt: "Marks",
+                    skills: [
+                      "Go",
+                      "Fiber",
+                      "REST APIs",
+                      "PostgreSQL",
+                      "React",
+                      "Typescript",
+                      "Docker",
+                    ],
                   },
                   {
                     title: "Huskerly: A Real-Time Messaging App",
