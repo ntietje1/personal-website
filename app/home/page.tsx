@@ -96,7 +96,21 @@ export default function Page() {
               <ExperienceCardStack
                 experiences={[
                   {
-                    date: "Oct 2024 – Present",
+                    date: "Jun 2025 – Present",
+                    title: "Software Engineer Intern",
+                    company: "Fidelity Investments",
+                    link: "https://www.fidelity.com/",
+                    responsibilities: ["Working on the Fidelity Youth app"],
+                    skills: [
+                      "Android",
+                      "Kotlin",
+                      "Jetpack Compose",
+                      "Gradle",
+                      "Android Studio",
+                    ],
+                  },
+                  {
+                    date: "Sep 2024 – Dec 2024",
                     title: "Software Engineer Intern",
                     company: "Northeastern University",
                     link: "https://gitmarks.org/",
@@ -116,7 +130,7 @@ export default function Page() {
                     ],
                   },
                   {
-                    date: "Jul 2024 – Sept 2024",
+                    date: "Jul 2024 – Sep 2024",
                     title: "Software Engineer Intern",
                     company: "State Street",
                     link: "https://www.statestreet.com/us/en/individual",
@@ -254,7 +268,7 @@ export default function Page() {
                             <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
                             <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
                           </svg>
-                          <span>{"800+"}</span>
+                          <span>{"3000+"}</span>
                         </div>
                         {/* <div className="mt-3 flex space-x-2 ml-4">
                           <img
