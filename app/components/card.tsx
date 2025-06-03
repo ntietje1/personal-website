@@ -44,7 +44,7 @@ export default function HoverableCard({
     >
       <div
         style={gradientStyle}
-        className="absolute -inset-x-4 -inset-y-4 z-0 p-4 transition-all bg-white/7 shadow-md backdrop-blur rounded-md transition motion-reduce:transition-none lg:-inset-x-6"
+        className="absolute -inset-x-4 -inset-y-4 z-0 p-4 transition-all bg-white/7 shadow-md backdrop-blur rounded-md motion-reduce:transition-none lg:-inset-x-6"
       ></div>
       {children}
     </div>

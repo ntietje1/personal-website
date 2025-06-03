@@ -63,23 +63,22 @@ export default function Page() {
             </div>
             <div className="max-w-4xl mx-auto mt-8 pb-8 lg:ml-10 font-medium text-lg text-gray-200">
               <p className="pb-2">
-                Three years ago, I was a Chemical Engineering student. Today,
-                I'm a Software Engineering Intern at State Street, while
-                completing both my B.S. in Computer Science and Chemical
-                Engineering as well as my M.S. in Computer Science at
-                Northeastern University.
+                Hi! I'm Nick Tietje. I'm an incoming computer science Master's
+                student at Northeastern University. I'm currently employed as a
+                Software Engineering Intern at Fidelity Investments.
               </p>
               <p className="pb-2">
                 I love creating practical tools and sharing them with the world.
                 In my free time, I've released a mobile app for tracking Magic:
-                The Gathering games, which is quickly approaching 1000 installs.
-                I've also contributed to open-source projects like RMG-Py, a
-                computational modeling software used and developed by
-                researchers at MIT and Northeastern University.
+                The Gathering games, which has over 3000 installs. I've also
+                contributed to open-source projects like RMG-Py, a computational
+                modeling software used and developed by researchers at MIT and
+                Northeastern University.
               </p>
               <p className="pb-2">
-                Beyond coding, I'm an avid board gamer, reader, cyclist, and
-                amateur chef, always seeking new challenges and experiences.
+                Beyond coding, I'm an avid board gamer, reader (sci-fi and
+                fantasy), cyclist, and amateur chef, always seeking new
+                challenges and experiences.
               </p>
             </div>
           </section>
