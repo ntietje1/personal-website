@@ -14,7 +14,7 @@ export default function Footer({ className }: FooterProps): React.ReactElement {
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Next.js (opens in a new tab)"
-          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
+          className="font-medium text-slate-200/90 hover:text-slate-100/70 focus-visible:text-slate-100/80"
         >
           Next.js
         </Link>
@@ -24,7 +24,7 @@ export default function Footer({ className }: FooterProps): React.ReactElement {
           target="_blank"
           rel="noreferrer noopener"
           aria-label="React.js (opens in a new tab)"
-          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
+          className="font-medium text-slate-200/90 hover:text-slate-100/70 focus-visible:text-slate-100/80"
         >
           {" "}
           React.js
@@ -35,7 +35,7 @@ export default function Footer({ className }: FooterProps): React.ReactElement {
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Tailwind CSS (opens in a new tab)"
-          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
+          className="font-medium text-slate-200/90 hover:text-slate-100/70 focus-visible:text-slate-100/80"
         >
           Tailwind CSS
         </Link>
@@ -45,7 +45,7 @@ export default function Footer({ className }: FooterProps): React.ReactElement {
           target="_blank"
           rel="noreferrer noopener"
           aria-label="Vercel (opens in a new tab)"
-          className="font-medium text-purple-300 hover:text-purple-100 focus-visible:text-purple-100"
+          className="font-medium text-slate-200/90 hover:text-slate-100/70 focus-visible:text-slate-100/80"
         >
           Vercel
         </Link>

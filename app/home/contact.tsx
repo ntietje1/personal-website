@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+import IconButton from "app/components/IconButton";
 
 interface ContactMenuProps {
   className?: string;
@@ -10,44 +14,39 @@ interface ContactMenuProps {
 export default function ContactMenu({
   className,
 }: ContactMenuProps): React.ReactElement {
+  const contacts = [
+    {
+      href: "https://github.com/ntietje1",
+      icon: faGithub,
+      label: "GitHub",
+    },
+    {
+      href: "https://www.linkedin.com/in/nicholas-tietje/",
+      icon: faLinkedin,
+      label: "LinkedIn",
+    },
+    {
+      href: "mailto:tietje.n@northeastern.edu",
+      icon: faEnvelope,
+      label: "Email",
+    },
+    {
+      href: "https://www.instagram.com/nick.techeee",
+      icon: faInstagram,
+      label: "Instagram",
+    },
+  ];
+
   return (
     <ul
-      className={`ml-1 mt-8 flex items-center ${className}`}
-      aria-label="Social media"
+      className={`flex items-center gap-5 ${className}`}
+      aria-label="Contact links"
     >
-      <li className="mr-5 text-xs shrink-0">
-        <Link
-          className="block text-white hover:text-slate-200"
-          href="https://github.com/ntietje1"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="GitHub (opens in a new tab)"
-        >
-          <FontAwesomeIcon icon={faGithub} className="w-6 h-6" />
-        </Link>
-      </li>
-      <li className="mr-5 text-xs shrink-0">
-        <Link
-          className="block text-white hover:text-slate-200"
-          href="https://www.linkedin.com/in/nicholas-tietje/"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="LinkedIn (opens in a new tab)"
-        >
-          <FontAwesomeIcon icon={faLinkedin} className="w-6 h-6" />
-        </Link>
-      </li>
-      <li className="mr-5 text-xs shrink-0">
-        <Link
-          className="block text-white hover:text-slate-200"
-          href="mailto:tietje.n@northeastern.edu"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="Email"
-        >
-          <FontAwesomeIcon icon={faEnvelope} className="w-6 h-6" />
-        </Link>
-      </li>
+      {contacts.map((contact) => (
+        <li key={contact.href}>
+          <IconButton {...contact} />
+        </li>
+      ))}
     </ul>
   );
 }

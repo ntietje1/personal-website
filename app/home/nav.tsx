@@ -43,28 +43,28 @@ export default function NavMenu({
 
   return (
     <nav
-      className={`nav hidden lg:block ${className}`}
+      className={`nav hidden lg:block ${className} px-6 py-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10`}
       aria-label="In-page jump links"
     >
       <ul className="w-max">
         {["About", "Experience", "Projects"].map((item) => (
           <li key={item}>
             <Link
-              className="group flex items-center py-3"
+              className="group flex items-center py-3 transition-all hover:bg-white/5 px-4 rounded-md"
               href={`#${item.toLowerCase()}`}
             >
               <span
-                className={`nav-indicator h-1 mr-4 transition-all group-hover:w-16 group-hover:bg-purple-200 group-focus-visible:w-16 group-focus-visible:bg-purple-200 motion-reduce:transition-none ${
+                className={`nav-indicator h-1 mr-4 transition-all group-hover:w-16 group-hover:bg-white group-focus-visible:w-16 group-focus-visible:bg-white motion-reduce:transition-none ${
                   activeSection === item.toLowerCase()
-                    ? "w-16 bg-purple-200"
-                    : "w-8 bg-purple-500"
+                    ? "w-16 bg-white"
+                    : "w-8 bg-white/50"
                 }`}
               ></span>
               <span
-                className={`nav-text text-xs font-bold uppercase tracking-widest  group-hover:text-purple-200 group-focus-visible:text-purple-200 ${
+                className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-white group-focus-visible:text-white ${
                   activeSection === item.toLowerCase()
-                    ? "text-purple-200"
-                    : "text-purple-400"
+                    ? "text-white"
+                    : "text-white/70"
                 }`}
               >
                 {item}

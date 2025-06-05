@@ -45,27 +45,44 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-black",
-        GeistMono.variable,
-        GeistMono.variable
-      )}
-    >
+    <html lang="en" className={cx("text-white", GeistMono.variable)}>
+      <head>
+        <title>Nick Tietje</title>
+        <meta
+          name="description"
+          content="Nick Tietje is a software engineer who builds innovative software products for the web and mobile"
+        />
+        <meta property="og:title" content="Nick Tietje" />
+        <meta
+          property="og:description"
+          content="Nick Tietje is a software engineer who builds innovative software products for the web and mobile"
+        />
+        <meta property="og:url" content={baseUrl} />
+        <meta property="og:site_name" content="Nick Tietje" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="max-video-preview" content="-1" />
+        <meta name="max-image-preview" content="large" />
+        <meta name="max-snippet" content="-1" />
+      </head>
       <body className="antialiased">
-        <div
-          className="min-h-screen bg-cover bg-center bg-no-repeat bg-fuchsia-950"
-          style={{ backgroundImage: "url('/images/mesh_gradient.png')" }}
-        >
-          <main className="flex flex-col items-center">
-            {/* <NavMenu /> */}
-            {children}
-            {/* <Footer /> */}
-            <Analytics />
-            <SpeedInsights />
-          </main>
+        <div className="fixed inset-0 z-0">
+          {/* Background base */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/images/background.jpg')",
+              willChange: "transform",
+            }}
+          />
         </div>
+
+        <main className="relative z-10 flex flex-col items-center min-h-screen">
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </main>
       </body>
     </html>
   );

@@ -1,374 +1,366 @@
 import Image from "next/image";
-import headshot from "../../public/images/headshot.jpg";
-import { ExperienceCardStack, ProjectCardStack } from "./card";
+import headshot_clear from "../../public/images/headshot_clear.png";
+import {
+  ExperienceCardStack,
+  ProjectCardStack,
+  HoverableButton,
+} from "../components/card";
 import ContactMenu from "./contact";
 import NavMenu from "./nav";
 import Footer from "./footer";
 import Link from "next/link";
 import { LinkWithArrow } from "../components/link";
 import lifelinked_preview from "../../public/images/lifelinked_preview.jpg";
-import huskerly_preview from "../../public/images/huskerly_preview.jpg";
-import portfolio_preview from "../../public/images/portfolio_preview.png";
+import gitmarks_preview from "../../public/images/gitmarks_preview.png";
+import HoverableCard from "app/components/card";
+import { Container } from "app/components/layout";
+import Headshot from "app/components/headshot";
 
 export default function Page() {
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-8 font-sans md:px-12 md:py-16 lg:px-24 lg:py-0">
-      <div className="lg:flex lg:justify-between lg:gap-4">
-        {/* Left side */}
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:min-w-64 lg:flex-col lg:justify-between lg:pt-24 lg:pb-6 pb-4">
-          <div className="w-full max-w-md pb-6">
-            <Image
-              src={headshot}
-              alt=""
-              width={200}
-              height={200}
-              className="rounded-full border-2 border-purple-200/50"
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-              }}
-            />
-          </div>
+    <div className="font-sans">
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col justify-center relative py-16 md:py-24">
+        <Container className="flex flex-col items-center">
+          <div className="flex flex-col md:flex-row items-center justify-between w-full gap-32 md:gap-12">
+            {/* Left content */}
+            <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 max-w-2xl">
+              <div className="space-y-4 mb-8">
+                <div>
+                  <span className="text-lg md:text-xl font-medium text-white">
+                    Hi, my name is
+                  </span>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mt-2">
+                    Nick Tietje
+                  </h1>
+                </div>
 
-          <h1>
-            <Link
-              href="/"
-              className="text-4xl font-bold tracking-tight text-purple-50 sm:text-5xl"
-            >
-              Nick Tietje
-            </Link>
-          </h1>
-          <h2 className="mt-3 text-lg font-semibold tracking-tight text-purple-50 sm:text-xl">
-            Software Engineer
-          </h2>
-          <p className="mt-4 max-w-xs font-normal leading-normal text-purple-50/90 sm:text-lg">
-            Building the next generation of web and mobile experiences.
-          </p>
-          <div className="flex flex-col h-full w-full">
-            <NavMenu className="pt-6" />
-            <ContactMenu className="lg:pt-4 lg:mt-auto lg:-ml-1" />
-          </div>
-        </header>
-        {/* Right side */}
-        <main id="content" className="pt-30 lg:pt-24">
-          <section
-            id="about"
-            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
-            aria-label="About me"
-          >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-md font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
-                About
-              </h2>
-            </div>
-            <div className="max-w-4xl mx-auto mt-8 pb-8 lg:ml-10 font-medium text-lg text-gray-200">
-              <p className="pb-2">
-                Hi! I'm Nick Tietje. I'm an incoming computer science Master's
-                student at Northeastern University. I'm currently employed as a
-                Software Engineering Intern at Fidelity Investments.
-              </p>
-              <p className="pb-2">
-                I love creating practical tools and sharing them with the world.
-                In my free time, I've released a mobile app for tracking Magic:
-                The Gathering games, which has over 3000 installs. I've also
-                contributed to open-source projects like RMG-Py, a computational
-                modeling software used and developed by researchers at MIT and
-                Northeastern University.
-              </p>
-              <p className="pb-2">
-                Beyond coding, I'm an avid board gamer, reader (sci-fi and
-                fantasy), cyclist, and amateur chef, always seeking new
-                challenges and experiences.
-              </p>
-            </div>
-          </section>
-          <section
-            id="experience"
-            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
-            aria-label="Work experience"
-          >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-md font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
-                Experience
-              </h2>
-            </div>
-            <div>
-              <ExperienceCardStack
-                experiences={[
-                  {
-                    date: "Jun 2025 – Present",
-                    title: "Software Engineer Intern",
-                    company: "Fidelity Investments",
-                    link: "https://www.fidelity.com/",
-                    responsibilities: ["Working on the Fidelity Youth app"],
-                    skills: [
-                      "Android",
-                      "Kotlin",
-                      "Jetpack Compose",
-                      "Gradle",
-                      "Android Studio",
-                    ],
-                  },
-                  {
-                    date: "Sep 2024 – Dec 2024",
-                    title: "Software Engineer Intern",
-                    company: "Northeastern University",
-                    link: "https://gitmarks.org/",
-                    responsibilities: [
-                      "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
-                      "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
-                      "Engineered classroom creation workflow with role-based access control and secure, time-sensitive invite links, streamlining course setup and student onboarding",
-                    ],
-                    skills: [
-                      "Go",
-                      "Fiber",
-                      "REST APIs",
-                      "PostgreSQL",
-                      "React",
-                      "Typescript",
-                      "Docker",
-                    ],
-                  },
-                  {
-                    date: "Jul 2024 – Sep 2024",
-                    title: "Software Engineer Intern",
-                    company: "State Street",
-                    link: "https://www.statestreet.com/us/en/individual",
-                    responsibilities: [
-                      "Architected and implemented a scalable notification management system as a full-stack SaaS product for State Street, enhancing communication efficiency of 3000+ users across multiple departments",
-                      "Collaborated with cross-functional teams to gather requirements, ensuring alignment with diverse user needs and strict financial industry compliance standards",
-                    ],
-                    skills: [
-                      "Java",
-                      "MySQL",
-                      "REST APIs",
-                      "AWS",
-                      "React",
-                      "Javascript",
-                    ],
-                  },
-                  {
-                    date: "Feb 2024 – Jul 2024",
-                    title: "Undergraduate Researcher",
-                    company: "Northeastern University",
-                    link: "https://rmg.mit.edu/",
-                    responsibilities: [
-                      "Contributed to RMG-Py, an open-source computational modeling software, by developing features and code optimizations",
-                      "Led migration of output file format to YAML, improving cross-application interoperability",
-                      "Implemented efficient string and file handling techniques, achieving up to 50% reduction in execution time",
-                    ],
-                    skills: ["Python", "Git", "Linux"],
-                  },
-                  {
-                    date: "Jan 2024 – May 2024",
-                    title: "Khoury Teaching Assistant",
-                    company: "Northeastern University",
-                    link: "https://www.khoury.northeastern.edu/",
-                    responsibilities: [
-                      "Mentored cohort of 250+ students in CS 3200 Database Design, providing technical support via Piazza and office hours",
-                      "Evaluated assignments, labs, and exams, offering constructive feedback to enhance student learning outcomes",
-                    ],
-                    skills: ["Python", "MySQL", "Docker", "Git", "REST APIs"],
-                  },
-                  {
-                    date: "Jul 2023 – Dec 2023",
-                    title: "Inks and Coatings Engineering Intern",
-                    company: "Nano-C, Inc.",
-                    link: "https://www.nano-c.com/",
-                    responsibilities: [
-                      "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
-                      "Developed novel chemical separation and purification methods to drive product refinement",
-                    ],
-                    skills: [
-                      "Nano-Technology",
-                      "Data Analysis",
-                      "Wet Lab Techniques",
-                    ],
-                  },
-                  {
-                    date: "Sep 2022 – May 2023",
-                    title: "FYELIC Teaching Assistant",
-                    company: "Northeastern University",
-                    link: "https://makerspaces.northeastern.edu/spaces/fyelic/",
-                    responsibilities: [
-                      "Guided 200+ students in C++ programming and electrical prototyping for the Cornerstone of Engineering course",
-                      "Managed and maintained advanced fabrication equipment including 3D printers, laser-cutters, and woodworking machinery",
-                    ],
-                    skills: [
-                      "C++",
-                      "Arduino",
-                      "MATLAB",
-                      "3D Printing",
-                      "Laser Cutting",
-                    ],
-                  },
-                ]}
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white">
+                  I'm a Software Engineer.
+                </h2>
+
+                <p className="text-lg text-white max-w-lg">
+                  I like to build full-stack web and mobile experiences.
+                </p>
+              </div>
+
+              {/* Headshot */}
+              <Headshot
+                className="md:hidden mb-8 mt-10 h-64 w-64"
+                imageOffset="5rem"
+                hoverOffset="3"
               />
-              <div className="mt-12 ml-3 group group/link">
-                <LinkWithArrow>
-                  <Link
-                    href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label="View Full Resume (opens in a new tab)"
-                    className="font-semibold text-lg"
-                  >
-                    View Full Resume
-                  </Link>
-                </LinkWithArrow>
+
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <HoverableButton
+                  href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download CV
+                </HoverableButton>
+                <ContactMenu className="flex gap-4 pl-2" />
               </div>
             </div>
-          </section>
-          <section
-            id="projects"
-            className="mb-12 scroll-mt-16 md:mb-16 lg:mb-24 lg:scroll-mt-24"
-            aria-label="Projects"
-          >
-            <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-              <h2 className="text-md font-bold uppercase tracking-widest text-purple-200 lg:sr-only">
-                Projects
-              </h2>
-            </div>
-            <div>
-              <ProjectCardStack
-                projects={[
-                  {
-                    title: "LifeLinked: A MTG Life Tracking App",
-                    descriptions: [
-                      "Engineered and launched a cross-platform mobile app, attracting over 500 active users across Google Play and App Store",
-                      "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms",
-                      "Adhered to Android/iOS design and quality standards by performing beta testing and applying clean architecture techniques",
-                    ],
-                    link: "https://github.com/ntietje1/MTG_Life_Total_App",
-                    imageSrc: lifelinked_preview,
-                    imageAlt: "LifeLinked",
-                    skills: [
-                      "Kotlin",
-                      "Android",
-                      "Compose Multiplatform",
-                      "Gradle",
-                      "Ktor",
-                      "Koin",
-                      "Android Studio",
-                      "XCode",
-                      "S3",
-                      "Lambda",
-                      "API Gateway",
-                    ],
-                    children: (
-                      <div className="flex">
-                        <div className="relative mt-3 inline-flex items-center text-sm font-medium text-purple-50">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="mr-1 h-4 w-4"
-                            aria-hidden="true"
-                          >
-                            <path d="M10.75 2.75a.75.75 0 00-1.5 0v8.614L6.295 8.235a.75.75 0 10-1.09 1.03l4.25 4.5a.75.75 0 001.09 0l4.25-4.5a.75.75 0 00-1.09-1.03l-2.955 3.129V2.75z"></path>
-                            <path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path>
-                          </svg>
-                          <span>{"3000+"}</span>
-                        </div>
-                        {/* <div className="mt-3 flex space-x-2 ml-4">
-                          <img
-                            src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
-                            alt="Get it on Android"
-                            className="h-12 -mt-2 -mb-2"
-                          />
 
-                          <a
-                            href="https://apps.apple.com/us/app/lifelinked-mtg-life-counter/id6503708612"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <img
-                              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                              alt="Get it on iOS"
-                              className="h-8"
-                            />
-                          </a>
-                        </div> */}
-                      </div>
-                    ),
-                  },
-                  {
-                    title: "Marks: A GitHub-Integrated Educational Platform",
-                    descriptions: [
-                      "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
-                      "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
-                      "Engineered classroom creation workflow with role-based access control and secure, time-sensitive invite links, streamlining course setup and student onboarding",
-                    ],
-                    link: "https://gitmarks.org/",
-                    imageSrc: "https://gitmarks.org/icons/site_logo.png",
-                    imageAlt: "Marks",
-                    skills: [
-                      "Go",
-                      "Fiber",
-                      "REST APIs",
-                      "PostgreSQL",
-                      "React",
-                      "Typescript",
-                      "Docker",
-                    ],
-                  },
-                  {
-                    title: "Huskerly: A Real-Time Messaging App",
-                    descriptions: [
-                      "Architected and developed a feature-rich real-time messaging platform with organization management, channels, direct messaging, and OAuth 2.0 authentication",
-                      "Designed and deployed a microservice-based cloud application with Kubernetes on AWS EKS to efficiently handle varying workloads and ensure high availability and reliability",
-                    ],
-                    link: "https://github.com/kennybc/huskerly-microservices",
-                    imageSrc: huskerly_preview,
-                    imageAlt: "Huskerly",
-                    skills: [
-                      "Python",
-                      "Javascript",
-                      "React",
-                      "RESTful APIs",
-                      "Websockets",
-                      "MySQL",
-                      "Terraform",
-                      "Kubernetes",
-                      "EKS",
-                      "RDS",
-                      "DynamoDB",
-                      "S3",
-                    ],
-                    // installs: "800+",
-                  },
-                  {
-                    title: "My Personal Portfolio: nicktietje.com",
-                    descriptions: [
-                      "Designed and developed a personal portfolio website using Next.js, React.js, and Tailwind CSS,  hosted with Vercel",
-                      "Implemented responsive design and accessibility features to ensure optimal user experience across all devices and screen readers",
-                    ],
-                    link: "https://github.com/ntietje1/personal-website/",
-                    imageSrc: portfolio_preview,
-                    imageAlt: "Portfolio",
-                    skills: ["Typescript", "React", "Next.js", "Tailwind CSS"],
-                    children: <div></div>,
-                  },
-                ]}
-              />
+            {/* Headshot (hidden on mobile) */}
+            <Headshot
+              className="hidden md:block h-72 w-72"
+              imageOffset="7rem"
+              hoverOffset="5"
+            />
+          </div>
+        </Container>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20" aria-label="About me">
+        <Container>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            About Me
+          </h2>
+          <HoverableCard>
+            <div className="prose prose-invert max-w-none px-4 pb-6">
+              <p className="text-lg text-slate-200 leading-relaxed">
+                Hi! I'm Nick Tietje, and I love building things. I've always
+                been a curious and analytical person, which initially drew me to
+                Chemical Engineering. However, after dabbling in programming, I
+                discovered my true passion for software development and made the
+                switch to a combined major in Computer Science and Chemical
+                Engineering. As a natural problem solver, this was a perfect
+                fit. My unique education has given me the ability to understand
+                complex systems and develop solutions to problems in both the
+                real world and the digital world.
+              </p>
+
+              <p className="text-lg text-slate-200 leading-relaxed">
+                I'm an incoming computer science Master's student at
+                Northeastern University and I'm currently employed as a Software
+                Engineering Intern at Fidelity Investments. In my free time, I
+                enjoy developing my own projects/tools, reading, and playing
+                board games. Here are some of my interests:
+              </p>
+
+              <ul className="space-y-4 text-lg text-slate-200 pt-2">
+                <li className="flex items-start">
+                  <span className="text-white/50 mr-3">•</span>
+                  <span>
+                    <span className="text-white font-semibold">
+                      Software Development:
+                    </span>{" "}
+                    Web apps, mobile apps, and other random tools.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white/50 mr-3">•</span>
+                  <span>
+                    <span className="text-white font-semibold">
+                      Board Games:
+                    </span>{" "}
+                    My favorites include Magic: The Gathering, Wingspan,
+                    Dominion, Sheriff of Nottingham, and Star Realms.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white/50 mr-3">•</span>
+                  <span>
+                    <span className="text-white font-semibold">Reading:</span>{" "}
+                    Science fiction, fantasy, dystopian/political fiction
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white/50 mr-3">•</span>
+                  <span>
+                    <span className="text-white font-semibold">Fitness:</span>{" "}
+                    Cycling, hiking, and general strength training.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-white/50 mr-3">•</span>
+                  <span>
+                    <span className="text-white font-semibold">Cooking:</span>{" "}
+                    Experimenting with new recipes and setting off the smoke
+                    alarm.
+                  </span>
+                </li>
+              </ul>
             </div>
-            <div className="mt-12 ml-3 group group/link">
-              <LinkWithArrow>
-                <Link
-                  href="https://github.com/ntietje1"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  aria-label="View All My Projects (opens in a new tab)"
-                  className="font-semibold text-lg"
-                >
-                  View All Projects
-                </Link>
-              </LinkWithArrow>
-            </div>
-          </section>
-          <Footer className="mb-6 pl-3" />
-        </main>
-      </div>
+          </HoverableCard>
+        </Container>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section id="projects" className="py-20" aria-label="Projects">
+        <Container maxWidth="lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 gap-8">
+            <ProjectCardStack
+              projects={[
+                {
+                  title: "LifeLinked: A MTG Life Tracking App",
+                  descriptions: [
+                    "Engineered and launched a cross-platform mobile app, attracting over 1000 active users across Google Play and App Store",
+                    "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms",
+                  ],
+                  link: "https://github.com/ntietje1/MTG_Life_Total_App",
+                  imageSrc: lifelinked_preview,
+                  imageAlt: "LifeLinked",
+                  skills: [
+                    "Kotlin",
+                    "Android",
+                    "Kotlin Multiplatform",
+                    "Compose Multiplatform",
+                    "iOS",
+                    "Gradle",
+                  ],
+                },
+                {
+                  title: "Marks: A GitHub-Integrated Educational Platform",
+                  descriptions: [
+                    "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
+                    "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
+                  ],
+                  link: "https://gitmarks.org/",
+                  imageSrc: gitmarks_preview,
+                  imageAlt: "GitMarks",
+                  skills: ["Go", "React", "TypeScript", "PostgreSQL"],
+                },
+              ]}
+            />
+          </div>
+          <div className="text-center mt-12">
+            <LinkWithArrow>
+              <Link
+                href="https://github.com/ntietje1"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-xl font-semibold"
+              >
+                View All Projects
+              </Link>
+            </LinkWithArrow>
+          </div>
+        </Container>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20" aria-label="Work experience">
+        <Container>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            Experience
+          </h2>
+          <ExperienceCardStack
+            experiences={[
+              {
+                date: "Jun 2025 – Present",
+                title: "Software Engineer Intern",
+                company: "Fidelity Investments",
+                link: "https://www.fidelity.com/",
+                responsibilities: [
+                  "Developing and maintaining features for the Fidelity Youth app under the Experience Engineering business unit",
+                ],
+                skills: [
+                  "Android",
+                  "Kotlin",
+                  "Jetpack Compose",
+                  "Gradle",
+                  "Android Studio",
+                  "REST APIs",
+                ],
+              },
+              {
+                date: "Sep 2024 – Dec 2024",
+                title: "Software Engineer Intern",
+                company: "Northeastern University",
+                link: "https://gitmarks.org/",
+                responsibilities: [
+                  "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
+                  "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
+                  "Engineered classroom creation workflow with role-based access control and secure, time-sensitive invite links, streamlining course setup and student onboarding",
+                ],
+                skills: [
+                  "Go",
+                  "Fiber",
+                  "REST APIs",
+                  "PostgreSQL",
+                  "React",
+                  "Typescript",
+                  "Docker",
+                ],
+              },
+              {
+                date: "Jul 2024 – Sep 2024",
+                title: "Software Engineer Intern",
+                company: "State Street",
+                link: "https://www.statestreet.com/us/en/individual",
+                responsibilities: [
+                  "Architected and implemented a scalable notification management system as a full-stack SaaS product for State Street, enhancing communication efficiency of 3000+ users across multiple departments",
+                  "Collaborated with cross-functional teams to gather requirements, ensuring alignment with diverse user needs and strict financial industry compliance standards",
+                ],
+                skills: [
+                  "Java",
+                  "MySQL",
+                  "REST APIs",
+                  "AWS",
+                  "React",
+                  "Javascript",
+                ],
+              },
+              {
+                date: "Feb 2024 – Jul 2024",
+                title: "Undergraduate Researcher",
+                company: "Northeastern University",
+                link: "https://rmg.mit.edu/",
+                responsibilities: [
+                  "Contributed to RMG-Py, an open-source computational modeling software, by developing features and code optimizations",
+                  "Led migration of output file format to YAML, improving cross-application interoperability",
+                  "Implemented efficient string and file handling techniques, achieving up to 50% reduction in execution time",
+                ],
+                skills: ["Python", "Git", "Linux"],
+              },
+              {
+                date: "Jan 2024 – May 2024",
+                title: "Khoury Teaching Assistant",
+                company: "Northeastern University",
+                link: "https://www.khoury.northeastern.edu/",
+                responsibilities: [
+                  "Mentored cohort of 250+ students in CS 3200 Database Design, providing technical support via Piazza and office hours",
+                  "Evaluated assignments, labs, and exams, offering constructive feedback to enhance student learning outcomes",
+                ],
+                skills: ["Python", "MySQL", "Docker", "Git", "REST APIs"],
+              },
+              {
+                date: "Jul 2023 – Dec 2023",
+                title: "Inks and Coatings Engineering Intern",
+                company: "Nano-C, Inc.",
+                link: "https://www.nano-c.com/",
+                responsibilities: [
+                  "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
+                  "Developed novel chemical separation and purification methods to drive product refinement",
+                ],
+                skills: [
+                  "Nano-Technology",
+                  "Data Analysis",
+                  "Wet Lab Techniques",
+                ],
+              },
+              {
+                date: "Sep 2022 – May 2023",
+                title: "FYELIC Teaching Assistant",
+                company: "Northeastern University",
+                link: "https://makerspaces.northeastern.edu/spaces/fyelic/",
+                responsibilities: [
+                  "Guided 200+ students in C++ programming and electrical prototyping for the Cornerstone of Engineering course",
+                  "Managed and maintained advanced fabrication equipment including 3D printers, laser-cutters, and woodworking machinery",
+                ],
+                skills: [
+                  "C++",
+                  "Arduino",
+                  "MATLAB",
+                  "3D Printing",
+                  "Laser Cutting",
+                ],
+              },
+            ]}
+          />
+          <div className="text-center mt-12">
+            <LinkWithArrow>
+              <Link
+                href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-xl font-semibold"
+              >
+                View Full Resume
+              </Link>
+            </LinkWithArrow>
+          </div>
+        </Container>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20" aria-label="Contact">
+        <Container>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+            Let's Connect
+          </h2>
+          <HoverableCard className="text-center py-8">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+              I'm always open to discussing new projects, opportunities, or just
+              having a chat about technology.
+            </p>
+            <ContactMenu className="justify-center mt-8" />
+          </HoverableCard>
+        </Container>
+      </section>
+
+      <footer className="py-8">
+        <Container>
+          <Footer className="text-center" />
+        </Container>
+      </footer>
     </div>
   );
 }
