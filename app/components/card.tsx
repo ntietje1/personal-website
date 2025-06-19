@@ -1,7 +1,7 @@
-import { LinkWithArrow } from "../components/link";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
+import { LinkWithArrow } from "./LinkWithArrow";
 
 interface HoverableCardProps {
   children?: React.ReactNode;
