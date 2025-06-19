@@ -1,5 +1,5 @@
 import Image from "next/image";
-import headshot_clear from "../../public/images/headshot_clear.png";
+import headshot_clear from "../../../public/images/headshot_clear.png";
 
 interface HeadshotProps {
   className?: string;
@@ -8,13 +8,11 @@ interface HeadshotProps {
     height: number;
   };
   imageOffset?: string;
-  hoverOffset?: string;
 }
 
 export default function Headshot({
   className = "",
-  imageOffset = "5rem",
-  hoverOffset = "5",
+  imageOffset = "5rem"
 }: HeadshotProps) {
   return (
     <div className={`relative group ${className}`}>
@@ -45,7 +43,7 @@ export default function Headshot({
               objectPosition: "center",
               transform: "scale(1.1)",
             }}
-            className={`group-hover:-translate-y-${hoverOffset} transition-transform duration-300`}
+            className="transition-transform duration-300 group-hover:-translate-y-4"
             priority
           />
         </div>
