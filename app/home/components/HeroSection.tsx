@@ -12,7 +12,7 @@ function Name({ className }: { className?: string }) {
         Nick Tietje
       </h1>
     </div>
-  )
+  );
 }
 
 function Description({ className }: { className?: string }) {
@@ -26,7 +26,7 @@ function Description({ className }: { className?: string }) {
         I like to build full-stack web and mobile experiences.
       </p>
     </div>
-  )
+  );
 }
 
 export default function HeroSection() {
@@ -37,19 +37,16 @@ export default function HeroSection() {
           {/* Left content */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left flex-1 max-w-2xl">
             <div className="mb-8">
-              <Name className="mb-4"/>
-              <Description className="hidden md:block"/>
+              <Name className="mb-4" />
+              <Description className="hidden md:block" />
             </div>
 
             {/* Headshot */}
-            <Headshot
-              className="md:hidden mt-8 h-64 w-64"
-              imageOffset="5rem"
-            />
+            <Headshot className="md:hidden mt-8 h-64 w-64" imageOffset="5rem" />
 
-            <Description className="md:hidden mb-4"/>
+            <Description className="md:hidden mb-4" />
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="flex items-center gap-4">
               <HoverableButton
                 href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
                 target="_blank"
@@ -62,12 +59,9 @@ export default function HeroSection() {
           </div>
 
           {/* Headshot (hidden on mobile) */}
-          <Headshot
-            className="hidden md:block h-72 w-72"
-            imageOffset="7rem"
-          />
+          <Headshot className="hidden md:block h-72 w-72" imageOffset="7rem" />
         </div>
       </div>
     </section>
   );
-} 
+}
