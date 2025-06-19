@@ -1,4 +1,4 @@
-import { LinkWithArrow } from "./LinkWithArrow";
+import { LinkWithArrow } from "../components/link";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,7 +56,6 @@ interface ExperienceCardProps {
   link: string;
   responsibilities: string[];
   skills: string[];
-  className?: string;
 }
 
 export function ExperienceCard({
@@ -66,23 +65,22 @@ export function ExperienceCard({
   link,
   responsibilities,
   skills,
-  className,
 }: ExperienceCardProps) {
   return (
-    <div className={`mb-8 flex pl-32 ${className}`}>
+    <div className="mb-8 flex pl-32 group">
       <div className="text-right flex-shrink-0 relative top-1.5 pl-6">
         <div className="absolute right-6 top-12 pt-2.5">
-          <span className="text-slate-200 font-semibold whitespace-nowrap">
+          <span className="text-slate-200 font-semibold whitespace-nowrap transition-colors duration-200 group-hover:text-white">
             {date}
           </span>
         </div>
       </div>
-      <div className="flex-grow relative w-full">
+      <div className="flex-grow relative">
         <div className="absolute -top-1 -bottom-7 w-1 bg-white/50 m-0" />
-        <div className="relative ml-6 w-full group">
+        <div className="relative ml-6">
           <div className="absolute -left-8 top-11 w-5 h-5 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70" />
 
-          <HoverableCard className="mt-6 ml-7 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <HoverableCard className="mt-6 ml-7 transition-transform duration-200 group-hover:translate-x-1">
             <Link
               href={link}
               target="_blank"
@@ -129,9 +127,9 @@ export function ExperienceCardStack({
   experiences: ExperienceCardProps[];
 }) {
   return (
-    <div className="min-w-full">
+    <div>
       {experiences.map((experience, index) => (
-        <ExperienceCard className="w-full pr-16" key={index} {...experience} />
+        <ExperienceCard key={index} {...experience} />
       ))}
     </div>
   );
@@ -233,9 +231,9 @@ export function ProjectCardStack({
   projects: ProjectCardProps[];
 }) {
   return (
-    <div className="min-w-full">
+    <div>
       {projects.map((project, index) => (
-        <ProjectCard className="w-full" key={index} {...project} />
+        <ProjectCard key={index} {...project} />
       ))}
     </div>
   );

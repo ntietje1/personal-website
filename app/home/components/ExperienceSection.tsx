@@ -97,11 +97,7 @@ export default function ExperienceSection() {
               "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
               "Developed novel chemical separation and purification methods to drive product refinement",
             ],
-            skills: [
-              "Nano-Technology",
-              "Data Analysis",
-              "Wet Lab Techniques",
-            ],
+            skills: ["Nano-Technology", "Data Analysis", "Wet Lab Techniques"],
           },
           {
             date: "Sep 2022 – May 2023",
@@ -136,4 +132,4 @@ export default function ExperienceSection() {
       </div>
     </section>
   );
-} 
+}
