@@ -15,6 +15,7 @@ export default function ExperienceSection() {
             title: "Software Engineer Intern",
             company: "Fidelity Investments",
             link: "https://www.fidelity.com/",
+            logo: "/images/company-logos/fidelity_logo.jpeg",
             responsibilities: [
               "Developing youth features for the flagship Fidelity app, brokerage technology experience engineering",
             ],
@@ -32,6 +33,7 @@ export default function ExperienceSection() {
             title: "Software Engineer Intern",
             company: "Northeastern University",
             link: "https://gitmarks.org/",
+            logo: "/images/company-logos/nu_logo.webp",
             responsibilities: [
               "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
               "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
@@ -52,6 +54,7 @@ export default function ExperienceSection() {
             title: "Software Engineer Intern",
             company: "State Street",
             link: "https://www.statestreet.com/us/en/individual",
+            logo: "/images/company-logos/statestreet_logo.jpeg",
             responsibilities: [
               "Architected and implemented a scalable notification management system as a full-stack SaaS product for State Street, enhancing communication efficiency of 3000+ users across multiple departments",
               "Collaborated with cross-functional teams to gather requirements, ensuring alignment with diverse user needs and strict financial industry compliance standards",
@@ -70,6 +73,7 @@ export default function ExperienceSection() {
             title: "Undergraduate Researcher",
             company: "Northeastern University",
             link: "https://rmg.mit.edu/",
+            logo: "/images/company-logos/nu_comocheng_logo.png",
             responsibilities: [
               "Contributed to RMG-Py, an open-source computational modeling software, by developing features and code optimizations",
               "Led migration of output file format to YAML, improving cross-application interoperability",
@@ -82,6 +86,7 @@ export default function ExperienceSection() {
             title: "Khoury Teaching Assistant",
             company: "Northeastern University",
             link: "https://www.khoury.northeastern.edu/",
+            logo: "/images/company-logos/nu_khoury_logo.jpg",
             responsibilities: [
               "Mentored cohort of 250+ students in CS 3200 Database Design, providing technical support via Piazza and office hours",
               "Evaluated assignments, labs, and exams, offering constructive feedback to enhance student learning outcomes",
@@ -93,6 +98,7 @@ export default function ExperienceSection() {
             title: "Inks and Coatings Engineering Intern",
             company: "Nano-C, Inc.",
             link: "https://www.nano-c.com/",
+            logo: "/images/company-logos/nanoc_logo.png",
             responsibilities: [
               "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
               "Developed novel chemical separation and purification methods to drive product refinement",
@@ -104,6 +110,7 @@ export default function ExperienceSection() {
             title: "FYELIC Teaching Assistant",
             company: "Northeastern University",
             link: "https://makerspaces.northeastern.edu/spaces/fyelic/",
+            logo: "/images/company-logos/nu_coe_logo.png",
             responsibilities: [
               "Guided 200+ students in C++ programming and electrical prototyping for the Cornerstone of Engineering course",
               "Managed and maintained advanced fabrication equipment including 3D printers, laser-cutters, and woodworking machinery",

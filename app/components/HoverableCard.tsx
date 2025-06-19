@@ -56,6 +56,7 @@ interface ExperienceCardProps {
   link: string;
   responsibilities: string[];
   skills: string[];
+  logo?: string | StaticImageData;
   className?: string;
 }
 
@@ -66,23 +67,36 @@ export function ExperienceCard({
   link,
   responsibilities,
   skills,
+  logo,
   className,
 }: ExperienceCardProps) {
   return (
     <div className={`mb-8 flex pl-32 ${className}`}>
-      <div className="text-right flex-shrink-0 relative top-1.5 pl-6">
-        <div className="absolute right-6 top-12 pt-2.5">
+      <div className="text-right flex-shrink-0 relative top-0.5 pl-6">
+        <div className="absolute right-6 top-12">
           <span className="text-slate-200 font-semibold whitespace-nowrap">
             {date}
           </span>
         </div>
       </div>
       <div className="flex-grow relative w-full">
-        <div className="absolute -top-1 -bottom-7 w-1 bg-white/50 m-0" />
-        <div className="relative ml-6 w-full group">
-          <div className="absolute -left-8 top-11 w-5 h-5 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70" />
+        <div className="absolute ml-2.5 -top-1 -bottom-7 w-1 bg-white/50 m-0" />
+        <div className="relative ml-8 w-full group">
+          <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
+            {logo ? (
+              <Image
+                src={logo}
+                alt={`${company} logo`}
+                width={36}
+                height={36}
+                className="w-full h-full object-cover rounded-full p-0.5"
+              />
+            ) : (
+              <div className="w-2 h-2 rounded-full bg-white/70" />
+            )}
+          </div>
 
-          <HoverableCard className="mt-6 ml-7 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <HoverableCard className="mt-6 ml-10 transition-transform duration-200 group-hover:translate-x-1 w-full">
             <Link
               href={link}
               target="_blank"
@@ -169,30 +183,18 @@ export function ProjectCard({
       >
         <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
           <div className=" sm:order-1 sm:col-span-2 sm:translate-y-1">
-            {typeof imageSrc === "string" ? (
-              <img
-                alt={imageAlt}
-                loading="lazy"
-                width="100%"
-                height="auto"
-                decoding="async"
-                style={{ color: "transparent" }}
-                src={imageSrc}
-              />
-            ) : (
-              <Image
-                alt={imageAlt}
-                src={imageSrc}
-                width={200}
-                height={100}
-                sizes="100vw"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "cover",
-                }}
-              />
-            )}
+            <Image
+              alt={imageAlt}
+              src={imageSrc}
+              width={200}
+              height={100}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+              }}
+            />
           </div>
         </div>
         <div className="pl-4 w-3/4 z-10">
