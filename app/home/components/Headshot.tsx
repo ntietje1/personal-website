@@ -12,7 +12,7 @@ interface HeadshotProps {
 
 export default function Headshot({
   className = "",
-  imageOffset = "5rem"
+  imageOffset = "5rem",
 }: HeadshotProps) {
   return (
     <div className={`relative group ${className}`}>
