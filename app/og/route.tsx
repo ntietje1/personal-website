@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export function GET(request: Request) {
   let url = new URL(request.url);
@@ -8,13 +8,13 @@ export function GET(request: Request) {
 
   // Option 2: Use a local image file
   try {
-    const imagePath = join(process.cwd(), 'public', 'images', 'og.png');
+    const imagePath = join(process.cwd(), "public", "images", "og.png");
     const imageBuffer = readFileSync(imagePath);
-    
-    return new Response(imageBuffer, {
+
+    return new Response(new Uint8Array(imageBuffer), {
       headers: {
-        'Content-Type': 'image/png',
-        'Cache-Control': 'public, max-age=31536000, immutable',
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=31536000, immutable",
       },
     });
   } catch (error) {
