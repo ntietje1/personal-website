@@ -16,6 +16,40 @@ export default function ParallaxBackground() {
           backgroundSize: "auto",
         }}
       />
+
+      {/* Parallax script */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              if (typeof window === 'undefined') return;
+              
+              function updateParallax() {
+                const scrollY = window.scrollY || window.pageYOffset;
+                document.documentElement.style.setProperty('--scroll-y', scrollY);
+              }
+              
+              // Throttle scroll events for better performance
+              let ticking = false;
+              function handleScroll() {
+                if (!ticking) {
+                  requestAnimationFrame(function() {
+                    updateParallax();
+                    ticking = false;
+                  });
+                  ticking = true;
+                }
+              }
+              
+              window.addEventListener('scroll', handleScroll, { passive: true });
+              window.addEventListener('resize', handleScroll, { passive: true });
+              
+              // Initialize immediately
+              updateParallax();
+            })();
+          `,
+        }}
+      />
     </>
   );
 }
