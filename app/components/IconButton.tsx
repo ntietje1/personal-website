@@ -18,7 +18,7 @@ export default function IconButton({
   return (
     <div className={`${className}`}>
       <Link
-        className="block relative hover:text-white transition-all group/contact"
+        className="block relative transition-all group/contact"
         href={href}
         target="_blank"
         rel="noreferrer noopener"
@@ -27,7 +27,7 @@ export default function IconButton({
         <div className="absolute inset-0 rounded-lg bg-white/10 opacity-0 group-hover/contact:opacity-80 backdrop-blur-md transition-opacity" />
         <FontAwesomeIcon
           icon={icon}
-          className="w-6 h-6 group-hover/contact:scale-110 relative z-10"
+          className="w-6 h-6 text-white group-hover/contact:scale-110 relative z-10"
         />
       </Link>
     </div>

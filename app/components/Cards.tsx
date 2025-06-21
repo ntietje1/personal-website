@@ -2,37 +2,7 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 import { LinkWithArrow } from "./LinkWithArrow";
-
-interface HoverableCardProps {
-  children?: React.ReactNode;
-  className?: string;
-}
-
-export default function HoverableCard({
-  children,
-  className,
-}: HoverableCardProps) {
-  return (
-    <div
-      className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
-    >
-      {/* Animated border gradient */}
-      <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
-
-      {/* Glass effect background */}
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none lg:-inset-x-6">
-        {/* Inner subtle gradient */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-black/5 to-transparent" />
-
-        {/* Noise texture */}
-        <div className="absolute inset-0 rounded-xl bg-noise opacity-[0.02]" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 w-full">{children}</div>
-    </div>
-  );
-}
+import HoverableCard from "./HoverableCard";
 
 interface TechBadgeProps {
   tech: string;
