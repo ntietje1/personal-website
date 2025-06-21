@@ -20,7 +20,7 @@ export default function HoverableCard({
       <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
 
       {/* Glass effect background */}
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 group-hover:shadow-[0_8px_32px_0_rgba(0,0,0,0.25)] motion-reduce:transition-none lg:-inset-x-6">
+      <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none lg:-inset-x-6">
         {/* Inner subtle gradient */}
         <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-black/5 to-transparent" />
 
@@ -269,7 +269,7 @@ export function HoverableButton({
       <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
 
       {/* Glass effect background */}
-      <div className="absolute inset-0 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_4px_16px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 group-hover:shadow-[0_6px_24px_0_rgba(0,0,0,0.25)] active:shadow-[0_2px_8px_0_rgba(0,0,0,0.2)] active:translate-y-[1px] motion-reduce:transition-none">
+      <div className="absolute inset-0 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_4px_16px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 active:translate-y-[1px] motion-reduce:transition-none">
         {/* Inner subtle gradient */}
         <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-black/5 to-transparent" />
 
