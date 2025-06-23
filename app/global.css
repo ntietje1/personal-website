@@ -166,8 +166,8 @@ table {
   z-index: -1;
   transform: translate3d(0, 0, 0);
   overflow: hidden;
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
+  perspective: 1px;
+  -webkit-perspective: 1px;
 }
 
 .parallax-layer {
@@ -179,11 +179,12 @@ table {
   background-size: auto;
   background-position: center;
   background-repeat: repeat;
-  min-height: 1000vh;
+  min-height: 300vh;
   will-change: transform;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transition: transform 10ms linear;
 }
 
 .parallax-layer-background {
