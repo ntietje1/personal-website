@@ -165,6 +165,9 @@ table {
   height: 100%;
   z-index: -1;
   transform: translate3d(0, 0, 0);
+  overflow: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 
 .parallax-layer {
@@ -177,15 +180,16 @@ table {
   background-position: center;
   background-repeat: repeat;
   min-height: 1000vh;
-  transform: translate3d(0, 0, 0);
   will-change: transform;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .parallax-layer-background {
-  transform: translate3d(0, calc(var(--scroll-y, 0) * -0.1px), -1px) scale(1.5);
+  z-index: 1;
 }
 
 .parallax-layer-stars {
-  transform: translate3d(0, calc(var(--scroll-y, 0) * -0.2px), -0.5px)
-    scale(1.4);
+  z-index: 2;
 }
