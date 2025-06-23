@@ -4,39 +4,19 @@ import { useEffect, useCallback } from "react";
 
 export default function ParallaxBackground() {
   const updateParallax = useCallback(() => {
-    // Use requestAnimationFrame for smooth animation
-    requestAnimationFrame(() => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      document.documentElement.style.setProperty(
-        "--scroll-y",
-        scrollY.toString()
-      );
-    });
+    const scrollY = window.scrollY || window.pageYOffset;
+    document.documentElement.style.setProperty(
+      "--scroll-y",
+      scrollY.toString()
+    );
   }, []);
 
   useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        // Use requestAnimationFrame to limit updates
-        requestAnimationFrame(() => {
-          updateParallax();
-          ticking = false;
-        });
-      }
-    };
-
-    // Scroll listener for better performance
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Initial update
+    window.addEventListener("scroll", updateParallax, { passive: true });
     updateParallax();
 
-    // Cleanup
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", updateParallax);
     };
   }, [updateParallax]);
 
