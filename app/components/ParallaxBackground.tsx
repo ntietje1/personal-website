@@ -1,21 +1,21 @@
 export default function ParallaxBackground() {
   return (
     <>
-      <div
-        className="parallax-bg parallax-10"
-        style={{
-          backgroundImage: "url('/images/background/backgrounds/Blue3.png')",
-          backgroundSize: "auto",
-        }}
-      />
-      <div
-        className="parallax-bg parallax-20"
-        style={{
-          backgroundImage:
-            "url('/images/background/backgrounds/YellowStars.png')",
-          backgroundSize: "auto",
-        }}
-      />
+      <div className="parallax-container">
+        <div
+          className="parallax-layer parallax-layer-background"
+          style={{
+            backgroundImage: "url('/images/background/backgrounds/Blue3.png')",
+          }}
+        />
+        <div
+          className="parallax-layer parallax-layer-stars"
+          style={{
+            backgroundImage:
+              "url('/images/background/backgrounds/YellowStars.png')",
+          }}
+        />
+      </div>
 
       {/* Parallax script */}
       <script
@@ -29,22 +29,7 @@ export default function ParallaxBackground() {
                 document.documentElement.style.setProperty('--scroll-y', scrollY);
               }
               
-              // Throttle scroll events for better performance
-              let ticking = false;
-              function handleScroll() {
-                if (!ticking) {
-                  requestAnimationFrame(function() {
-                    updateParallax();
-                    ticking = false;
-                  });
-                  ticking = true;
-                }
-              }
-              
-              window.addEventListener('scroll', handleScroll, { passive: true });
-              window.addEventListener('resize', handleScroll, { passive: true });
-              
-              // Initialize immediately
+              window.addEventListener('scroll', updateParallax, { passive: true });
               updateParallax();
             })();
           `,
