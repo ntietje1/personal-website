@@ -32,7 +32,48 @@
 }
 
 html {
-  min-width: 360px;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+body {
+  height: 100vh;
+  perspective: 1px;
+  perspective-origin: left top;
+  transform-style: preserve-3d;
+  overflow-y: scroll;
+  background-color: #000;
+}
+
+.page-container {
+  transform-style: preserve-3d;
+  overflow-y: hidden;
+}
+
+.parallax-layer-base {
+  position: absolute;
+  top: 0vmax;
+  left: 0vmax;
+  width: 800vmax;
+  height: 800vmax;
+  background-image: url("/images/background/backgrounds/Blue3.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+  transform: translateZ(-1px) scale(2);
+  z-index: -2;
+}
+
+.parallax-layer-stars {
+  position: absolute;
+  width: 800vmax;
+  height: 800vmax;
+  background-image: url("/images/background/backgrounds/YellowStars.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+  transform: translateZ(-0.5px) scale(1.5);
+  z-index: -1;
 }
 
 /* Custom utility classes */
@@ -155,49 +196,3 @@ table {
 .title {
   text-wrap: balance;
 }
-
-/* CSS 3D Transform Parallax Background */
-.parallax-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.parallax-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: auto;
-  background-position: center;
-  background-repeat: repeat;
-  min-height: 300vh;
-  will-change: transform;
-  transition: transform 10ms linear;
-}
-
-.parallax-layer-background {
-  z-index: 1;
-  transform: translateY(calc(var(--scroll-y, 0) * -0.1px));
-}
-
-.parallax-layer-stars {
-  z-index: 2;
-  transform: translateY(calc(var(--scroll-y, 0) * -0.2px));
-}
-
-/* Disable parallax on mobile */
-/* @media (max-width: 768px) {
-  .parallax-layer {
-    transform: none !important;
-    transition: none;
-    min-height: 100vh;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-} */

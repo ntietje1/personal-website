@@ -4,7 +4,6 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
-import ParallaxBackground from "./components/ParallaxBackground";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -66,13 +65,15 @@ export default function RootLayout({
         <meta name="max-snippet" content="-1" />
       </head>
       <body className="antialiased">
-        <ParallaxBackground />
-
-        <main className="relative z-10 flex flex-col items-center min-h-screen">
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </main>
+        <div className="page-container">
+          <div className="parallax-layer-base" />
+          <div className="parallax-layer-stars" />
+          <main className="relative z-10 flex flex-col items-center w-screen">
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </main>
+        </div>
       </body>
     </html>
   );
