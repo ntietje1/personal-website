@@ -46,6 +46,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={cx("text-white", GeistMono.variable)}>
       <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
         <title>Nick Tietje</title>
         <meta
           name="description"
