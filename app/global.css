@@ -192,7 +192,7 @@ table {
 }
 
 /* Disable parallax on mobile */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .parallax-layer {
     transform: none !important;
     transition: none;
@@ -200,4 +200,4 @@ table {
     background-attachment: fixed;
     background-size: cover;
   }
-}
+} */
