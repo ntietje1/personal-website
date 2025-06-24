@@ -38,7 +38,6 @@
 }
 
 html {
-  height: 100vh;
   height: 100dvh; /* Dynamic viewport height for mobile */
   width: 100vw;
   overflow: hidden;
@@ -48,7 +47,6 @@ html {
 }
 
 body {
-  height: 100vh;
   height: 100dvh; /* Dynamic viewport height for mobile */
   width: 100vw;
   background-color: #000;
@@ -65,7 +63,7 @@ body {
   background-image: url("/images/background/backgrounds/Purple3_tall.webp");
   background-position: center center;
   background-repeat: repeat;
-  background-size: 100%;
+  background-size: auto;
   z-index: -2;
   transform-origin: 0 0;
 }
@@ -75,7 +73,7 @@ body {
   background-image: url("/images/background/backgrounds/YellowStars_tall.webp");
   background-position: center center;
   background-repeat: repeat;
-  background-size: 100%;
+  background-size: auto;
   z-index: -1;
   transform-origin: 0 0;
 }
@@ -92,16 +90,16 @@ body {
     top: 0;
     left: 0;
     width: 200%;
-    height: 300vh;
-    transform: translateZ(-5px) scale(4);
+    height: 200vh;
+    transform: translateZ(-5px) scale(12);
   }
 
   .parallax-layer-stars {
     top: 0;
     left: 0;
     width: 200%;
-    height: 650vh;
-    transform: translateZ(-1px) scale(1.5);
+    height: 400vh;
+    transform: translateZ(-1px) scale(3);
   }
 }
 
@@ -126,16 +124,16 @@ body {
   }
 
   .parallax-layer-base {
-    width: 100vw;
+    width: 200vmax;
     aspect-ratio: 5 / 12;
-    min-height: 100vh;
+    min-height: 100dvh;
     transform: translateZ(-5px) scale(15);
   }
 
   .parallax-layer-stars {
-    width: 100vw;
+    width: 200vmax;
     aspect-ratio: 5 / 12;
-    min-height: 100vh;
+    min-height: 100dvh;
     transform: translateZ(-1px) scale(5);
   }
 }
