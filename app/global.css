@@ -33,61 +33,99 @@
 
 html {
   height: 100vh;
-  overflow: hidden;
 }
 
 body {
   height: 100vh;
-  overflow: hidden;
   background-color: #000;
 }
 
-main {
-  position: relative;
-  transform-style: preserve-3d;
-}
+/* Chrome/Webkit-specific implementation (excludes Firefox) */
+@supports (not (-moz-appearance: none)) {
+  .page-container {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    perspective-origin: 0 0;
+    transform-style: preserve-3d;
+  }
 
-.page-container {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  perspective: 1px;
-  perspective-origin: 0 0;
-  transform-style: preserve-3d;
-}
+  .parallax-layer-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300vh;
+    background-image: url("/images/background/backgrounds/Blue3.png");
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: auto;
+    transform: translateZ(-2px) scale(3);
+    transform-origin: 0 0;
+    z-index: -2;
+  }
 
-.parallax-layer-base {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 300vh;
-  background-image: url("/images/background/backgrounds/Blue3.png");
-  background-position: center center;
-  background-repeat: repeat;
-  background-size: auto;
-  transform: translateZ(-2px) scale(3);
-  transform-origin: 0 0;
-  z-index: -2;
-}
-
-.parallax-layer-stars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 300vh;
-  background-image: url("/images/background/backgrounds/YellowStars.png");
-  background-position: center center;
-  background-repeat: repeat;
-  background-size: auto;
-  transform: translateZ(-1px) scale(2);
-  transform-origin: 0 0;
-  z-index: -1;
+  .parallax-layer-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300vh;
+    background-image: url("/images/background/backgrounds/YellowStars.png");
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: auto;
+    transform: translateZ(-1px) scale(2);
+    transform-origin: 0 0;
+    z-index: -1;
+  }
 }
 
 /* Firefox-specific implementation */
 @-moz-document url-prefix() {
+  html {
+    overflow-y: hidden;
+  }
+
+  body {
+    perspective: 1px;
+    perspective-origin: left top;
+    transform-style: preserve-3d;
+    overflow-y: scroll;
+    background-color: #000;
+  }
+
+  .page-container {
+    transform-style: preserve-3d;
+    overflow-y: hidden;
+  }
+
+  .parallax-layer-base {
+    position: absolute;
+    top: 0vmax;
+    left: 0vmax;
+    width: 800vmax;
+    height: 800vmax;
+    background-image: url("/images/background/backgrounds/Blue3.png");
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: auto;
+    transform: translateZ(-2px) scale(3);
+    z-index: -2;
+  }
+
+  .parallax-layer-stars {
+    position: absolute;
+    width: 800vmax;
+    height: 800vmax;
+    background-image: url("/images/background/backgrounds/YellowStars.png");
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: auto;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+  }
 }
 
 /* Custom utility classes */
