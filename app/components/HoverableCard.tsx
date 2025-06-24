@@ -185,10 +185,11 @@ export function ProjectCard({
         target="_blank"
         rel="noreferrer noopener"
         aria-label={`${title} (opens in a new tab)`}
-        className="flex"
+        className="flex flex-col sm:flex-row"
       >
-        <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
-          <div className=" sm:order-1 sm:col-span-2 sm:translate-y-1">
+        {/* Image: on top for mobile, left for desktop */}
+        <div className="w-full sm:w-1/5 h-auto pr-0 md:pr-4 pb-4 pt-2 z-10 flex-shrink-0">
+          <div className="sm:order-1 sm:col-span-2 sm:translate-y-1">
             <Image
               alt={imageAlt}
               src={imageSrc}
@@ -203,7 +204,8 @@ export function ProjectCard({
             />
           </div>
         </div>
-        <div className="pl-4 w-3/4 z-10">
+        {/* Text content */}
+        <div className="pl-0 sm:pl-4 w-full sm:w-4/5 z-10 flex flex-col justify-center">
           <div className="pb-2 pt-2">
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
               <div className="z-10 sm:col-span-8">

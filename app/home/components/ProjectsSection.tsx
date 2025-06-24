@@ -32,7 +32,7 @@ export default function ProjectsSection() {
               ],
             },
             {
-              title: "Marks: A GitHub-Integrated Educational Platform",
+              title: "GitMarks: A GitHub-Integrated Educational Platform",
               descriptions: [
                 "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
                 "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
