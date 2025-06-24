@@ -31,7 +31,7 @@ function Description({ className }: { className?: string }) {
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex flex-col justify-center relative py-16 md:py-24">
+    <section className="min-h-screen flex flex-col justify-center relative">
       <div className="flex flex-col items-center">
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-32 md:gap-12">
           {/* Left content */}
