@@ -38,7 +38,7 @@
 }
 
 html {
-  height: 100dvh; /* Dynamic viewport height for mobile */
+  height: 100dvh;
   width: 100vw;
   overflow: hidden;
   position: fixed;
@@ -47,7 +47,7 @@ html {
 }
 
 body {
-  height: 100dvh; /* Dynamic viewport height for mobile */
+  height: 100dvh;
   width: 100vw;
   background-color: #000;
 }
