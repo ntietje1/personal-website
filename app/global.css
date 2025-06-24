@@ -33,11 +33,38 @@
 
 html {
   height: 100vh;
+  width: 100vw;
 }
 
 body {
   height: 100vh;
   background-color: #000;
+}
+
+.page-container {
+  transform-style: preserve-3d;
+  perspective: 1px;
+  perspective-origin: 0 0;
+}
+
+.parallax-layer-base {
+  position: absolute;
+  background-image: url("/images/background/backgrounds/Blue3.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+  z-index: -2;
+  transform-origin: 0 0;
+}
+
+.parallax-layer-stars {
+  position: absolute;
+  background-image: url("/images/background/backgrounds/YellowStars.png");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+  z-index: -1;
+  transform-origin: 0 0;
 }
 
 /* Chrome/Webkit-specific implementation (excludes Firefox) */
@@ -46,46 +73,29 @@ body {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    perspective: 1px;
-    perspective-origin: 0 0;
-    transform-style: preserve-3d;
   }
 
   .parallax-layer-base {
-    position: absolute;
     top: 0;
     left: 0;
     width: 300%;
-    height: 300vh;
-    background-image: url("/images/background/backgrounds/Blue3.png");
-    background-position: center center;
-    background-repeat: repeat;
-    background-size: auto;
-    transform: translateZ(-2px) scale(3);
-    transform-origin: 0 0;
-    z-index: -2;
+    height: 200vh;
+    transform: translateZ(-2px) scale(4);
   }
 
   .parallax-layer-stars {
-    position: absolute;
     top: 0;
     left: 0;
     width: 300%;
     height: 300vh;
-    background-image: url("/images/background/backgrounds/YellowStars.png");
-    background-position: center center;
-    background-repeat: repeat;
-    background-size: auto;
     transform: translateZ(-1px) scale(2);
-    transform-origin: 0 0;
-    z-index: -1;
   }
 }
 
 /* Firefox-specific implementation */
 @-moz-document url-prefix() {
   html {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 
   body {
@@ -93,38 +103,24 @@ body {
     perspective-origin: left top;
     transform-style: preserve-3d;
     overflow-y: scroll;
-    background-color: #000;
+    overflow-x: hidden;
   }
 
   .page-container {
-    transform-style: preserve-3d;
     overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .parallax-layer-base {
-    position: absolute;
-    top: 0vmax;
-    left: 0vmax;
     width: 800vmax;
     height: 800vmax;
-    background-image: url("/images/background/backgrounds/Blue3.png");
-    background-position: center center;
-    background-repeat: repeat;
-    background-size: auto;
-    transform: translateZ(-2px) scale(3);
-    z-index: -2;
+    transform: translateZ(-2px) scale(6);
   }
 
   .parallax-layer-stars {
-    position: absolute;
     width: 800vmax;
     height: 800vmax;
-    background-image: url("/images/background/backgrounds/YellowStars.png");
-    background-position: center center;
-    background-repeat: repeat;
-    background-size: auto;
-    transform: translateZ(-1px) scale(2);
-    z-index: -1;
+    transform: translateZ(-1px) scale(4);
   }
 }
 
