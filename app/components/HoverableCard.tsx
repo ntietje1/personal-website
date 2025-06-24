@@ -70,8 +70,9 @@ export function ExperienceCard({
   className,
 }: ExperienceCardProps) {
   return (
-    <div className={`mb-8 flex pl-32 ${className}`}>
-      <div className="text-right flex-shrink-0 relative top-0.5 pl-6">
+    <div className={`mb-8 flex pl-0 sm:pl-32 ${className}`}>
+      {/* Date on the left: only show on sm and up */}
+      <div className="hidden sm:flex text-right flex-shrink-0 relative top-0.5 pl-6">
         <div className="absolute right-6 top-12">
           <span className="text-slate-200 font-semibold whitespace-nowrap">
             {date}
@@ -79,8 +80,10 @@ export function ExperienceCard({
         </div>
       </div>
       <div className="flex-grow relative w-full">
+        {/* Vertical line: always show */}
         <div className="absolute ml-2.5 -top-1 -bottom-7 w-1 bg-white/50 m-0" />
         <div className="relative ml-8 w-full group">
+          {/* Logo: always show */}
           <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
             {logo ? (
               <Image
@@ -95,13 +98,13 @@ export function ExperienceCard({
             )}
           </div>
 
-          <HoverableCard className="mt-6 ml-10 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <HoverableCard className="mt-6 ml-8 sm:ml-10 transition-transform duration-200 group-hover:translate-x-1 w-full">
             <Link
               href={link}
               target="_blank"
               rel="noreferrer noopener"
               aria-label={`${title} at ${company} (opens in a new tab)`}
-              className="flex"
+              className="flex flex-col"
             >
               <div className="z-10 sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
@@ -109,6 +112,10 @@ export function ExperienceCard({
                     {title} · <span className="inline-block">{company}</span>
                   </LinkWithArrow>
                 </h3>
+                {/* Date inside card for mobile */}
+                <span className="block sm:hidden text-slate-200 font-semibold italic mb-2">
+                  {date}
+                </span>
                 <ul className="list-disc list-inside text-slate-100">
                   {responsibilities.map((responsibility, idx) => (
                     <div
