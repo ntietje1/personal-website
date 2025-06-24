@@ -6,27 +6,26 @@ import Link from "next/link";
 interface HoverableCardProps {
   children?: React.ReactNode;
   className?: string;
+  compact?: boolean;
+  intense?: boolean;
 }
 
 export default function HoverableCard({
   children,
   className,
+  compact = false,
+  intense = false,
 }: HoverableCardProps) {
   return (
     <div
       className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
+      style={{ willChange: "transform, opacity" }}
     >
-      {/* Animated border gradient */}
-      <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
+      {/* Gradient */}
+      <div className={`${compact ? "absolute inset-0" : "absolute -inset-1"} ${intense? "bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20" : "bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5"} rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200`} />
 
-      {/* Glass effect background */}
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none lg:-inset-x-6">
-        {/* Inner subtle gradient */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-black/5 to-transparent" />
-
-        {/* Noise texture */}
-        <div className="absolute inset-0 rounded-xl bg-noise opacity-[0.02]" />
-      </div>
+      {/* Glass effect */}
+      <div className={`${compact ? "absolute inset-0" : "absolute -inset-x-4 -inset-y-4 lg:-inset-x-6"} z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none`} />
 
       {/* Content */}
       <div className="relative z-10 w-full">{children}</div>
@@ -42,7 +41,7 @@ interface TechBadgeProps {
 function TechBadge({ tech, className }: TechBadgeProps) {
   return (
     <div
-      className={`flex items-center rounded-full bg-white/5 backdrop-blur-sm px-3 py-1 text-xs font-medium leading-5 text-slate-200 border border-white/10 transition-all duration-200 group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white ${className}`}
+      className={`flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium leading-5 text-slate-200 border border-white/10 transition-all duration-200 group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white ${className}`}
     >
       {tech}
     </div>
@@ -82,7 +81,7 @@ export function ExperienceCard({
       <div className="flex-grow relative w-full">
         <div className="absolute ml-2.5 -top-1 -bottom-7 w-1 bg-white/50 m-0" />
         <div className="relative ml-8 w-full group">
-          <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
+          <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
             {logo ? (
               <Image
                 src={logo}
@@ -259,28 +258,15 @@ export function HoverableButton({
   rel,
 }: HoverableButtonProps) {
   return (
-    <Link
-      href={href}
-      target={target}
-      rel={rel}
-      className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
-    >
-      {/* Animated border gradient */}
-      <div className="absolute -inset-[1px] rounded-xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
-
-      {/* Glass effect background */}
-      <div className="absolute inset-0 z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_4px_16px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 active:translate-y-[1px] motion-reduce:transition-none">
-        {/* Inner subtle gradient */}
-        <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-black/5 to-transparent" />
-
-        {/* Noise texture */}
-        <div className="absolute inset-0 rounded-xl bg-noise opacity-[0.02]" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 w-full px-6 py-3 text-center text-white font-semibold text-lg">
+    <HoverableCard className={className} compact intense>
+      <Link
+        href={href}
+        target={target}
+        rel={rel}
+        className="w-full px-6 py-3 text-center text-white font-semibold text-lg flex items-center justify-center"
+      >
         {children}
-      </div>
-    </Link>
+      </Link>
+    </HoverableCard>
   );
 }

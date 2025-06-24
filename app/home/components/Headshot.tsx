@@ -16,17 +16,11 @@ export default function Headshot({
 }: HeadshotProps) {
   return (
     <div className={`relative group ${className}`}>
-      {/* Animated border gradient */}
-      <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
+      {/* Gradient */}
+      <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
 
-      {/* Glass effect background */}
-      <div className="absolute inset-0 rounded-full border border-white/10 bg-black/10 backdrop-blur-md group-hover:backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none">
-        {/* Inner subtle gradient */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-black/5 to-transparent" />
-
-        {/* Noise texture */}
-        <div className="absolute inset-0 rounded-full bg-noise opacity-[0.02]" />
-      </div>
+      {/* Glass effect */}
+      <div className="absolute inset-0 rounded-full border border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none"/>
 
       {/* Image container with top overflow */}
       <div className="absolute inset-0">
