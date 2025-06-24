@@ -8,7 +8,7 @@ export default function AboutSection() {
       </h2>
       <HoverableCard>
         <div className="max-w-none px-4 pb-6">
-          <p className="text-lg text-slate-200 leading-relaxed">
+          <p className="text-md md:text-lg text-slate-200 leading-relaxed">
             Hi! I'm Nick Tietje, and I love building things. I've always been a
             curious and analytical person, which initially drew me to Chemical
             Engineering. However, after dabbling in programming, I discovered my
@@ -19,7 +19,7 @@ export default function AboutSection() {
             solutions to problems in both the real world and the digital world.
           </p>
 
-          <p className="text-lg text-slate-200 leading-relaxed">
+          <p className="text-md md:text-lg text-slate-200 leading-relaxed pt-2">
             I'm an incoming computer science Master's student at Northeastern
             University and I'm currently employed as a Software Engineering
             Intern at Fidelity Investments. In my free time, I enjoy developing
@@ -27,7 +27,7 @@ export default function AboutSection() {
             some of my interests:
           </p>
 
-          <ul className="space-y-4 text-lg text-slate-200 pt-2">
+          <ul className="space-y-4 text-md md:text-lg text-slate-200 pt-2">
             <li className="flex items-start">
               <span className="text-white/50 mr-3">•</span>
               <span>

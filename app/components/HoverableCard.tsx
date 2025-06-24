@@ -263,7 +263,7 @@ export function HoverableButton({
         href={href}
         target={target}
         rel={rel}
-        className="w-full px-6 py-3 text-center text-white font-semibold text-lg flex items-center justify-center"
+        className="w-full px-6 py-3 text-center text-white font-semibold text-md md:text-lg flex items-center justify-center"
       >
         {children}
       </Link>

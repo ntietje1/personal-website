@@ -46,15 +46,11 @@ export default function HeroSection() {
 
             <Description className="md:hidden mb-4" />
 
-            <div className="flex items-center gap-4">
-              <HoverableButton
-                href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <div className="flex flex-col md:flex-row items-center gap-4 w-full">
+              <HoverableButton className="whitespace-nowrap" href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 Download Resume
               </HoverableButton>
-              <ContactMenu className="flex gap-4 pl-2" />
+              <ContactMenu className="flex gap-4 pl-0 md:pl-2" />
             </div>
           </div>
 

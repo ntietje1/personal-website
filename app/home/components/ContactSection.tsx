@@ -8,7 +8,7 @@ export default function ContactSection() {
         Let's Connect
       </h2>
       <HoverableCard className="text-center py-8">
-        <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+        <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
           I'm always open to discussing new projects, opportunities, or just
           having a chat about technology.
         </p>
