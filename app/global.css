@@ -33,21 +33,22 @@
 
 html {
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 body {
   height: 100vh;
-  perspective: 1px;
-  perspective-origin: left top;
-  transform-style: preserve-3d;
-  overflow-y: scroll;
+  overflow: hidden;
   background-color: #000;
 }
 
 .page-container {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  perspective-origin: 0 0;
   transform-style: preserve-3d;
-  overflow-y: hidden;
 }
 
 .parallax-layer-base {
@@ -60,7 +61,8 @@ body {
   background-position: center center;
   background-repeat: repeat;
   background-size: auto;
-  transform: translateZ(-4px) scale(8);
+  transform: translateZ(-2px) scale(3);
+  transform-origin: 0 0;
   z-index: -2;
 }
 
@@ -72,8 +74,15 @@ body {
   background-position: center center;
   background-repeat: repeat;
   background-size: auto;
-  transform: translateZ(-2px) scale(4);
+  transform: translateZ(-1px) scale(2);
+  transform-origin: 0 0;
   z-index: -1;
+}
+
+main {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 0;
 }
 
 /* Custom utility classes */

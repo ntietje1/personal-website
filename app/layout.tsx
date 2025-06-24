@@ -68,7 +68,7 @@ export default function RootLayout({
         <div className="page-container">
           <div className="parallax-layer-base" />
           <div className="parallax-layer-stars" />
-          <main className="relative z-10 flex flex-col items-center w-screen">
+          <main>
             {children}
             <Analytics />
             <SpeedInsights />
