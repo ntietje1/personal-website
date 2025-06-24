@@ -18,17 +18,16 @@ export default function HoverableCard({
 }: HoverableCardProps) {
   return (
     <div
-      className={`relative flex group/link group lg:hover:!opacity-100 lg:group-hover/list:opacity-50 ${className}`}
-      style={{ willChange: "transform, opacity" }}
+      className={`relative flex group/link group ${className}`}
     >
       {/* Gradient */}
-      <div className={`${compact ? "absolute inset-0" : "absolute -inset-1"} ${intense? "bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20" : "bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5"} rounded-xl opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200`} />
+      <div className={`${compact ? "absolute inset-0" : "absolute -inset-1"} ${intense? "bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20" : "bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5"} rounded-xl opacity-10 group-hover:opacity-80 blur-sm transition-opacity duration-200`} />
 
       {/* Glass effect */}
-      <div className={`${compact ? "absolute inset-0" : "absolute -inset-x-4 -inset-y-4 lg:-inset-x-6"} z-0 rounded-xl border border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none`} />
+      <div className={`${compact ? "absolute inset-0" : "absolute -inset-x-4 -inset-y-4 lg:-inset-x-6"} rounded-xl border border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none`} />
 
       {/* Content */}
-      <div className="relative z-10 w-full">{children}</div>
+      <div className="relative w-full">{children}</div>
     </div>
   );
 }
