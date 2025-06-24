@@ -47,6 +47,10 @@ export default function RootLayout({
       <head>
         <title>Nick Tietje</title>
         <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta
           name="description"
           content="Nick Tietje is a software engineer who builds innovative software products for the web and mobile"
         />

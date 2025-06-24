@@ -31,13 +31,26 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+  width: 100vw;
   background-color: #000;
 }
 
@@ -95,7 +108,8 @@ body {
 /* Firefox-specific implementation */
 @-moz-document url-prefix() {
   html {
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   body {
