@@ -42,6 +42,11 @@ body {
   background-color: #000;
 }
 
+main {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
 .page-container {
   height: 100vh;
   overflow-x: hidden;
@@ -53,10 +58,10 @@ body {
 
 .parallax-layer-base {
   position: absolute;
-  top: 0vmax;
-  left: 0vmax;
-  width: 800vmax;
-  height: 800vmax;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300vh;
   background-image: url("/images/background/backgrounds/Blue3.png");
   background-position: center center;
   background-repeat: repeat;
@@ -68,8 +73,10 @@ body {
 
 .parallax-layer-stars {
   position: absolute;
-  width: 800vmax;
-  height: 800vmax;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300vh;
   background-image: url("/images/background/backgrounds/YellowStars.png");
   background-position: center center;
   background-repeat: repeat;
@@ -79,10 +86,8 @@ body {
   z-index: -1;
 }
 
-main {
-  position: relative;
-  transform-style: preserve-3d;
-  z-index: 0;
+/* Firefox-specific implementation */
+@-moz-document url-prefix() {
 }
 
 /* Custom utility classes */
