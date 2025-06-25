@@ -8,7 +8,7 @@ export default function AboutSection() {
       </h2>
       <HoverableCard>
         <div className="max-w-none px-4 pb-6">
-          <p className="text-md md:text-lg text-slate-200 leading-relaxed">
+          <p className="text-md md:text-lg text-slate-200 leading-relaxed pt-2">
             Hi! I'm Nick Tietje, and I love building things. I've always been a
             curious and analytical person, which initially drew me to Chemical
             Engineering. However, after dabbling in programming, I discovered my
