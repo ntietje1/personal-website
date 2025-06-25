@@ -1,14 +1,12 @@
-import HoverableCard from "../../components/HoverableCard";
-
 export default function AboutSection() {
   return (
     <section id="about" className="py-20" aria-label="About me">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
         About Me
       </h2>
-      <HoverableCard>
-        <div className="max-w-none px-4 pb-6">
-          <p className="text-md md:text-lg text-slate-200 leading-relaxed pt-2">
+      <div className="custom-frosted-dark rounded-xl">
+        <div className="max-w-none px-8 pb-6 pt-2">
+          <p className="text-md text-slate-200 leading-relaxed pt-2">
             Hi! I'm Nick Tietje, and I love building things. I've always been a
             curious and analytical person, which initially drew me to Chemical
             Engineering. However, after dabbling in programming, I discovered my
@@ -19,7 +17,7 @@ export default function AboutSection() {
             solutions to problems in both the real world and the digital world.
           </p>
 
-          <p className="text-md md:text-lg text-slate-200 leading-relaxed pt-2">
+          <p className="text-md text-slate-200 leading-relaxed pt-2">
             I'm an incoming computer science Master's student at Northeastern
             University and I'm currently employed as a Software Engineering
             Intern at Fidelity Investments. In my free time, I enjoy developing
@@ -27,7 +25,7 @@ export default function AboutSection() {
             some of my interests:
           </p>
 
-          <ul className="space-y-4 text-md md:text-lg text-slate-200 pt-2">
+          <ul className="space-y-4 text-md text-slate-200 pt-2">
             <li className="flex items-start">
               <span className="text-white/50 mr-3">•</span>
               <span>
@@ -68,7 +66,7 @@ export default function AboutSection() {
             </li>
           </ul>
         </div>
-      </HoverableCard>
+      </div>
     </section>
   );
 }

@@ -57,7 +57,7 @@
 
 @keyframes comet-anim {
   0% { background-position: 0px 0px; }
-  97% { background-position: 0px 0px; }
+  90% { background-position: 0px 0px; }
   100% { background-position: -208px 0px; }
 }
 

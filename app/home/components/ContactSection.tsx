@@ -1,4 +1,3 @@
-import HoverableCard from "../../components/HoverableCard";
 import ContactMenu from "./ContactMenu";
 
 export default function ContactSection() {
@@ -7,13 +6,13 @@ export default function ContactSection() {
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
         Let's Connect
       </h2>
-      <HoverableCard className="text-center py-8">
+      <div className="custom-frosted-dark rounded-xl text-center py-8">
         <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
           I'm always open to discussing new projects, opportunities, or just
           having a chat about technology.
         </p>
         <ContactMenu className="justify-center mt-8" />
-      </HoverableCard>
+      </div>
     </section>
   );
 } 

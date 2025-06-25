@@ -59,6 +59,7 @@ body {
   transform-style: preserve-3d;
   perspective: 1px;
   perspective-origin: center center;
+  backface-visibility: hidden;
 }
 
 .parallax-layer-base {
@@ -70,6 +71,7 @@ body {
   background-size: auto;
   z-index: -3;
   transform-origin: center center;
+  backface-visibility: hidden;
 }
 
 .parallax-layer-stars {
@@ -81,6 +83,7 @@ body {
   background-size: auto;
   z-index: -2;
   transform-origin: center center;
+  backface-visibility: hidden;
 }
 
 .parallax-layer-stars-2 {
@@ -167,11 +170,6 @@ body {
     min-height: 100dvh;
     transform: translateZ(-0.5px) scale(2);
   }
-}
-
-/* Custom utility classes */
-.bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .prose .anchor {
@@ -288,4 +286,91 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+
+/* Frosted glass effect */
+.custom-frosted {
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(232, 179, 231, 0.2);
+  transition: all 0.1s ease-out;
+}
+
+.custom-frosted::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.35), rgba(147, 51, 234, 0.35), rgba(236, 72, 153, 0.35));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.85;
+  transition: opacity 0.1s ease-out;
+}
+
+.custom-frosted::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(33, 16, 40, 0.6);
+  border-radius: inherit;
+  z-index: -2;
+}
+
+.custom-frosted:hover::before {
+  opacity: 0.9;
+}
+
+.custom-frosted:hover {
+  background: rgba(96, 37, 99, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.custom-frosted {
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Darker, more muted frosted glass effect */
+.custom-frosted-dark {
+  position: relative;
+  background: rgba(20, 17, 29, 0.8);
+  border: 2px solid rgba(185, 149, 192, 0.15);
+  transition: all 0.1s ease-out;
+}
+
+.custom-frosted-dark::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  background: linear-gradient(to right, rgba(60, 34, 94, 0.8), rgba(75, 33, 87, 0.7), rgba(81, 31, 68, 0.6));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.2;
+  transition: opacity 0.1s ease-out;
+}
+
+.custom-frosted-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/images/background/backgrounds/Purple3_tall.webp');
+  border-radius: inherit;
+  z-index: -2;
+  opacity: 0.6;
+}
+
+.custom-frosted-dark:hover::before {
+  opacity: 0.3;
+}
+
+.custom-frosted-dark:hover {
+  border-color: rgba(222, 212, 228, 0.141);
+}
+
+.custom-frosted-dark {
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }

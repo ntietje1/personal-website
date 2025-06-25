@@ -45,7 +45,7 @@ export default function ProjectsSection() {
           ]}
         />
       </div>
-      <div className="text-center mt-12">
+      <div className="text-center mt-8">
         <LinkWithArrow>
           <Link
             href="https://github.com/ntietje1"

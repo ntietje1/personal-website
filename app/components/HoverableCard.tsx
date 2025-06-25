@@ -3,34 +3,40 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 
-interface HoverableCardProps {
-  children?: React.ReactNode;
-  className?: string;
-  compact?: boolean;
-  intense?: boolean;
-}
+// interface HoverableCardProps {
+//   children?: React.ReactNode;
+//   className?: string;
+//   compact?: boolean;
+//   intense?: boolean;
+// }
 
-export default function HoverableCard({
-  children,
-  className,
-  compact = false,
-  intense = false,
-}: HoverableCardProps) {
-  return (
-    <div
-      className={`relative flex group/link group ${className}`}
-    >
-      {/* Glass effect */}
-      <div className={`${compact ? "absolute inset-0" : "absolute -inset-5"} rounded-xl border-2 border-white/5 bg-black/15 backdrop-blur-[10px] transition-all duration-200 group-hover:border-white/10 group-hover:bg-black/10 motion-reduce:transition-none`} />
+// export default function HoverableCard({
+//   children,
+//   className,
+//   compact = false,
+//   intense = false,
+// }: HoverableCardProps) {
+//   return (
+//     <div className={`space-y-4 ${className}`}>
+//         <div className={`custom-frosted-dark rounded-xl`}>
+//           {/* <div className={`absolute -inset-[0.5px] ${intense? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60" : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"} opacity-30 rounded-xl blur-[5px] transition-opacity duration-200`} /> */}
+//           {children}
+//         </div>
+//       </div>
+//     // <div
+//     //   className={`relative flex group/link group ${className}`}
+//     // >
+//     //   {/* Glass effect */}
+//     //   <div className={`${compact ? "absolute inset-0" : "absolute -inset-5"} rounded-xl border-2 border-white/5 bg-black/15 transition-all duration-200 group-hover:border-white/10 group-hover:bg-black/10 motion-reduce:transition-none`} />
       
-      {/* Gradient */}
-      <div className={`${compact ? "absolute -inset-0.5" : "absolute -inset-6"} ${intense? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60" : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"} opacity-30 rounded-xl blur-[5px] transition-opacity duration-200`} />
+//     //   {/* Gradient */}
+//     //   <div className={`${compact ? "absolute -inset-0.5" : "absolute -inset-6"} ${intense? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60" : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"} opacity-30 rounded-xl blur-[5px] transition-opacity duration-200`} />
 
-      {/* Content */}
-      <div className="relative w-full">{children}</div>
-    </div>
-  );
-}
+//     //   {/* Content */}
+//     //   <div className="relative w-full">{children}</div>
+//     // </div>
+//   );
+// }
 
 interface TechBadgeProps {
   tech: string;
@@ -69,10 +75,10 @@ export function ExperienceCard({
   className,
 }: ExperienceCardProps) {
   return (
-    <div className={`mb-8 flex pl-0 sm:pl-32 ${className}`}>
+    <div className={`flex pl-0 sm:pl-32 ${className}`}>
       {/* Date on the left: only show on sm and up */}
-      <div className="hidden sm:flex text-right flex-shrink-0 relative top-0.5 pl-6">
-        <div className="absolute right-6 top-12">
+      <div className="hidden sm:flex text-right flex-shrink-0 relative pl-6">
+        <div className="absolute right-6 top-7">
           <span className="text-slate-200 font-semibold whitespace-nowrap">
             {date}
           </span>
@@ -83,7 +89,7 @@ export function ExperienceCard({
         <div className="absolute ml-2.5 -top-1 -bottom-7 w-1 bg-white/50 m-0" />
         <div className="relative ml-8 w-full group">
           {/* Logo: always show */}
-          <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
+          <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
             {logo ? (
               <Image
                 src={logo}
@@ -97,7 +103,7 @@ export function ExperienceCard({
             )}
           </div>
 
-          <HoverableCard className="mt-6 ml-8 sm:ml-10 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <div className="custom-frosted-dark rounded-xl ml-5 py-2 pl-3 pr-1 transition-transform duration-200 group-hover:translate-x-1 w-full">
             <Link
               href={link}
               target="_blank"
@@ -105,7 +111,7 @@ export function ExperienceCard({
               aria-label={`${title} at ${company} (opens in a new tab)`}
               className="flex flex-col"
             >
-              <div className="z-10 sm:col-span-8">
+              <div className="sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
                   <LinkWithArrow>
                     {title} · <span className="inline-block">{company}</span>
@@ -135,7 +141,7 @@ export function ExperienceCard({
                 </ul>
               </div>
             </Link>
-          </HoverableCard>
+          </div>
         </div>
       </div>
     </div>
@@ -150,7 +156,7 @@ export function ExperienceCardStack({
   return (
     <div className="min-w-full">
       {experiences.map((experience, index) => (
-        <ExperienceCard className="w-full pr-16" key={index} {...experience} />
+        <ExperienceCard className="w-full pr-12 mt-6" key={index} {...experience} />
       ))}
     </div>
   );
@@ -178,7 +184,7 @@ export function ProjectCard({
   className,
 }: ProjectCardProps) {
   return (
-    <HoverableCard className={`mt-12 ${className}`}>
+    <div className={`custom-frosted-dark rounded-xl ${className}`}>
       <a
         href={link}
         target="_blank"
@@ -187,7 +193,7 @@ export function ProjectCard({
         className="flex flex-col sm:flex-row"
       >
         {/* Image: on top for mobile, left for desktop */}
-        <div className="w-full sm:w-1/5 h-auto pr-0 md:pr-4 pb-4 pt-2 z-10 flex-shrink-0">
+        <div className="w-full sm:w-1/4 h-auto pr-0 md:pr-4 pb-4 pt-3 pl-3 lex-shrink-0">
           <div className="sm:order-1 sm:col-span-2 sm:translate-y-1">
             <Image
               alt={imageAlt}
@@ -204,10 +210,10 @@ export function ProjectCard({
           </div>
         </div>
         {/* Text content */}
-        <div className="pl-0 sm:pl-4 w-full sm:w-4/5 z-10 flex flex-col justify-center">
+        <div className="pl-0 w-full sm:w-3/4 flex flex-col justify-center">
           <div className="pb-2 pt-2">
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
-              <div className="z-10 sm:col-span-8">
+              <div className="sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
                   <LinkWithArrow>{title}</LinkWithArrow>
                 </h3>
@@ -232,7 +238,7 @@ export function ProjectCard({
           </div>
         </div>
       </a>
-    </HoverableCard>
+    </div>
   );
 }
 
@@ -244,7 +250,7 @@ export function ProjectCardStack({
   return (
     <div className="min-w-full">
       {projects.map((project, index) => (
-        <ProjectCard className="w-full" key={index} {...project} />
+        <ProjectCard className="w-full mt-6" key={index} {...project} />
       ))}
     </div>
   );
@@ -266,7 +272,7 @@ export function HoverableButton({
   rel,
 }: HoverableButtonProps) {
   return (
-    <HoverableCard className={className} compact intense>
+    <div className={`custom-frosted rounded-xl ${className}`}>
       <Link
         href={href}
         target={target}
@@ -275,6 +281,6 @@ export function HoverableButton({
       >
         {children}
       </Link>
-    </HoverableCard>
+    </div>
   );
 }

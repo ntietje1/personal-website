@@ -47,8 +47,8 @@ function generateStars(): Star[] {
       type: "comet",
       x: x,
       y: y,
-      animationDelay: 1 + Math.random() * 25,
-      animationDuration: 30 + Math.random() * 6,
+      animationDelay: 1 + Math.random() * 10,
+      animationDuration: 10 + Math.random() * 3,
       rotation: rotation,
     });
   }

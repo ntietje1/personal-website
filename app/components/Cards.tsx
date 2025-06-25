@@ -2,7 +2,6 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 import { LinkWithArrow } from "./LinkWithArrow";
-import HoverableCard from "./HoverableCard";
 
 interface TechBadgeProps {
   tech: string;
@@ -48,9 +47,9 @@ export function ExperienceCard({
       <div className="flex-grow relative">
         <div className="absolute -top-1 -bottom-7 w-1 bg-white/50 m-0" />
         <div className="relative ml-6">
-          <div className="absolute -left-8 top-11 w-5 h-5 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center z-10 transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70" />
+          <div className="absolute -left-8 top-11 w-5 h-5 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70" />
 
-          <HoverableCard className="mt-6 ml-7 transition-transform duration-200 group-hover:translate-x-1">
+          <div className="custom-frosted-dark rounded-xl mt-6 ml-7 transition-transform duration-200 group-hover:translate-x-1">
             <Link
               href={link}
               target="_blank"
@@ -58,7 +57,7 @@ export function ExperienceCard({
               aria-label={`${title} at ${company} (opens in a new tab)`}
               className="flex"
             >
-              <div className="z-10 sm:col-span-8">
+              <div className="sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
                   <LinkWithArrow>
                     {title} · <span className="inline-block">{company}</span>
@@ -84,7 +83,7 @@ export function ExperienceCard({
                 </ul>
               </div>
             </Link>
-          </HoverableCard>
+          </div>
         </div>
       </div>
     </div>
@@ -127,7 +126,7 @@ export function ProjectCard({
   className,
 }: ProjectCardProps) {
   return (
-    <HoverableCard className={`mt-12 ${className}`}>
+    <div className={`custom-frosted-dark rounded-xl mt-12 ${className}`}>
       <a
         href={link}
         target="_blank"
@@ -135,7 +134,7 @@ export function ProjectCard({
         aria-label={`${title} (opens in a new tab)`}
         className="flex"
       >
-        <div className="w-1/5 h-full pr-4 pb-4 pt-2 z-10">
+        <div className="w-1/5 h-full pr-4 pb-4 pt-2">
           <div className=" sm:order-1 sm:col-span-2 sm:translate-y-1">
             {typeof imageSrc === "string" ? (
               <img
@@ -163,10 +162,10 @@ export function ProjectCard({
             )}
           </div>
         </div>
-        <div className="pl-4 w-3/4 z-10">
+        <div className="pl-4 w-3/4">
           <div className="pb-2 pt-2">
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
-              <div className="z-10 sm:col-span-8">
+              <div className="sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
                   <LinkWithArrow>{title}</LinkWithArrow>
                 </h3>
@@ -191,7 +190,7 @@ export function ProjectCard({
           </div>
         </div>
       </a>
-    </HoverableCard>
+    </div>
   );
 }
 
