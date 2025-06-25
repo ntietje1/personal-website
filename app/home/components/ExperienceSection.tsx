@@ -126,7 +126,7 @@ export default function ExperienceSection() {
         ]}
       />
       <div className="text-center mt-8">
-        <LinkWithArrow>
+        <LinkWithArrow className="group">
           <Link
             href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
             target="_blank"

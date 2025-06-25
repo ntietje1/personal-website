@@ -103,7 +103,7 @@ export function ExperienceCard({
             )}
           </div>
 
-          <div className="custom-frosted-dark rounded-xl ml-5 py-2 pl-3 pr-1 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <div className="custom-frosted-dark rounded-xl ml-5 py-2 px-3 transition-transform duration-200 group-hover:translate-x-1 w-full">
             <Link
               href={link}
               target="_blank"
@@ -193,8 +193,8 @@ export function ProjectCard({
         className="flex flex-col sm:flex-row"
       >
         {/* Image: on top for mobile, left for desktop */}
-        <div className="w-full sm:w-1/4 h-auto pr-0 md:pr-4 pb-4 pt-3 pl-3 lex-shrink-0">
-          <div className="sm:order-1 sm:col-span-2 sm:translate-y-1">
+        <div className="w-full sm:w-1/4 h-auto p-4 lex-shrink-0">
+          <div className="sm:order-1 sm:col-span-2">
             <Image
               alt={imageAlt}
               src={imageSrc}
@@ -210,7 +210,7 @@ export function ProjectCard({
           </div>
         </div>
         {/* Text content */}
-        <div className="pl-0 w-full sm:w-3/4 flex flex-col justify-center">
+        <div className="px-4 w-full sm:w-3/4 flex flex-col justify-center">
           <div className="pb-2 pt-2">
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
               <div className="sm:col-span-8">
@@ -219,7 +219,7 @@ export function ProjectCard({
                 </h3>
                 <ul className="list-disc list-inside text-white/75">
                   {descriptions.map((responsibility, idx) => (
-                    <div key={idx} className="mt-2 text-sm">
+                    <div key={idx} className="mt-2 text-sm text-slate-200">
                       {responsibility}
                     </div>
                   ))}

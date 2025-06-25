@@ -12,7 +12,7 @@ export function ArrowIcon() {
       viewBox="0 0 20 20"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className="inline-block h-3 w-3 shrink-0 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 group-focus-visible/link:-translate-y-0.5 group-focus-visible/link:translate-x-0.5 motion-reduce:transition-none ml-1 translate-y-px"
+      className="inline-block h-3 w-3 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
       aria-hidden="true"
     >
       <path
@@ -29,7 +29,7 @@ export const LinkWithArrow: React.FC<LinkProps> = ({ children, className }) => {
     <div
       className={`inline-flex items-baseline leading-tight text-white hover:text-white/80 focus-visible:text-white/80 text-base transition-colors ${className}`}
     >
-      <div className="pr-1">{children}</div>
+      <div className="pr-0.5">{children}</div>
       <ArrowIcon />
     </div>
   );

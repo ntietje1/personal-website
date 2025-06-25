@@ -6,7 +6,7 @@ interface FooterProps {
 
 export default function Footer({ className }: FooterProps): React.ReactElement {
   return (
-    <footer className={`mt-2 mb-2 text-sm ${className} text-slate-500`}>
+    <footer className={`my-2 text-sm ${className} text-slate-500`}>
       <p className="text-center">
           Built with{" "}
           <Link
