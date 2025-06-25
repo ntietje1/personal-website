@@ -17,24 +17,14 @@ export default function HoverableCard({
   intense = false,
 }: HoverableCardProps) {
   return (
-    <div className={`relative flex group/link group ${className}`}>
-      {/* Gradient */}
-      <div
-        className={`${compact ? "absolute inset-0" : "absolute -inset-1"} ${
-          intense
-            ? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60"
-            : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"
-        } opacity-40 rounded-xl blur-md transition-opacity duration-200`}
-      />
-
+    <div
+      className={`relative flex group/link group ${className}`}
+    >
       {/* Glass effect */}
-      <div
-        className={`${
-          compact
-            ? "absolute inset-0"
-            : "absolute -inset-x-4 -inset-y-4 lg:-inset-x-6"
-        } rounded-xl border-2 border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:border-white/15 group-hover:bg-black/8 motion-reduce:transition-none`}
-      />
+      <div className={`${compact ? "absolute inset-0" : "absolute -inset-5"} rounded-xl border-2 border-white/5 bg-black/15 backdrop-blur-[10px] transition-all duration-200 group-hover:border-white/10 group-hover:bg-black/10 motion-reduce:transition-none`} />
+      
+      {/* Gradient */}
+      <div className={`${compact ? "absolute -inset-0.5" : "absolute -inset-6"} ${intense? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60" : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"} opacity-30 rounded-xl blur-[5px] transition-opacity duration-200`} />
 
       {/* Content */}
       <div className="relative w-full">{children}</div>

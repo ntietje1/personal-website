@@ -52,13 +52,13 @@ body {
   width: 100vw;
   background-color: #000;
   transform-style: preserve-3d;
+  overflow-x: hidden;
 }
 
 .page-container {
   transform-style: preserve-3d;
   perspective: 1px;
   perspective-origin: center center;
-  transform-style: preserve-3d;
 }
 
 .parallax-layer-base {
@@ -114,7 +114,7 @@ body {
     top: 0;
     left: 0;
     width: 200%;
-    height: 250vh;
+    height: 325vh;
     transform: translateZ(-1px) scale(3);
     will-change: transform;
     backface-visibility: hidden;
@@ -125,7 +125,7 @@ body {
     top: 0;
     left: 0;
     width: 200%;
-    height: 250vh;
+    height: 325vh;
     transform: translateZ(-0.5px) scale(2);
     will-change: transform;
     backface-visibility: hidden;
@@ -135,20 +135,16 @@ body {
 
 /* Firefox-specific implementation */
 @-moz-document url-prefix() {
-  html {
-    overflow-y: hidden;
-  }
-
   body {
     perspective: 1px;
     perspective-origin: center center;
     transform-style: preserve-3d;
     overflow-y: scroll;
-    overflow-x: hidden;
   }
 
   .page-container {
     overflow-y: hidden;
+    overflow-x: hidden;
   }
 
   .parallax-layer-base {
