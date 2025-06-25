@@ -17,10 +17,10 @@ export default function Headshot({
   return (
     <div className={`relative group ${className}`}>
       {/* Gradient */}
-      <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-200" />
+      <div className="absolute -inset-[1px] rounded-full bg-gradient-to-r from-blue-500/35 via-purple-500/35 to-pink-500/35 opacity-25 group-hover:opacity-80 blur-sm transition-opacity duration-200" />
 
       {/* Glass effect */}
-      <div className="absolute inset-0 rounded-full border border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 motion-reduce:transition-none"/>
+      <div className="absolute inset-0 rounded-full border-2 border-white/10 bg-black/10 backdrop-blur-lg shadow-[0_6px_24px_0_rgba(0,0,0,0.15)] transition-all duration-200 group-hover:bg-black/8 group-hover:border-white/15 motion-reduce:transition-none"/>
 
       {/* Image container with top overflow */}
       <div className="absolute inset-0">
