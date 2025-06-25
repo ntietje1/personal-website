@@ -31,7 +31,7 @@ export default function ContactMenu({
       label: "Email",
     },
     {
-      href: "https://www.instagram.com/nick.techeee",
+      href: "https://www.instagram.com/nick.tietje",
       icon: faInstagram,
       label: "Instagram",
     },
