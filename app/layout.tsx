@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
+import StarLayer from "./components/starlayer/StarLayer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -71,7 +72,8 @@ export default function RootLayout({
       <body className="antialiased">
         <div className="page-container">
           <div className="parallax-layer-base" />
-          <div className="parallax-layer-stars" />
+          <div className="parallax-layer-stars"/>
+          <StarLayer className="parallax-layer-stars-2"/>
           <main>
             {children}
             <Analytics />

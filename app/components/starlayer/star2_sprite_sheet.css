@@ -1,0 +1,68 @@
+.sprite-star1 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -0px -0px;
+ }
+ .sprite-star2 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -9px -0px;
+ }
+ .sprite-star3 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -18px -0px;
+ }
+ .sprite-star4 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -27px -0px;
+ }
+ .sprite-star5 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -36px -0px;
+ }
+ .sprite-star6 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -45px -0px;
+ }
+ .sprite-star7 {
+     background: url(../../../public/images/background/star2/yellow/star2_sprite_sheet.png);
+     display: inline-block;
+     height: 9px;
+     width: 9px;
+     background-position: -54px -0px;
+ }
+
+@keyframes star2-anim {
+  0% { background-position: 0px 0px; }
+  100% { background-position: -63px 0px; }
+}
+
+.star2-animated {
+  animation: star2-anim 1s steps(8, end) infinite;
+}
+
+.star2-sprite {
+  background-image: url('/images/background/star2/yellow/star2_sprite_sheet.png');
+  background-size: 63px 9px;
+  width: 9px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(1.5);
+}
+ 

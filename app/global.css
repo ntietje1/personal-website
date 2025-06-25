@@ -55,27 +55,37 @@ body {
 .page-container {
   transform-style: preserve-3d;
   perspective: 1px;
-  perspective-origin: 0 0;
+  perspective-origin: center center;
 }
 
 .parallax-layer-base {
   position: absolute;
+  image-rendering: pixelated;
   background-image: url("/images/background/backgrounds/Purple3_tall.webp");
   background-position: center center;
   background-repeat: repeat;
   background-size: auto;
-  z-index: -2;
-  transform-origin: 0 0;
+  z-index: -3;
+  transform-origin: center center;
 }
 
 .parallax-layer-stars {
   position: absolute;
+  image-rendering: pixelated;
   background-image: url("/images/background/backgrounds/YellowStars_tall.webp");
   background-position: center center;
   background-repeat: repeat;
   background-size: auto;
+  z-index: -2;
+  transform-origin: center center;
+}
+
+.parallax-layer-stars-2 {
+  position: absolute;
+  image-rendering: pixelated;
   z-index: -1;
-  transform-origin: 0 0;
+  transform-origin: center center;
+  transform: translateZ(-0.5px) scale(2);
 }
 
 /* Chrome/Webkit-specific implementation (excludes Firefox) */
@@ -92,6 +102,11 @@ body {
     width: 200%;
     height: 200vh;
     transform: translateZ(-5px) scale(12);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    margin: -100px;
+    padding: 100px;
   }
 
   .parallax-layer-stars {
@@ -100,6 +115,24 @@ body {
     width: 200%;
     height: 400vh;
     transform: translateZ(-1px) scale(3);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    margin: -100px;
+    padding: 100px;
+  }
+
+  .parallax-layer-stars-2 {
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 400vh;
+    transform: translateZ(-0.5px) scale(2);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    margin: -100px;
+    padding: 100px;
   }
 }
 
@@ -107,12 +140,11 @@ body {
 @-moz-document url-prefix() {
   html {
     overflow-y: hidden;
-    overflow-x: hidden;
   }
 
   body {
     perspective: 1px;
-    perspective-origin: left top;
+    perspective-origin: center center;
     transform-style: preserve-3d;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -120,7 +152,6 @@ body {
 
   .page-container {
     overflow-y: hidden;
-    overflow-x: hidden;
   }
 
   .parallax-layer-base {
@@ -135,6 +166,13 @@ body {
     aspect-ratio: 5 / 12;
     min-height: 100dvh;
     transform: translateZ(-1px) scale(5);
+  }
+
+  .parallax-layer-stars-2 {
+    width: 200vmax;
+    aspect-ratio: 5 / 12;
+    min-height: 100dvh;
+    transform: translateZ(-0.5px) scale(2);
   }
 }
 
