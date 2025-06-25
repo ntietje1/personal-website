@@ -165,7 +165,7 @@ body {
     width: 200vmax;
     aspect-ratio: 5 / 12;
     min-height: 100dvh;
-    transform: translateZ(-1px) scale(5);
+    transform: translateZ(-1px) scale(4);
   }
 
   .parallax-layer-stars-2 {
