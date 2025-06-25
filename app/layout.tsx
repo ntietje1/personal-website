@@ -72,8 +72,8 @@ export default function RootLayout({
       <body className="antialiased">
         <div className="page-container">
           <div className="parallax-layer-base" />
-          <div className="parallax-layer-stars"/>
-          <StarLayer className="parallax-layer-stars-2"/>
+          <div className="parallax-layer-stars" />
+          <StarLayer className="parallax-layer-stars-2" />
           <main>
             {children}
             <Analytics />

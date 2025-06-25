@@ -44,18 +44,21 @@ html {
   position: fixed;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  transform-style: preserve-3d;
 }
 
 body {
   height: 100dvh;
   width: 100vw;
   background-color: #000;
+  transform-style: preserve-3d;
 }
 
 .page-container {
   transform-style: preserve-3d;
   perspective: 1px;
   perspective-origin: center center;
+  transform-style: preserve-3d;
 }
 
 .parallax-layer-base {
@@ -105,34 +108,28 @@ body {
     will-change: transform;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    margin: -100px;
-    padding: 100px;
   }
 
   .parallax-layer-stars {
     top: 0;
     left: 0;
     width: 200%;
-    height: 400vh;
+    height: 250vh;
     transform: translateZ(-1px) scale(3);
     will-change: transform;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    margin: -100px;
-    padding: 100px;
   }
 
   .parallax-layer-stars-2 {
     top: 0;
     left: 0;
     width: 200%;
-    height: 400vh;
+    height: 250vh;
     transform: translateZ(-0.5px) scale(2);
     will-change: transform;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    margin: -100px;
-    padding: 100px;
   }
 }
 
