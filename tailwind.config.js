@@ -6,7 +6,11 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'jost': ['Jost', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };

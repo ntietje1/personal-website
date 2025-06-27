@@ -6,7 +6,7 @@ export default function AboutSection() {
       </h2>
       <div className="custom-frosted-dark rounded-xl">
         <div className="max-w-none px-8 pb-6 pt-2">
-          <p className="text-md text-white leading-relaxed pt-3">
+          <p className="text-md text-white leading-relaxed pt-2">
             Hi! I'm Nick Tietje, and I love building things. I've always been a
             curious and analytical person, which initially drew me to Chemical
             Engineering. However, after dabbling in programming, I discovered my
@@ -17,7 +17,7 @@ export default function AboutSection() {
             solutions to problems in both the real world and the digital world.
           </p>
 
-          <p className="text-md text-white leading-relaxed pt-3">
+          <p className="text-md text-white leading-relaxed pt-2">
             I'm an incoming computer science Master's student at Northeastern
             University and I'm currently employed as a Software Engineering
             Intern at Fidelity Investments. In my free time, I enjoy developing

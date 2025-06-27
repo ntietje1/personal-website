@@ -3,40 +3,6 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 
-// interface HoverableCardProps {
-//   children?: React.ReactNode;
-//   className?: string;
-//   compact?: boolean;
-//   intense?: boolean;
-// }
-
-// export default function HoverableCard({
-//   children,
-//   className,
-//   compact = false,
-//   intense = false,
-// }: HoverableCardProps) {
-//   return (
-//     <div className={`space-y-4 ${className}`}>
-//         <div className={`custom-frosted-dark rounded-xl`}>
-//           {/* <div className={`absolute -inset-[0.5px] ${intense? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60" : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"} opacity-30 rounded-xl blur-[5px] transition-opacity duration-200`} /> */}
-//           {children}
-//         </div>
-//       </div>
-//     // <div
-//     //   className={`relative flex group/link group ${className}`}
-//     // >
-//     //   {/* Glass effect */}
-//     //   <div className={`${compact ? "absolute inset-0" : "absolute -inset-5"} rounded-xl border-2 border-white/5 bg-black/15 transition-all duration-200 group-hover:border-white/10 group-hover:bg-black/10 motion-reduce:transition-none`} />
-      
-//     //   {/* Gradient */}
-//     //   <div className={`${compact ? "absolute -inset-0.5" : "absolute -inset-6"} ${intense? "group-hover:opacity-90 bg-gradient-to-r from-blue-500/60 via-purple-500/60 to-pink-500/60" : "group-hover:opacity-70 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"} opacity-30 rounded-xl blur-[5px] transition-opacity duration-200`} />
-
-//     //   {/* Content */}
-//     //   <div className="relative w-full">{children}</div>
-//     // </div>
-//   );
-// }
 
 interface TechBadgeProps {
   tech: string;
@@ -46,7 +12,7 @@ interface TechBadgeProps {
 function TechBadge({ tech, className }: TechBadgeProps) {
   return (
     <div
-      className={`flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium leading-5 text-slate-200 border border-white/10 transition-all duration-200 group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-white ${className}`}
+      className={`flex items-center rounded-full bg-slate-100/5 px-3 py-1 text-xs font-medium leading-5 text-slate-200 border border-white/10 transition-all duration-200 group-hover:bg-white/5 group-hover:border-white/20 group-hover:text-white ${className}`}
     >
       {tech}
     </div>
@@ -79,31 +45,31 @@ export function ExperienceCard({
       {/* Date on the left: only show on sm and up */}
       <div className="hidden sm:flex text-right flex-shrink-0 relative pl-6">
         <div className="absolute right-6 top-7">
-          <span className="text-slate-200 font-semibold whitespace-nowrap">
+          <span className="text-white font-semibold whitespace-nowrap">
             {date}
           </span>
         </div>
       </div>
       <div className="flex-grow relative w-full">
         {/* Vertical line: always show */}
-        <div className="absolute ml-2.5 -top-1 -bottom-7 w-1 bg-white/50 m-0" />
+        <div className="absolute ml-3.5 -top-1 -bottom-5 w-1 bg-slate-300/80 m-0" />
         <div className="relative ml-8 w-full group">
           {/* Logo: always show */}
-          <div className="absolute -left-10 top-6 w-10 h-10 rounded-full bg-white/50 flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
+          <div className="absolute -left-10 top-6 w-12 h-12 rounded-full bg-slate-300/80 flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
             {logo ? (
               <Image
                 src={logo}
                 alt={`${company} logo`}
-                width={36}
-                height={36}
-                className="w-full h-full object-cover rounded-full p-0.5"
+                width={50}
+                height={50}
+                className="w-full h-full object-cover rounded-full border-2 border-slate-300/80"
               />
             ) : (
-              <div className="w-2 h-2 rounded-full bg-white/70" />
+              <div className="w-2 h-2 rounded-full bg-slate-300/80" />
             )}
           </div>
 
-          <div className="custom-frosted-dark rounded-xl ml-5 py-2 px-3 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <div className="custom-frosted-dark rounded-xl ml-6 py-2 px-3 transition-transform duration-200 group-hover:translate-x-1 w-full">
             <Link
               href={link}
               target="_blank"
@@ -184,7 +150,7 @@ export function ProjectCard({
   className,
 }: ProjectCardProps) {
   return (
-    <div className={`custom-frosted-dark rounded-xl ${className}`}>
+    <div className={`custom-frosted-dark rounded-xl group ${className}`}>
       <a
         href={link}
         target="_blank"
@@ -193,8 +159,8 @@ export function ProjectCard({
         className="flex flex-col sm:flex-row"
       >
         {/* Image: on top for mobile, left for desktop */}
-        <div className="w-full sm:w-1/4 h-auto p-4 lex-shrink-0">
-          <div className="sm:order-1 sm:col-span-2">
+        <div className="w-full sm:w-1/4 h-auto p-4 flex-shrink-0">
+          <div className="sm:order-1">
             <Image
               alt={imageAlt}
               src={imageSrc}
@@ -210,7 +176,7 @@ export function ProjectCard({
           </div>
         </div>
         {/* Text content */}
-        <div className="px-4 w-full sm:w-3/4 flex flex-col justify-center">
+        <div className="px-4 sm:pl-0 w-full sm:w-3/4 flex flex-col justify-center">
           <div className="pb-2 pt-2">
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
               <div className="sm:col-span-8">

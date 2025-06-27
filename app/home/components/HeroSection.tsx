@@ -4,8 +4,8 @@ import Headshot from "./Headshot";
 
 function Name({ className }: { className?: string }) {
   return (
-    <div className={`space-y-2 md:space-y-4 ${className}`}>
-      <span className="text-lg md:text-2xl font-medium text-white">
+    <div className={`${className}`}>
+      <span className="text-lg md:text-2xl font-medium text-white pb-4 md:pb-8">
         Hi, my name is
       </span>
       <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white md:mt-2 md:ml-[-5px]">

@@ -1,6 +1,14 @@
 import "./global.css";
 import type { Metadata } from "next";
-import { GeistMono } from "geist/font/mono";
+import "@fontsource/jost/100.css";
+import "@fontsource/jost/200.css";
+import "@fontsource/jost/300.css";
+import "@fontsource/jost/400.css";
+import "@fontsource/jost/500.css";
+import "@fontsource/jost/600.css";
+import "@fontsource/jost/700.css";
+import "@fontsource/jost/800.css";
+import "@fontsource/jost/900.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
@@ -44,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cx("text-white", GeistMono.variable)}>
+    <html lang="en" className={cx("text-white", "font-jost")}>
       <head>
         <title>Nick Tietje</title>
         <meta
@@ -73,7 +81,9 @@ export default function RootLayout({
         <div className="page-container">
           <div className="parallax-layer-base" />
           <div className="parallax-layer-stars" />
-          <StarLayer className="parallax-layer-stars-2" />
+          <div className="parallax-layer-planets">
+            <div className="moon hidden md:block"/>
+          </div>
           <main>
             {children}
             <Analytics />

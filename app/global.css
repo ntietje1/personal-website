@@ -45,6 +45,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   transform-style: preserve-3d;
+  font-family: 'Jost', sans-serif;
 }
 
 body {
@@ -53,6 +54,9 @@ body {
   background-color: #000;
   transform-style: preserve-3d;
   overflow-x: hidden;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .page-container {
@@ -94,6 +98,23 @@ body {
   transform: translateZ(-0.5px) scale(2);
 }
 
+.parallax-layer-planets {
+  position: absolute;
+  image-rendering: pixelated;
+  z-index: -1;
+  transform-origin: top left;
+  transform: translateZ(-0.5px) scale(2);
+  backface-visibility: hidden;
+}
+
+.moon {
+  background-image: url("/images/background/planets/moon.webp");
+  background-size: cover;
+  width: 90px;
+  height: 90px;
+  image-rendering: pixelated;
+}
+
 /* Chrome/Webkit-specific implementation (excludes Firefox) */
 @supports (not (-moz-appearance: none)) {
   .page-container {
@@ -105,7 +126,7 @@ body {
   .parallax-layer-base {
     top: 0;
     left: 0;
-    width: 200%;
+    width: 100vw;
     height: 200vh;
     transform: translateZ(-5px) scale(12);
     will-change: transform;
@@ -116,7 +137,7 @@ body {
   .parallax-layer-stars {
     top: 0;
     left: 0;
-    width: 200%;
+    width: 100vw;
     height: 325vh;
     transform: translateZ(-1px) scale(3);
     will-change: transform;
@@ -127,12 +148,26 @@ body {
   .parallax-layer-stars-2 {
     top: 0;
     left: 0;
-    width: 200%;
+    width: 100vw;
     height: 325vh;
     transform: translateZ(-0.5px) scale(2);
     will-change: transform;
     backface-visibility: hidden;
     transform-style: preserve-3d;
+  }
+
+  .parallax-layer-planets {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 325vh;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .moon {
+    transform: translateX(-8.5vw) translateY(45vh) scale(0.7);
   }
 }
 
@@ -169,6 +204,15 @@ body {
     aspect-ratio: 5 / 12;
     min-height: 100dvh;
     transform: translateZ(-0.5px) scale(2);
+  }
+
+  .parallax-layer-planets {
+    width: 200vmax;
+    min-height: 100dvh;
+  }
+
+  .moon {
+    transform: translateX(-18vw) translateY(-5vh);
   }
 }
 
@@ -335,8 +379,8 @@ table {
 /* Darker, more muted frosted glass effect */
 .custom-frosted-dark {
   position: relative;
-  background: rgba(20, 17, 29, 0.8);
-  border: 2px solid rgba(185, 149, 192, 0.15);
+  background: rgba(31, 29, 33, 0.8);
+  border: 2px solid rgba(185, 149, 192, 0.35);
   transition: all 0.1s ease-out;
 }
 
@@ -347,8 +391,8 @@ table {
   background: linear-gradient(to right, rgba(60, 34, 94, 0.8), rgba(75, 33, 87, 0.7), rgba(81, 31, 68, 0.6));
   border-radius: inherit;
   z-index: -1;
-  opacity: 0.2;
-  filter: saturate(0.6) brightness(1.2);
+  opacity: 0.3;
+  filter: saturate(0.1) brightness(0.4);
   transition: opacity 0.1s ease-out;
 }
 
@@ -367,7 +411,7 @@ table {
 }
 
 .custom-frosted-dark:hover {
-  border-color: rgba(222, 212, 228, 0.141);
+  border-color: rgba(222, 212, 228, 0.35);
 }
 
 .custom-frosted-dark {
