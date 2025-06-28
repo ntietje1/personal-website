@@ -84,7 +84,7 @@ export function ExperienceCard({
                   </LinkWithArrow>
                 </h3>
                 {/* Date inside card for mobile */}
-                <span className="block sm:hidden text-slate-200 font-semibold italic mb-2">
+                <span className="block sm:hidden text-slate-100 font-semibold italic mb-2">
                   {date}
                 </span>
                 <ul className="list-disc list-inside text-slate-100">
