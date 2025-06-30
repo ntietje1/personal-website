@@ -17,6 +17,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
+  font-size: 130%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,7 +46,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   transform-style: preserve-3d;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 
 body {
@@ -54,7 +55,7 @@ body {
   background-color: #000;
   transform-style: preserve-3d;
   overflow-x: hidden;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -103,16 +104,23 @@ body {
   image-rendering: pixelated;
   z-index: -1;
   transform-origin: top left;
-  transform: translateZ(-0.5px) scale(2);
   backface-visibility: hidden;
 }
 
 .moon {
   background-image: url("/images/background/planets/moon.webp");
   background-size: cover;
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   image-rendering: pixelated;
+}
+
+.moon-1 {
+  margin-top: 45rem;
+}
+
+.moon-2 {
+  margin-top: 100rem;
 }
 
 /* Chrome/Webkit-specific implementation (excludes Firefox) */
@@ -157,17 +165,24 @@ body {
   }
 
   .parallax-layer-planets {
+    position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 325vh;
+    height: 100vh;
     will-change: transform;
     backface-visibility: hidden;
     transform-style: preserve-3d;
   }
 
-  .moon {
-    transform: translateX(-8.5vw) translateY(45vh) scale(0.7);
+  .parallax-layer-planets-left {
+    left: 0;
+    transform: translateZ(-0.5px) scale(2)
+      translateX(calc((100vw - 64rem) / 4 - 17vw));
+  }
+
+  .parallax-layer-planets-right {
+    right: 0;
+    transform: translateZ(-0.5px) scale(2)
+      translateX(calc((64rem - 100vw) / 4 + 16vw));
   }
 }
 
@@ -196,7 +211,7 @@ body {
     width: 200vmax;
     aspect-ratio: 5 / 12;
     min-height: 100dvh;
-    transform: translateZ(-1px) scale(4);
+    transform: translateZ(-1px) scale(4.5);
   }
 
   .parallax-layer-stars-2 {
@@ -206,13 +221,16 @@ body {
     transform: translateZ(-0.5px) scale(2);
   }
 
-  .parallax-layer-planets {
-    width: 200vmax;
-    min-height: 100dvh;
+  .parallax-layer-planets-left {
+    left: 0;
+    transform: translateZ(-0.5px) scale(2.6)
+      translateX(calc((100vw - 64rem) / 4 - 23vw)) translateY(-24rem);
   }
 
-  .moon {
-    transform: translateX(-18vw) translateY(-5vh);
+  .parallax-layer-planets-right {
+    right: 0;
+    transform: translateZ(-0.5px) scale(2.6)
+      translateX(calc((64rem - 100vw) / 4 + 21vw)) translateY(-24rem);
   }
 }
 
@@ -332,7 +350,6 @@ table {
   text-wrap: balance;
 }
 
-
 /* Frosted glass effect */
 .custom-frosted {
   position: relative;
@@ -342,10 +359,15 @@ table {
 }
 
 .custom-frosted::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1.5px;
-  background: linear-gradient(to right, rgba(59, 130, 246, 0.35), rgba(147, 51, 234, 0.35), rgba(236, 72, 153, 0.35));
+  background: linear-gradient(
+    to right,
+    rgba(59, 130, 246, 0.35),
+    rgba(147, 51, 234, 0.35),
+    rgba(236, 72, 153, 0.35)
+  );
   border-radius: inherit;
   z-index: -1;
   opacity: 0.85;
@@ -353,7 +375,7 @@ table {
 }
 
 .custom-frosted::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(33, 16, 40, 0.6);
@@ -385,10 +407,15 @@ table {
 }
 
 .custom-frosted-dark::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1.5px;
-  background: linear-gradient(to right, rgba(60, 34, 94, 0.8), rgba(75, 33, 87, 0.7), rgba(81, 31, 68, 0.6));
+  background: linear-gradient(
+    to right,
+    rgba(60, 34, 94, 0.8),
+    rgba(75, 33, 87, 0.7),
+    rgba(81, 31, 68, 0.6)
+  );
   border-radius: inherit;
   z-index: -1;
   opacity: 0.3;
@@ -397,10 +424,10 @@ table {
 }
 
 .custom-frosted-dark::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: url('/images/background/backgrounds/Purple3_tall.webp');
+  background: url("/images/background/backgrounds/Purple3_tall.webp");
   border-radius: inherit;
   z-index: -2;
   opacity: 0.6;

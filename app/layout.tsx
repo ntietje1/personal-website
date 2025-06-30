@@ -81,9 +81,14 @@ export default function RootLayout({
         <div className="page-container">
           <div className="parallax-layer-base" />
           <div className="parallax-layer-stars" />
-          <div className="parallax-layer-planets">
-            <div className="moon hidden md:block"/>
+          <div className="hidden xl:block parallax-layer-planets parallax-layer-planets-left">
+            <div className="moon moon-1" />
           </div>
+
+          <div className="hidden xl:block parallax-layer-planets parallax-layer-planets-right">
+            <div className="moon moon-2" />
+          </div>
+
           <main>
             {children}
             <Analytics />
