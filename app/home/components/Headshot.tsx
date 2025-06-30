@@ -15,7 +15,9 @@ export default function Headshot({
   imageOffset = "5rem",
 }: HeadshotProps) {
   return (
-    <div className={`relative group custom-frosted rounded-full aspect-square ${className}`}>
+    <div
+      className={`relative group custom-frosted rounded-full aspect-square ${className}`}
+    >
       <div className="absolute inset-0">
         <div
           className="absolute bottom-0 left-0 right-0 rounded-full overflow-hidden"

@@ -3,7 +3,6 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
 
-
 interface TechBadgeProps {
   tech: string;
   className?: string;
@@ -41,16 +40,16 @@ export function ExperienceCard({
   className,
 }: ExperienceCardProps) {
   return (
-    <div className={`flex pl-0 sm:pl-32 ${className}`}>
+    <div className={`flex pl-0 lg:ml-4 lg:pl-32 ${className}`}>
       {/* Date on the left: only show on sm and up */}
-      <div className="hidden sm:flex text-right flex-shrink-0 relative pl-6">
-        <div className="absolute right-6 top-7">
+      <div className="hidden lg:flex text-right flex-shrink-0 relative pl-6">
+        <div className="absolute right-5 top-8 pt-0.5">
           <span className="text-white font-semibold whitespace-nowrap">
             {date}
           </span>
         </div>
       </div>
-      <div className="flex-grow relative w-full">
+      <div className="flex-grow relative w-full mr-2">
         {/* Vertical line: always show */}
         <div className="absolute ml-3.5 -top-1 -bottom-5 w-1 bg-slate-300/80 m-0" />
         <div className="relative ml-8 w-full group">
@@ -69,7 +68,7 @@ export function ExperienceCard({
             )}
           </div>
 
-          <div className="custom-frosted-dark rounded-xl ml-6 py-2 px-3 transition-transform duration-200 group-hover:translate-x-1 w-full">
+          <div className="custom-frosted-dark rounded-xl ml-6 py-2 px-3.5 transition-transform duration-200 group-hover:translate-x-1 w-full">
             <Link
               href={link}
               target="_blank"
@@ -84,7 +83,7 @@ export function ExperienceCard({
                   </LinkWithArrow>
                 </h3>
                 {/* Date inside card for mobile */}
-                <span className="block sm:hidden text-slate-100 font-semibold italic mb-2">
+                <span className="block lg:hidden text-slate-100 font-semibold italic mb-2">
                   {date}
                 </span>
                 <ul className="list-disc list-inside text-slate-100">
@@ -122,7 +121,11 @@ export function ExperienceCardStack({
   return (
     <div className="min-w-full">
       {experiences.map((experience, index) => (
-        <ExperienceCard className="w-full pr-12 mt-6" key={index} {...experience} />
+        <ExperienceCard
+          className="w-full pr-12 mt-6"
+          key={index}
+          {...experience}
+        />
       ))}
     </div>
   );
