@@ -69,43 +69,42 @@ export function ExperienceCard({
           </div>
 
           <div className="custom-frosted-dark rounded-xl ml-6 py-2 px-3.5 transition-transform duration-200 group-hover:translate-x-1 w-full">
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={`${title} at ${company} (opens in a new tab)`}
-              className="flex flex-col"
-            >
-              <div className="sm:col-span-8">
-                <h3 className="font-semibold leading-snug">
+            <div className="sm:col-span-8">
+              <h3 className="font-semibold leading-snug">
+                <Link
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label={`${title} at ${company} (opens in a new tab)`}
+                >
                   <LinkWithArrow>
                     {title} · <span className="inline-block">{company}</span>
                   </LinkWithArrow>
-                </h3>
-                {/* Date inside card for mobile */}
-                <span className="block lg:hidden text-slate-100 font-semibold italic mb-2">
-                  {date}
-                </span>
-                <ul className="list-disc list-inside text-slate-100">
-                  {responsibilities.map((responsibility, idx) => (
-                    <div
-                      key={idx}
-                      className="mt-2 text-sm transition-colors duration-200 group-hover:text-white"
-                    >
-                      {responsibility}
-                    </div>
-                  ))}
-                </ul>
-                <ul
-                  className="mt-2 flex flex-wrap"
-                  aria-label="Technologies used"
-                >
-                  {skills.map((tech) => (
-                    <TechBadge key={tech} tech={tech} className="mr-1.5 mt-2" />
-                  ))}
-                </ul>
-              </div>
-            </Link>
+                </Link>
+              </h3>
+              {/* Date inside card for mobile */}
+              <span className="block lg:hidden text-slate-100 font-semibold italic mb-2">
+                {date}
+              </span>
+              <ul className="list-disc list-inside text-slate-100">
+                {responsibilities.map((responsibility, idx) => (
+                  <div
+                    key={idx}
+                    className="mt-2 text-sm transition-colors duration-200 group-hover:text-white"
+                  >
+                    {responsibility}
+                  </div>
+                ))}
+              </ul>
+              <ul
+                className="mt-2 flex flex-wrap"
+                aria-label="Technologies used"
+              >
+                {skills.map((tech) => (
+                  <TechBadge key={tech} tech={tech} className="mr-1.5 mt-2" />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -154,13 +153,7 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className={`custom-frosted-dark rounded-xl group ${className}`}>
-      <a
-        href={link}
-        target="_blank"
-        rel="noreferrer noopener"
-        aria-label={`${title} (opens in a new tab)`}
-        className="flex flex-col sm:flex-row"
-      >
+      <div className="flex flex-col sm:flex-row">
         {/* Image: on top for mobile, left for desktop */}
         <div className="w-full sm:w-1/4 h-auto p-4 flex-shrink-0">
           <div className="sm:order-1">
@@ -184,7 +177,14 @@ export function ProjectCard({
             <div className="relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4">
               <div className="sm:col-span-8">
                 <h3 className="font-semibold leading-snug">
-                  <LinkWithArrow>{title}</LinkWithArrow>
+                  <Link
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label={`${title} (opens in a new tab)`}
+                  >
+                    <LinkWithArrow>{title}</LinkWithArrow>
+                  </Link>
                 </h3>
                 <ul className="list-disc list-inside text-white/75">
                   {descriptions.map((responsibility, idx) => (
@@ -206,7 +206,7 @@ export function ProjectCard({
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }

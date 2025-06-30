@@ -12,8 +12,11 @@ export function ArrowIcon() {
       viewBox="0 0 20 20"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className="inline-block h-3 w-3 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+      className="inline-block h-2.5 w-2.5 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-focus-visible:-translate-y-0.5 group-focus-visible:translate-x-0.5 motion-reduce:transition-none ml-0.5"
       aria-hidden="true"
+      style={{
+        imageRendering: "pixelated",
+      }}
     >
       <path
         fillRule="evenodd"
