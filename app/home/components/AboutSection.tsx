@@ -22,7 +22,7 @@ export default function AboutSection() {
             University and I'm currently employed as a Software Engineering
             Intern at Fidelity Investments. In my free time, I enjoy developing
             my own projects/tools, reading, and playing board games. Here are
-            some of my interests:
+            some of my interests, which I would love to talk about with you:
           </p>
 
           <ul className="space-y-4 text-md text-slate-100 pt-3">
@@ -48,6 +48,13 @@ export default function AboutSection() {
               <span>
                 <span className="text-white font-semibold">Reading:</span>{" "}
                 Science fiction, fantasy, dystopian/political fiction
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-white/80 mr-3">•</span>
+              <span>
+                <span className="text-white font-semibold">Video Games:</span>{" "}
+                Elden Ring, Expedition 33, Hollow Knight, Dota 2, Minecraft, Terraria, Enter the Gungeon, Stardew Valley, and many more.
               </span>
             </li>
             <li className="flex items-start">

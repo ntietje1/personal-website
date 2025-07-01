@@ -16,8 +16,9 @@ export default function ProjectsSection() {
             {
               title: "LifeLinked: A MTG Life Tracking App",
               descriptions: [
-                "Engineered and launched a cross-platform mobile app, attracting over 1000 active users across Google Play and App Store",
+                "Engineered and launched a cross-platform mobile app, attracting over 3000 installs across Google Play and App Store",
                 "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms",
+                "Adhered to Android/iOS design and quality standards by performing beta testing and applying clean architecture techniques",
               ],
               link: "https://github.com/ntietje1/MTG_Life_Total_App",
               imageSrc: lifelinked_preview,
@@ -29,18 +30,23 @@ export default function ProjectsSection() {
                 "Compose Multiplatform",
                 "iOS",
                 "Gradle",
+                "SQLite",
+                "Koin",
+                "Dependency Injection",
+                "MVVM",
               ],
             },
             {
               title: "GitMarks: A GitHub-Integrated Educational Platform",
               descriptions: [
                 "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
-                "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
+                "Deployed in a pilot program across several Northeastern University CS/DS courses",
+                "Implemented a comprehensive authentication system using JWTs, GoFiber, and extensive integration with the GitHub API for secure user and classroom management",
               ],
               link: "https://gitmarks.org/",
               imageSrc: gitmarks_preview,
               imageAlt: "GitMarks",
-              skills: ["Go", "React", "TypeScript", "PostgreSQL"],
+              skills: ["Go", "React", "TypeScript", "PostgreSQL", "AWS", "GoFiber", "JWT", "Docker", "React Query"],
             },
           ]}
         />

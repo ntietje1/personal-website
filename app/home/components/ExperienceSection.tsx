@@ -35,9 +35,9 @@ export default function ExperienceSection() {
             link: "https://gitmarks.org/",
             logo: "/images/company-logos/nu_logo.webp",
             responsibilities: [
-              "Developed a GitHub-integrated educational platform to support automated grading, assignment management, and analytics",
-              "Architected multi-tenant back-end in Go, creating RESTful endpoints for classroom creation and management workflows",
-              "Engineered classroom creation workflow with role-based access control and secure, time-sensitive invite links, streamlining course setup and student onboarding",
+              "Developed GitMarks, an industry-aligned educational platform that integrates standard GitHub workflows into classroom coding assignments, currently deployed in a pilot program across Northeastern University CS/DS courses",
+              "Gathered requirements from professors, ensuring the product effectively met a robust set of academic needs & wants",
+              "Enabled automatic student repository creation, assignment setup/distribution, submission deadlines, and grade-enabled pull requests with TA feedback through extensive integration with the GitHub API",
             ],
             skills: [
               "Go",
@@ -56,7 +56,7 @@ export default function ExperienceSection() {
             link: "https://www.statestreet.com/us/en/individual",
             logo: "/images/company-logos/statestreet_logo.jpeg",
             responsibilities: [
-              "Architected and implemented a scalable notification management system as a full-stack SaaS product for State Street, enhancing communication efficiency of 3000+ users across multiple departments",
+              "Designed a scalable internal notification management system, enhancing communication efficiency of 3000+ users",
               "Collaborated with cross-functional teams to gather requirements, ensuring alignment with diverse user needs and strict financial industry compliance standards",
             ],
             skills: [
@@ -88,14 +88,14 @@ export default function ExperienceSection() {
             link: "https://www.khoury.northeastern.edu/",
             logo: "/images/company-logos/nu_khoury_logo.jpg",
             responsibilities: [
-              "Mentored cohort of 250+ students in CS 3200 Database Design, providing technical support via Piazza and office hours",
+              "Led mentorship of 250+ students in CS 3200 Database Design, delivering comprehensive support through Piazza discussions and one-on-one office hours",
               "Evaluated assignments, labs, and exams, offering constructive feedback to enhance student learning outcomes",
             ],
-            skills: ["Python", "MySQL", "Docker", "Git", "REST APIs"],
+            skills: ["Python", "Flask", "MySQL", "Docker", "Git", "REST APIs"],
           },
           {
             date: "Jul 2023 – Dec 2023",
-            title: "Inks and Coatings Engineering Intern",
+            title: "Research and Development Intern",
             company: "Nano-C, Inc.",
             link: "https://www.nano-c.com/",
             logo: "/images/company-logos/nanoc_logo.png",
@@ -103,7 +103,7 @@ export default function ExperienceSection() {
               "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
               "Developed novel chemical separation and purification methods to drive product refinement",
             ],
-            skills: ["Nano-Technology", "Data Analysis", "Wet Lab Techniques"],
+            skills: ["Nano-Technology", "Data Analysis", "Wet Lab Techniques", "DOE"],
           },
           {
             date: "Sep 2022 – May 2023",
