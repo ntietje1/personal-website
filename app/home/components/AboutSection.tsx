@@ -25,9 +25,9 @@ export default function AboutSection() {
             some of my interests, which I would love to talk about with you:
           </p>
 
-          <ul className="space-y-4 text-md text-slate-100 pt-3">
+          <ul className="space-y-4 text-md text-white/90 pt-3">
             <li className="flex items-start">
-              <span className="text-white/80 mr-3">•</span>
+              <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">
                   Software Development:
@@ -36,7 +36,7 @@ export default function AboutSection() {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-white/80 mr-3">•</span>
+              <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Board Games:</span>{" "}
                 My favorites include Magic: The Gathering, Wingspan, Dominion,
@@ -44,28 +44,28 @@ export default function AboutSection() {
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-white/80 mr-3">•</span>
+              <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Reading:</span>{" "}
                 Science fiction, fantasy, dystopian/political fiction
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-white/80 mr-3">•</span>
+              <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Video Games:</span>{" "}
                 Elden Ring, Expedition 33, Hollow Knight, Dota 2, Minecraft, Terraria, Enter the Gungeon, Stardew Valley, and many more.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-white/80 mr-3">•</span>
+              <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Fitness:</span>{" "}
                 Cycling, hiking, and general strength training.
               </span>
             </li>
             <li className="flex items-start">
-              <span className="text-white/80 mr-3">•</span>
+              <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Cooking:</span>{" "}
                 Experimenting with new recipes and setting off the smoke alarm.

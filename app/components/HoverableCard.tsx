@@ -11,7 +11,7 @@ interface TechBadgeProps {
 function TechBadge({ tech, className }: TechBadgeProps) {
   return (
     <div
-      className={`flex items-center rounded-full bg-slate-100/5 px-3 py-1 text-xs font-medium leading-5 text-slate-200 border border-white/10 transition-all duration-200 group-hover:bg-white/5 group-hover:border-white/20 group-hover:text-white ${className}`}
+      className={`flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium leading-5 text-white/90 border border-white/10 transition-all duration-200 group-hover:border-white/20 group-hover:text-white ${className}`}
     >
       {tech}
     </div>
@@ -61,7 +61,7 @@ export function ExperienceCard({
                 alt={`${company} logo`}
                 width={50}
                 height={50}
-                className="w-full h-full object-cover rounded-full border-2 border-white/70"
+                className="w-full h-full object-cover rounded-full border-2 border-white/20"
               />
             ) : (
               <div className="w-2 h-2 rounded-full bg-white/70" />
@@ -86,14 +86,14 @@ export function ExperienceCard({
               <span className="block lg:hidden text-white/90 font-semibold italic mb-2">
                 {date}
               </span>
-              <ul className="list-disc list-inside text-slate-100">
+              <ul className="list-disc list-inside">
                 {responsibilities.map((responsibility, idx) => (
-                  <div
-                    key={idx}
-                    className="mt-2 text-sm transition-colors duration-200 group-hover:text-white"
-                  >
-                    {responsibility}
-                  </div>
+                  <li key={idx} className="mt-2 text-sm flex flex-row">
+                    <span className="text-white/80 font-bold mr-2">•</span>
+                    <div key={idx} className="text-white/90">
+                      {responsibility}
+                    </div>
+                  </li>
                 ))}
               </ul>
               <ul
@@ -188,9 +188,12 @@ export function ProjectCard({
                 </h3>
                 <ul className="list-disc list-inside text-white/75">
                   {descriptions.map((responsibility, idx) => (
-                    <div key={idx} className="mt-2 text-sm text-slate-200">
-                      {responsibility}
-                    </div>
+                    <li key={idx} className="mt-2 text-sm flex flex-row">
+                      <span className="text-white/80 font-bold mr-2">•</span>
+                      <div key={idx} className="text-white/90">
+                        {responsibility}
+                      </div>
+                    </li>
                   ))}
                   {children}
                 </ul>
