@@ -17,7 +17,7 @@
   --sh-jsxliterals: #6266d1;
   --sh-property: #e25a1c;
   --sh-entity: #e25a1c;
-  font-size: 130%;
+  font-size: clamp(100%, calc(0.75rem + 1vw), 130%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -121,6 +121,10 @@ body {
 
 .moon-2 {
   margin-top: 100rem;
+}
+
+.comet-1 {
+  margin-top: 20rem;
 }
 
 /* Chrome/Webkit-specific implementation (excludes Firefox) */
