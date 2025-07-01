@@ -51,20 +51,20 @@ export function ExperienceCard({
       </div>
       <div className="flex-grow relative w-full mr-2">
         {/* Vertical line: always show */}
-        <div className="absolute ml-3.5 -top-1 -bottom-5 w-1 bg-slate-300/80 m-0" />
+        <div className="absolute ml-3.5 -top-1 -bottom-5 w-1 bg-white/70 m-0" />
         <div className="relative ml-8 w-full group">
           {/* Logo: always show */}
-          <div className="absolute -left-10 top-6 w-12 h-12 rounded-full bg-slate-300/80 flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
+          <div className="absolute -left-10 top-6 w-12 h-12 rounded-full bg-white/70 flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
             {logo ? (
               <Image
                 src={logo}
                 alt={`${company} logo`}
                 width={50}
                 height={50}
-                className="w-full h-full object-cover rounded-full border-2 border-slate-300/80"
+                className="w-full h-full object-cover rounded-full border-2 border-white/70"
               />
             ) : (
-              <div className="w-2 h-2 rounded-full bg-slate-300/80" />
+              <div className="w-2 h-2 rounded-full bg-white/70" />
             )}
           </div>
 
@@ -83,7 +83,7 @@ export function ExperienceCard({
                 </Link>
               </h3>
               {/* Date inside card for mobile */}
-              <span className="block lg:hidden text-slate-100 font-semibold italic mb-2">
+              <span className="block lg:hidden text-white/90 font-semibold italic mb-2">
                 {date}
               </span>
               <ul className="list-disc list-inside text-slate-100">

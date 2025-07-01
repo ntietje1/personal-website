@@ -33,20 +33,20 @@ export default function HeroSection() {
   return (
     <section className="min-h-screen flex flex-col justify-center relative">
       <div className="flex flex-col items-center pb-4">
-        <div className="flex flex-col xl:flex-row items-center justify-between w-full gap-32 xl:gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full gap-32 md:gap-12">
           {/* Left content */}
-          <div className="flex flex-col items-center xl:items-start text-center xl:text-left flex-1 max-w-2xl">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-8">
               <Name className="mb-4" />
-              <Description className="hidden xl:block" />
+              <Description className="hidden md:block" />
             </div>
 
             {/* Headshot */}
-            <Headshot className="xl:hidden mt-8 h-64 w-64" imageOffset="5rem" />
+            <Headshot className="md:hidden mt-8 h-56 w-56" imageOffset="5rem" />
 
-            <Description className="xl:hidden mb-4" />
+            <Description className="md:hidden mb-4" />
 
-            <div className="flex flex-col xl:flex-row items-center gap-4 w-full">
+            <div className="flex flex-col md:flex-row items-center gap-4 w-full">
               <HoverableButton
                 className="whitespace-nowrap"
                 href="https://tietje-resume-bucket.s3.amazonaws.com/Nicholas_Tietje_Resume.pdf"
@@ -55,12 +55,12 @@ export default function HeroSection() {
               >
                 Download Resume
               </HoverableButton>
-              <ContactMenu className="flex gap-4 pl-0 xl:pl-2" />
+              <ContactMenu className="flex gap-4 pl-0 md:pl-2" />
             </div>
           </div>
 
           {/* Headshot (hidden on mobile) */}
-          <Headshot className="hidden xl:block h-72 w-72" imageOffset="7rem" />
+          <Headshot className="hidden md:block h-72 w-72" imageOffset="7rem" />
         </div>
       </div>
     </section>

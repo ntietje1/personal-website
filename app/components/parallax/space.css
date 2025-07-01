@@ -107,8 +107,8 @@
   width: 80px;
   height: 80px;
   image-rendering: pixelated;
-  margin-top: 50rem;
-  margin-left: 4rem;
+  margin-top: 45rem;
+  margin-left: 2rem;
 }
 
 .tundra-planet {
@@ -118,6 +118,7 @@
   height: 100px;
   image-rendering: pixelated;
   margin-top: 35rem;
+  margin-left: 1rem;
 }
 
 .lava-planet {
@@ -126,7 +127,7 @@
   width: 130px;
   height: 130px;
   image-rendering: pixelated;
-  margin-top: 35rem;
+  margin-top: 30rem;
 }
 
 .terran-with-clouds {
@@ -135,7 +136,7 @@
   width: 110px;
   height: 110px;
   image-rendering: pixelated;
-  margin-top: 40rem;
+  margin-top: 35rem;
 }
 
 .gas-giant {
@@ -154,7 +155,7 @@
   width: 100px;
   height: 100px;
   image-rendering: pixelated;
-  margin-top: 25rem;
+  margin-top: 15rem;
 }
 
 .desert-planet {
@@ -164,7 +165,7 @@
   height: 120px;
   image-rendering: pixelated;
   margin-top: 30rem;
-  margin-left: 12rem;
+  margin-left: 6rem;
 }
 
 .ice-planet {
@@ -183,7 +184,7 @@
   width: 100px;
   height: 100px;
   image-rendering: pixelated;
-  margin-top: 50rem;
+  margin-top: 40rem;
   margin-left: 15rem;
 }
 
@@ -266,24 +267,24 @@
 
   .parallax-layer-stars-2 {
     width: 100vw;
-    transform: translateZ(-0.5px) scale(2.6) translateY(-15vh) translateX(20vw);
+    transform: translateZ(-0.5px) scale(2.7) translateY(-15vh) translateX(20vw);
   }
 
   .parallax-layer-planets-left {
     left: 0;
-    transform: translateZ(-0.5px) scale(2.6) translateY(10rem)
+    transform: translateZ(-0.5px) scale(2.7)
       translateX(calc((100vw - 64rem) / 4 - 23vw)) translateY(-24rem);
   }
 
   .parallax-layer-planets-center {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%) translateZ(-0.5px) translateY(10rem) scale(2.6);
+    transform: translateX(-50%) translateZ(-0.5px) scale(2.7);
   }
 
   .parallax-layer-planets-right {
     right: 0;
-    transform: translateZ(-0.5px) scale(2.6) translateY(10rem)
+    transform: translateZ(-0.5px) scale(2.7)
       translateX(calc((64rem - 100vw) / 4 + 21vw)) translateY(-24rem);
   }
 }

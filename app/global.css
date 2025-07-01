@@ -12,7 +12,7 @@ html {
   -ms-text-size-adjust: 100%;
   transform-style: preserve-3d;
   font-family: "Jost", sans-serif;
-  font-size: clamp(100%, calc(0.75rem + 1vw), 140%);
+  font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.05rem);
 }
 
 body {
