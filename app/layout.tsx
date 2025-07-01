@@ -12,7 +12,7 @@ import "@fontsource/jost/900.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl } from "./sitemap";
-import StarLayer from "./components/starlayer/StarLayer";
+import SpaceParallax from "./components/parallax/SpaceParallax";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -79,15 +79,38 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <div className="page-container">
-          <div className="parallax-layer-base" />
+          <SpaceParallax />
+          {/* <div className="parallax-layer-base" />
           <div className="parallax-layer-stars" />
+
+          <div className="parallax-layer-stars-2">
+            <div className={`comet-sprite comet-1`} />
+            <div className={`comet-sprite comet-2`} />
+            <div className={`comet-sprite comet-3`} />
+            <div className={`comet-sprite comet-4`} />
+            <div className={`comet-sprite comet-5`} />
+            <div className={`comet-sprite comet-6`} />
+            <div className={`comet-sprite comet-7`} />
+            <div className={`comet-sprite comet-8`} />
+          </div>
+
           <div className="hidden xl:block parallax-layer-planets parallax-layer-planets-left">
-            <div className="moon moon-1" />
+            <div className="moon" />
+            <div className="tundra-planet" />
+            <div className="lava-planet" />
+          </div>
+
+          <div className="hidden xl:block parallax-layer-planets parallax-layer-planets-center">
+            <div className="desert-planet" />
+            <div className="ice-planet" />
+            <div className="ocean-planet" />
           </div>
 
           <div className="hidden xl:block parallax-layer-planets parallax-layer-planets-right">
-            <div className="moon moon-2" />
-          </div>
+            <div className="terran-with-clouds" />
+            <div className="gas-giant" />
+            <div className="jungle-planet" />
+          </div> */}
 
           <main>
             {children}

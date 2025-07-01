@@ -27,7 +27,9 @@ export default function Headshot({
             src={headshot_clear}
             alt="Nick Tietje"
             fill
+            quality={100}
             style={{
+              imageRendering: "crisp-edges",
               objectFit: "cover",
               objectPosition: "center",
             }}

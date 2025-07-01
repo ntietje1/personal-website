@@ -1,0 +1,366 @@
+.parallax-layer-base {
+  position: absolute;
+  image-rendering: pixelated;
+  background-image: url("/images/background/backgrounds/Purple3_tall.webp");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+  z-index: -4;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+.parallax-layer-stars {
+  position: absolute;
+  image-rendering: pixelated;
+  background-image: url("/images/background/backgrounds/YellowStars_tall.webp");
+  background-position: center center;
+  background-repeat: repeat;
+  background-size: auto;
+  z-index: -3;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+.parallax-layer-stars-2 {
+  position: absolute;
+  image-rendering: pixelated;
+  z-index: -2;
+  transform-origin: top left;
+}
+
+.comet-1 {
+  margin-top: -15rem;
+  margin-left: -35rem;
+  animation: comet-anim 30s steps(8, end) infinite;
+  animation-delay: 0s;
+  transform: scale(4) rotate(80deg);
+}
+
+.comet-2 {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  animation: comet-anim 35s steps(8, end) infinite;
+  animation-delay: 12s;
+  transform: scale(5) rotate(0deg);
+}
+
+.comet-3 {
+  margin-top: 20rem;
+  margin-left: 30rem;
+  animation: comet-anim 30s steps(8, end) infinite;
+  animation-delay: 28s;
+  transform: scale(6) rotate(20deg);
+}
+
+.comet-4 {
+  margin-top: 5rem;
+  margin-left: -30rem;
+  animation: comet-anim 35s steps(8, end) infinite;
+  animation-delay: 13s;
+  transform: scale(4) rotate(-100deg);
+}
+
+.comet-5 {
+  margin-top: 25rem;
+  margin-left: -35rem;
+  animation: comet-anim 40s steps(8, end) infinite;
+  animation-delay: 27s;
+  transform: scale(3) rotate(-10deg);
+}
+
+.comet-6 {
+  margin-top: 22rem;
+  margin-left: 25rem;
+  animation: comet-anim 35s steps(8, end) infinite;
+  animation-delay: 11s;
+  transform: scale(4) rotate(80deg);
+}
+
+.comet-7 {
+  margin-top: 22rem;
+  margin-left: -30rem;
+  animation: comet-anim 30s steps(8, end) infinite;
+  animation-delay: 1s;
+  transform: scale(5) rotate(250deg);
+}
+
+.comet-8 {
+  margin-top: 18rem;
+  margin-left: 25rem;
+  animation: comet-anim 35s steps(8, end) infinite;
+  animation-delay: 18s;
+  transform: scale(4) rotate(0deg);
+}
+
+.parallax-layer-planets {
+  position: absolute;
+  image-rendering: pixelated;
+  z-index: -1;
+  transform-origin: top left;
+  backface-visibility: hidden;
+}
+
+.moon {
+  background-image: url("/images/background/planets/moon.webp");
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  image-rendering: pixelated;
+  margin-top: 50rem;
+  margin-left: 4rem;
+}
+
+.tundra-planet {
+  background-image: url("/images/background/planets/tundra.webp");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  image-rendering: pixelated;
+  margin-top: 35rem;
+}
+
+.lava-planet {
+  background-image: url("/images/background/planets/lava.webp");
+  background-size: cover;
+  width: 130px;
+  height: 130px;
+  image-rendering: pixelated;
+  margin-top: 35rem;
+}
+
+.terran-with-clouds {
+  background-image: url("/images/background/planets/terran_with_clouds.webp");
+  background-size: cover;
+  width: 110px;
+  height: 110px;
+  image-rendering: pixelated;
+  margin-top: 40rem;
+}
+
+.gas-giant {
+  background-image: url("/images/background/planets/gas_giant.webp");
+  background-size: cover;
+  width: 170px;
+  height: 170px;
+  image-rendering: pixelated;
+  margin-top: 30rem;
+  margin-left: 2rem;
+}
+
+.jungle-planet {
+  background-image: url("/images/background/planets/jungle.webp");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  image-rendering: pixelated;
+  margin-top: 25rem;
+}
+
+.desert-planet {
+  background-image: url("/images/background/planets/desert.webp");
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+  image-rendering: pixelated;
+  margin-top: 30rem;
+  margin-left: 12rem;
+}
+
+.ice-planet {
+  background-image: url("/images/background/planets/ice.webp");
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  image-rendering: pixelated;
+  margin-top: 17rem;
+  margin-left: -7rem;
+}
+
+.ocean-planet {
+  background-image: url("/images/background/planets/ocean_with_clouds.webp");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  image-rendering: pixelated;
+  margin-top: 50rem;
+  margin-left: 15rem;
+}
+
+/* Chrome/Webkit-specific implementation (excludes Firefox) */
+@supports (not (-moz-appearance: none)) {
+  .parallax-layer-base {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 200vh;
+    transform: translateZ(-5px) scale(12);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer-stars {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 325vh;
+    transform: translateZ(-1px) scale(3);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer-stars-2 {
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    transform: translateZ(-0.5px) scale(2);
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer-planets {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  .parallax-layer-planets-left {
+    left: 0;
+    transform: translateZ(-0.5px) scale(2)
+      translateX(calc((100vw - 64rem) / 4 - 17vw));
+  }
+
+  .parallax-layer-planets-center {
+    left: 50%;
+    transform: translateX(-50%) translateY(50vh) translateZ(-0.5px) scale(2);
+  }
+
+  .parallax-layer-planets-right {
+    right: 0;
+    transform: translateZ(-0.5px) scale(2)
+      translateX(calc((64rem - 100vw) / 4 + 16vw));
+  }
+}
+
+/* Firefox-specific implementation */
+@-moz-document url-prefix() {
+  .parallax-layer-base {
+    width: 200vmax;
+    aspect-ratio: 5 / 12;
+    min-height: 100dvh;
+    transform: translateZ(-5px) scale(15);
+  }
+
+  .parallax-layer-stars {
+    width: 200vmax;
+    aspect-ratio: 5 / 12;
+    min-height: 100dvh;
+    transform: translateZ(-1px) scale(4.5);
+  }
+
+  .parallax-layer-stars-2 {
+    width: 100vw;
+    transform: translateZ(-0.5px) scale(2.6) translateY(-15vh) translateX(20vw);
+  }
+
+  .parallax-layer-planets-left {
+    left: 0;
+    transform: translateZ(-0.5px) scale(2.6) translateY(10rem)
+      translateX(calc((100vw - 64rem) / 4 - 23vw)) translateY(-24rem);
+  }
+
+  .parallax-layer-planets-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateZ(-0.5px) translateY(10rem) scale(2.6);
+  }
+
+  .parallax-layer-planets-right {
+    right: 0;
+    transform: translateZ(-0.5px) scale(2.6) translateY(10rem)
+      translateX(calc((64rem - 100vw) / 4 + 21vw)) translateY(-24rem);
+  }
+}
+
+.sprite-comet1 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -0px -0px;
+}
+.sprite-comet2 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -26px -0px;
+}
+.sprite-comet3 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -52px -0px;
+}
+.sprite-comet4 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -78px -0px;
+}
+.sprite-comet5 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -104px -0px;
+}
+.sprite-comet6 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -130px -0px;
+}
+.sprite-comet7 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -156px -0px;
+}
+.sprite-comet8 {
+  background: url(../../../public/images/background/planets/comet_sprite_sheet.png);
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  background-position: -182px -0px;
+}
+
+@keyframes comet-anim {
+  0% {
+    background-position: 0px 0px;
+  }
+  97% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -208px 0px;
+  }
+}
+
+.comet-sprite {
+  background-image: url("/images/background/comet/yellow/comet_sprite_sheet.png");
+  background-size: 208px 26px;
+  width: 26px;
+  height: 26px;
+  image-rendering: pixelated;
+}

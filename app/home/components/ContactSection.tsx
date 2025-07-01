@@ -15,4 +15,4 @@ export default function ContactSection() {
       </div>
     </section>
   );
-} 
+}

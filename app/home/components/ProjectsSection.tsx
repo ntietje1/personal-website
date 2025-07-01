@@ -7,7 +7,7 @@ import gitmarks_preview from "../../../public/images/gitmarks_preview.png";
 export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20" aria-label="Projects">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
         Featured Projects
       </h2>
       <div className="grid grid-cols-1 gap-8">
