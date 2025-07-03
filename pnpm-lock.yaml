@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/inter':
-        specifier: ^5.0.20
-        version: 5.0.20
       '@fontsource/jost':
         specifier: ^5.2.6
         version: 5.2.6
@@ -81,9 +78,6 @@ packages:
 
   '@emnapi/runtime@1.2.0':
     resolution: {integrity: sha512-bV21/9LQmcQeCPEg3BDFtvwL6cwiTMksYNWQQ4KOxCZikEGalWtenoZ0wCiukJINlGCIi2KXx01g4FoH/LxpzQ==}
-
-  '@fontsource/inter@5.0.20':
-    resolution: {integrity: sha512-rtw2F7xfM7rJmmnncXnR4ADr5wXsp4GyN1O1jmQJ1PMjAK+bm620/ZkQkeOYOkGoa09OksGinOeMA+Mkt6K9PQ==}
 
   '@fontsource/jost@5.2.6':
     resolution: {integrity: sha512-9r/ZSnCORLvboyiOCZT8Ff7/Nvmu/+hKXpAtoL4b7KlewWD1G/RCaUeiduE05VhBwnxcCgkgvJ4S4HSQB/5/1w==}
@@ -1303,8 +1297,6 @@ snapshots:
     dependencies:
       tslib: 2.7.0
     optional: true
-
-  '@fontsource/inter@5.0.20': {}
 
   '@fontsource/jost@5.2.6': {}
 
