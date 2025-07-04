@@ -114,7 +114,7 @@
   height: 80px;
   image-rendering: pixelated;
   position: absolute;
-  top: 10rem;
+  top: 20rem;
   left: calc((100vw - 64rem) / 2 - 20vw);
 }
 
@@ -126,8 +126,8 @@
   height: 150px;
   image-rendering: pixelated;
   position: absolute;
-  top: 125rem;
-  left: calc((100vw - 64rem) / 2 - 30vw);
+  top: 135rem;
+  left: calc((100vw - 64rem) / 2 - 20vw);
 }
 
 .lava-planet {
@@ -138,8 +138,8 @@
   height: 100px;
   image-rendering: pixelated;
   position: absolute;
-  top: 195rem;
-  left: calc((100vw - 64rem) / 2 - 25vw);
+  top: 205rem;
+  left: calc((100vw - 64rem) / 2 - 15vw);
 }
 
 .terran-with-clouds {
@@ -150,7 +150,7 @@
   height: 110px;
   image-rendering: pixelated;
   position: absolute;
-  top: 15rem;
+  top: 25rem;
   right: calc((100vw - 64rem) / 2 - 25vw);
 }
 
@@ -162,7 +162,7 @@
   height: 250px;
   image-rendering: pixelated;
   position: absolute;
-  top: 100rem;
+  top: 110rem;
   right: calc((100vw - 64rem) / 2 - 35vw);
 }
 
@@ -174,8 +174,8 @@
   height: 100px;
   image-rendering: pixelated;
   position: absolute;
-  top: 200rem;
-  right: calc((100vw - 64rem) / 2 - 30vw);
+  top: 210rem;
+  right: calc((100vw - 64rem) / 2 - 20vw);
 }
 
 .desert-planet {
@@ -186,7 +186,7 @@
   height: 140px;
   image-rendering: pixelated;
   position: absolute;
-  top: 30rem;
+  top: 40rem;
   left: 60vw;
 }
 
@@ -198,7 +198,7 @@
   height: 80px;
   image-rendering: pixelated;
   position: absolute;
-  top: 80rem;
+  top: 90rem;
   left: 22vw;
 }
 
@@ -210,7 +210,7 @@
   height: 120px;
   image-rendering: pixelated;
   position: absolute;
-  top: 180rem;
+  top: 190rem;
   left: 60vw;
 }
 
@@ -253,8 +253,9 @@
   }
 
   .parallax-layer-planets {
+    top: 100%;
     width: 100vw;
-    transform: translateY(25vh) translateZ(-0.35px);
+    transform: translateZ(-0.35px);
   }
 }
 
@@ -285,10 +286,10 @@
 
   .parallax-layer-planets {
     left: 50%;
-    top: 100vh;
+    top: 5%;
     width: 100vw;
     height: 100vh;
-    transform: translateX(-75%) translateZ(-0.5px) scale(1.5) translateY(5vh);
+    transform: translateX(-75%) translateZ(-0.5px) scale(1.5);
   }
 }
 
