@@ -214,6 +214,14 @@
   left: 60vw;
 }
 
+.planets-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
 /* Chrome/Webkit-specific implementation (excludes Firefox) */
 @supports (not (-moz-appearance: none)) {
   .parallax-layer-base {
@@ -252,9 +260,18 @@
     transform: scale(1.75);
   }
 
+  .planets-container {
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: -1;
+  }
+
   .parallax-layer-planets {
+    position: fixed;
     width: 100vw;
-    transform: translateY(25vh) translateZ(-0.35px);
+    transform: translateZ(-0.5px) translateY(28vh);
+    will-change: transform;
+    backface-visibility: hidden;
   }
 }
 
@@ -280,15 +297,21 @@
   }
 
   .planet {
-    transform: scale(1.8);
+    transform: scale(1.75);
+  }
+
+  .planets-container {
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: -1;
   }
 
   .parallax-layer-planets {
+    position: fixed;
     left: 50%;
-    top: 100vh;
     width: 100vw;
-    height: 100vh;
-    transform: translateX(-75%) translateZ(-0.5px) scale(1.5) translateY(5vh);
+    height: 0vh;
+    transform: translateX(-67%) translateZ(-0.5px) scale(1.35);
   }
 }
 

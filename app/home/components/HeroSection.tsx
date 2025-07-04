@@ -29,9 +29,11 @@ function Description({ className }: { className?: string }) {
   );
 }
 
-export default function HeroSection() {
+export default function HeroSection({ className }: { className?: string }) {
   return (
-    <section className="min-h-screen flex flex-col justify-center relative">
+    <section
+      className={`min-h-screen flex flex-col justify-center relative ${className}`}
+    >
       <div className="flex flex-col items-center pb-4">
         <div className="flex flex-col md:flex-row items-center justify-between w-full gap-32 md:gap-12">
           {/* Left content */}

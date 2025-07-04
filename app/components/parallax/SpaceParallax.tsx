@@ -17,21 +17,24 @@ export default function SpaceParallax() {
         <div className={`comet-sprite comet-8`} />
       </div>
 
-      <div className="hidden xl:block parallax-layer-planets">
-        {/* Left section planets */}
-        <div className="moon" />
-        <div className="tundra-planet" />
-        <div className="lava-planet" />
+      <div className="planets-container">
+        <div className="hidden xl:block parallax-layer-planets">
+          {/* Left section planets */}
+          <div className="moon" />
+          <div className="moon-2" />
+          <div className="tundra-planet" />
+          <div className="lava-planet" />
 
-        {/* Center section planets */}
-        <div className="desert-planet" />
-        <div className="ice-planet" />
-        <div className="ocean-planet" />
+          {/* Center section planets */}
+          <div className="desert-planet" />
+          <div className="ice-planet" />
+          <div className="ocean-planet" />
 
-        {/* Right section planets */}
-        <div className="terran-with-clouds" />
-        <div className="gas-giant" />
-        <div className="jungle-planet" />
+          {/* Right section planets */}
+          <div className="terran-with-clouds" />
+          <div className="gas-giant" />
+          <div className="jungle-planet" />
+        </div>
       </div>
     </>
   );
