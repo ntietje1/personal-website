@@ -13,7 +13,6 @@
 .glowing-button-container {
   position: relative;
   border-radius: 6px;
-  padding: 1px;
   transform: translateZ(0);
   will-change: transform;
   isolation: isolate;
@@ -45,7 +44,7 @@
 
 .glowing-button-highlight {
   position: absolute;
-  inset: -0.5px;
+  inset: -2px;
   background: linear-gradient(-60deg, #a000df, #007cf0, #ff0080, #007cf0);
   background-size: 400% 100%;
   border-radius: 7px;
@@ -66,10 +65,7 @@
   background-size: inherit;
   background-image: inherit;
   animation: inherit;
-  left: -0.5px;
-  right: -0.5px;
-  top: -0.5px;
-  bottom: -0.5px;
+  inset: 1px;
   border-radius: inherit;
   filter: blur(0.4rem);
   z-index: 0;
