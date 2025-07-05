@@ -1,0 +1,80 @@
+@keyframes backgroundAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glowing-button-container {
+  position: relative;
+  border-radius: 6px;
+  padding: 1px;
+  transform: translateZ(0);
+  will-change: transform;
+  isolation: isolate;
+}
+
+.glowing-button-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(19, 17, 20, 0.85);
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  z-index: 2;
+  transform: translateZ(0);
+}
+
+.glowing-button-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/background/backgrounds/Purple3_tall.webp");
+  border-radius: inherit;
+  z-index: -2;
+  opacity: 0.7;
+}
+
+.glowing-button-highlight {
+  position: absolute;
+  inset: -0.5px;
+  background: linear-gradient(-60deg, #a000df, #007cf0, #ff0080, #007cf0);
+  background-size: 400% 100%;
+  border-radius: 7px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0.8;
+  animation: backgroundAnim 8s ease-in-out infinite;
+  z-index: 1;
+  transition: opacity 0.2s ease-in-out;
+  transform: translateZ(0);
+  will-change: opacity, background-position;
+}
+
+.glowing-button-highlight::after {
+  content: "";
+  position: absolute;
+  background-size: inherit;
+  background-image: inherit;
+  animation: inherit;
+  left: -0.5px;
+  right: -0.5px;
+  top: -0.5px;
+  bottom: -0.5px;
+  border-radius: inherit;
+  filter: blur(0.4rem);
+  z-index: 0;
+}
+
+.glowing-button-container:hover .glowing-button-highlight {
+  opacity: 1;
+}

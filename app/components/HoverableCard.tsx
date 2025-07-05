@@ -2,6 +2,7 @@ import { LinkWithArrow } from "./LinkWithArrow";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import Link from "next/link";
+import "./GlowingButton.css";
 
 interface TechBadgeProps {
   tech: string;
@@ -244,12 +245,13 @@ export function HoverableButton({
   rel,
 }: HoverableButtonProps) {
   return (
-    <div className={`custom-frosted rounded-xl ${className}`}>
+    <div className={`glowing-button-container ${className}`}>
+      <span className="glowing-button-highlight" />
       <Link
         href={href}
         target={target}
         rel={rel}
-        className="w-full px-6 py-3 text-center text-white font-semibold text-md md:text-lg flex items-center justify-center"
+        className="glowing-button-content"
       >
         {children}
       </Link>
