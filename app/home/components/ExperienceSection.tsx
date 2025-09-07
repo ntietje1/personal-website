@@ -11,13 +11,35 @@ export default function ExperienceSection() {
       <ExperienceCardStack
         experiences={[
           {
-            date: "Jun 2025 – Present",
+            date: "Aug 2025 – Present",
+            title: "Senior Software Engineer Intern",
+            company: "Northeastern University (NExT Consulting)", 
+            link: "https://nunext.dev/",
+            logo: "/images/company-logos/next_logo.png",
+            responsibilities: [
+              "Providing technical leadership and architectural guidance across multiple 5 software development teams",
+              "Mentoring and advising 30+ undergraduate software engineers through complex software challenges",
+              "Reviewing student-created code, technical documentation, and presentations/communications with stakeholders"
+            ],
+            skills: [
+              "Go",
+              "Fiber",
+              "REST APIs",
+              "PostgreSQL",
+              "React",
+              "Typescript",
+              "Docker",
+            ],
+          },
+          {
+            date: "Jun 2025 – Aug 2025",
             title: "Software Engineer Intern",
             company: "Fidelity Investments",
             link: "https://www.fidelity.com/",
             logo: "/images/company-logos/fidelity_logo.jpeg",
             responsibilities: [
-              "Developing youth features for the flagship Fidelity app, brokerage technology experience engineering",
+              "Developed the money request and spending insight pages in the flagship Fidelity android app for teen/parent users",
+              "Suppressed various features and entry points in the Fidelity app to streamline the experience for teen users and increase engagement and retention",
             ],
             skills: [
               "Android",
@@ -31,9 +53,9 @@ export default function ExperienceSection() {
           {
             date: "Sep 2024 – Dec 2024",
             title: "Software Engineer Intern",
-            company: "Northeastern University",
-            link: "https://gitmarks.org/",
-            logo: "/images/company-logos/nu_logo.webp",
+            company: "Northeastern University (NExT Consulting)",
+            link: "https://nunext.dev/",
+            logo: "/images/company-logos/next_logo.png",
             responsibilities: [
               "Developed GitMarks, an industry-aligned educational platform that integrates standard GitHub workflows into classroom coding assignments, currently deployed in a pilot program across Northeastern University CS/DS courses",
               "Gathered requirements from professors, ensuring the product effectively met a robust set of academic needs & wants",

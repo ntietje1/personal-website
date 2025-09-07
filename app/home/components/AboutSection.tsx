@@ -18,9 +18,8 @@ export default function AboutSection() {
           </p>
 
           <p className="text-md text-white leading-relaxed pt-2">
-            I'm an incoming computer science Master's student at Northeastern
-            University and I'm currently employed as a Software Engineering
-            Intern at Fidelity Investments. In my free time, I enjoy developing
+            I've recently started my computer science Master's at Northeastern
+            University. In my free time, I enjoy developing
             my own projects/tools, reading, and playing board games. Here are
             some of my interests, which I would love to talk about with you:
           </p>
@@ -47,7 +46,7 @@ export default function AboutSection() {
               <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Reading:</span>{" "}
-                Science fiction, fantasy, dystopian/political fiction
+                Science fiction, fantasy, dystopian/political fiction: Dune, Red Rising, etc.
               </span>
             </li>
             <li className="flex items-start">
@@ -55,13 +54,6 @@ export default function AboutSection() {
               <span>
                 <span className="text-white font-semibold">Video Games:</span>{" "}
                 Elden Ring, Expedition 33, Hollow Knight, Dota 2, Minecraft, Terraria, Enter the Gungeon, Stardew Valley, and many more.
-              </span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-white/80 font-bold mr-2">•</span>
-              <span>
-                <span className="text-white font-semibold">Fitness:</span>{" "}
-                Cycling, hiking, and general strength training.
               </span>
             </li>
             <li className="flex items-start">
