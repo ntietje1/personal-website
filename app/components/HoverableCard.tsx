@@ -55,7 +55,7 @@ export function ExperienceCard({
         <div className="absolute ml-3.5 -top-1 -bottom-5 w-1 bg-white m-0" />
         <div className="relative ml-8 w-full group">
           {/* Logo: always show */}
-          <div className="absolute -left-10 top-6 w-12 h-12 rounded-full bg-white flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:bg-white/70 overflow-hidden">
+          <div className="absolute -left-10 top-6 w-12 h-12 rounded-full bg-white flex items-center justify-center transition-all duration-200 group-hover:scale-110 overflow-hidden">
             {logo ? (
               <Image
                 src={logo}
