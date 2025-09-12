@@ -21,7 +21,6 @@ export default function SpaceParallax() {
         <div className="hidden xl:block parallax-layer-planets">
           {/* Left section planets */}
           <div className="moon" />
-          <div className="moon-2" />
           <div className="tundra-planet" />
           <div className="lava-planet" />
 

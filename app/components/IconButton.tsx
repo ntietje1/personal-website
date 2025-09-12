@@ -24,7 +24,7 @@ export default function IconButton({
         rel="noreferrer noopener"
         aria-label={`${label} (opens in a new tab)`}
       >
-        <div className="absolute inset-0 rounded-lg bg-white/10 opacity-0 group-hover/contact:opacity-80 backdrop-blur-md transition-opacity" />
+        <div className="absolute inset-0 rounded-lg bg-white/10 opacity-0 backdrop-blur-md transition-opacity" />
         <FontAwesomeIcon
           icon={icon}
           className="w-8 h-8 text-white group-hover/contact:scale-110 relative"

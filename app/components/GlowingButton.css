@@ -23,31 +23,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(19, 17, 20, 0.85);
+  background: rgba(15, 0, 20, 0.9);
   border-radius: 6px;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 20px;
   color: white;
   font-weight: 600;
   z-index: 2;
   transform: translateZ(0);
 }
 
-.glowing-button-content::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("/images/background/backgrounds/Purple3_tall.webp");
-  border-radius: inherit;
-  z-index: -2;
-  opacity: 0.7;
-}
-
 .glowing-button-highlight {
   position: absolute;
   inset: -2px;
-  background: linear-gradient(-60deg, #a000df, #007cf0, #ff0080, #007cf0);
+  background: linear-gradient(-60deg, #b700ff, #0084ff, #ff0080, #007cf0);
   background-size: 400% 100%;
-  border-radius: 7px;
+  border-radius: 8px;
   border: none;
   padding: 0;
   margin: 0;
@@ -59,18 +49,7 @@
   will-change: opacity, background-position;
 }
 
-.glowing-button-highlight::after {
-  content: "";
-  position: absolute;
-  background-size: inherit;
-  background-image: inherit;
-  animation: inherit;
-  inset: 1px;
-  border-radius: inherit;
-  filter: blur(0.4rem);
-  z-index: 0;
-}
-
 .glowing-button-container:hover .glowing-button-highlight {
   opacity: 1;
+  filter: brightness(1.1);
 }

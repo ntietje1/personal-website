@@ -33,7 +33,7 @@ export default function Headshot({
               objectFit: "cover",
               objectPosition: "center",
             }}
-            className="scale-110 transition-transform duration-300 ease-out group-hover:-translate-y-4"
+            className="scale-110 transition-transform duration-200 ease-out group-hover:-translate-y-4"
             priority
           />
         </div>

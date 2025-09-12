@@ -84,7 +84,7 @@ body {
 }
 
 .custom-frosted-dark:hover::before {
-  opacity: 0.31;
+  opacity: 0.35;
 }
 
 .custom-frosted-dark:hover {
