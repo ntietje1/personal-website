@@ -13,17 +13,17 @@ export default function ExperienceSection() {
           {
             date: "Aug 2025 – Present",
             title: "Senior Software Engineer Intern",
-            company: "Northeastern University (NExT Consulting)", 
+            company: "Northeastern University (NExT Consulting)",
             link: "https://nunext.dev/",
             logo: "/images/company-logos/next_logo.png",
             responsibilities: [
-              "Providing technical leadership and architectural guidance across multiple 5 software development teams",
-              "Mentoring and advising 30+ undergraduate software engineers through complex software challenges",
-              "Reviewing student-created code, technical documentation, and presentations/communications with stakeholders"
+              "Delivering technical leadership to 6 student development teams, guiding architectural decisions and best practices",
+              "Mentoring 30+ undergraduate developers through complex software challenges and professional skills development",
+              "Evaluating code quality, system design, and client communications to maintain high delivery standards for industry partner",
             ],
             skills: [
               "Go",
-              "Fiber",
+              "Python",
               "REST APIs",
               "PostgreSQL",
               "React",
@@ -38,8 +38,9 @@ export default function ExperienceSection() {
             link: "https://www.fidelity.com/",
             logo: "/images/company-logos/fidelity_logo.jpeg",
             responsibilities: [
-              "Developed the money request and spending insight pages in the flagship Fidelity android app for teen/parent users",
-              "Suppressed various features and entry points in the Fidelity app to streamline the experience for teen users and increase engagement and retention",
+              "Developed request money and spending insight features for Fidelity’s Android app, enabling parents to monitor and manage youth financial activity",
+              "Streamlined teen user experience by implementing role-based feature flags to dynamically suppress or customize features",
+              "Prototyped Kotlin Multiplatform migration for a critical internal CMS service to evaluate cross-platform development viability",
             ],
             skills: [
               "Android",
@@ -48,6 +49,7 @@ export default function ExperienceSection() {
               "Gradle",
               "Android Studio",
               "REST APIs",
+              "LaunchDarkly",
             ],
           },
           {
@@ -57,9 +59,9 @@ export default function ExperienceSection() {
             link: "https://nunext.dev/",
             logo: "/images/company-logos/next_logo.png",
             responsibilities: [
-              "Developed GitMarks, an industry-aligned educational platform that integrates standard GitHub workflows into classroom coding assignments, currently deployed in a pilot program across Northeastern University CS/DS courses",
-              "Gathered requirements from professors, ensuring the product effectively met a robust set of academic needs & wants",
-              "Enabled automatic student repository creation, assignment setup/distribution, submission deadlines, and grade-enabled pull requests with TA feedback through extensive integration with the GitHub API",
+              "Developed GitMarks, an educational platform that integrates GitHub workflows into classroom coding assignments",
+              "Gathered requirements from professors and deployed a pilot program across several Northeastern University CS/DS courses",
+              "Integrated with GitHub API to enable automatic student repository creation, assignment setup/distribution, submission deadlines, and grade-enabled pull requests with TA feedback",
             ],
             skills: [
               "Go",
@@ -69,6 +71,7 @@ export default function ExperienceSection() {
               "React",
               "Typescript",
               "Docker",
+              "JWT",
             ],
           },
           {
@@ -110,8 +113,8 @@ export default function ExperienceSection() {
             link: "https://www.khoury.northeastern.edu/",
             logo: "/images/company-logos/nu_khoury_logo.jpg",
             responsibilities: [
-              "Led mentorship of 250+ students in CS 3200 Database Design, delivering comprehensive support through Piazza discussions and one-on-one office hours",
-              "Evaluated assignments, labs, and exams, offering constructive feedback to enhance student learning outcomes",
+              "Mentored 250+ students in CS 3200 Database Design, providing support through Piazza discussions and one-on-one office hours",
+              "Evaluated assignments, labs, and exams, offering constructive feedback to improve student learning outcomes",
             ],
             skills: ["Python", "Flask", "MySQL", "Docker", "Git", "REST APIs"],
           },
@@ -125,7 +128,12 @@ export default function ExperienceSection() {
               "Optimized techniques for surfactant-free Single Walled Carbon Nanotube inks, improving R/T performance by 11%",
               "Developed novel chemical separation and purification methods to drive product refinement",
             ],
-            skills: ["Nano-Technology", "Data Analysis", "Wet Lab Techniques", "DOE"],
+            skills: [
+              "Nano-Technology",
+              "Data Analysis",
+              "Wet Lab Techniques",
+              "DOE",
+            ],
           },
           {
             date: "Sep 2022 – May 2023",
@@ -135,7 +143,7 @@ export default function ExperienceSection() {
             logo: "/images/company-logos/nu_coe_logo.png",
             responsibilities: [
               "Guided 200+ students in C++ programming and electrical prototyping for the Cornerstone of Engineering course",
-              "Managed and maintained advanced fabrication equipment including 3D printers, laser-cutters, and woodworking machinery",
+              "Managed advanced fabrication equipment including 3D printers, laser-cutters, and woodworking machinery",
             ],
             skills: [
               "C++",

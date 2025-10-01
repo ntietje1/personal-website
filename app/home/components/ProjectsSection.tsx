@@ -43,10 +43,20 @@ export default function ProjectsSection() {
                 "Deployed in a pilot program across several Northeastern University CS/DS courses",
                 "Implemented a comprehensive authentication system using JWTs, GoFiber, and extensive integration with the GitHub API for secure user and classroom management",
               ],
-              link: "https://gitmarks.org/",
+              link: "https://github.com/NUSpecialProjects/gitmarks",
               imageSrc: gitmarks_preview,
               imageAlt: "GitMarks",
-              skills: ["Go", "React", "TypeScript", "PostgreSQL", "AWS", "GoFiber", "JWT", "Docker", "React Query"],
+              skills: [
+                "Go",
+                "React",
+                "TypeScript",
+                "PostgreSQL",
+                "AWS",
+                "GoFiber",
+                "JWT",
+                "Docker",
+                "React Query",
+              ],
             },
           ]}
         />

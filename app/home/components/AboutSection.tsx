@@ -19,9 +19,9 @@ export default function AboutSection() {
 
           <p className="text-md text-white leading-relaxed pt-2">
             I've recently started my computer science Master's at Northeastern
-            University. In my free time, I enjoy developing
-            my own projects/tools, reading, and playing board games. Here are
-            some of my interests, which I would love to talk about with you:
+            University. In my free time, I enjoy developing my own
+            projects/tools, reading, and playing board games. Here are some of
+            my interests, which I would love to talk about with you:
           </p>
 
           <ul className="space-y-4 text-md text-white/90 pt-3">
@@ -46,14 +46,16 @@ export default function AboutSection() {
               <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Reading:</span>{" "}
-                Science fiction, fantasy, dystopian/political fiction: Dune, Red Rising, etc.
+                Science fiction, fantasy, dystopian/political fiction: Dune, Red
+                Rising, etc.
               </span>
             </li>
             <li className="flex items-start">
               <span className="text-white/80 font-bold mr-2">•</span>
               <span>
                 <span className="text-white font-semibold">Video Games:</span>{" "}
-                Elden Ring, Expedition 33, Hollow Knight, Dota 2, Minecraft, Terraria, Enter the Gungeon, Stardew Valley, and many more.
+                Elden Ring, Expedition 33, Hollow Knight, Dota 2, Minecraft,
+                Terraria, Enter the Gungeon, Stardew Valley, and many more.
               </span>
             </li>
             <li className="flex items-start">
