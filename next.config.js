@@ -1,7 +1,6 @@
 const nextConfig = {
-  swcMinify: true,
-  webpack: (config, { isServer }) => {
-    return config;
+  images: {
+    qualities: [100, 75],
   },
 };
 
