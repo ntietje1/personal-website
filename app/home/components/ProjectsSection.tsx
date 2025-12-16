@@ -3,6 +3,7 @@ import { ProjectCardStack } from "../../components/HoverableCard";
 import { LinkWithArrow } from "../../components/LinkWithArrow";
 import lifelinked_preview from "../../../public/images/lifelinked_preview.jpg";
 import gitmarks_preview from "../../../public/images/gitmarks_preview.png";
+import wizard_archive_preview from "../../../public/images/wizard_archive_preview.png";
 
 export default function ProjectsSection() {
   return (
@@ -14,9 +15,29 @@ export default function ProjectsSection() {
         <ProjectCardStack
           projects={[
             {
+              title: "(WIP) The Wizard's Archive: A TTRPG Notes Manager for DMs and Players",
+              descriptions: [
+                "Developed a real-time collaborative React web application for note taking with block-level sharing",
+                "Designed virtual file system and highly interactive editor for notes, maps, files, and more",
+                "Built novel tagging and templating system for sharing, sessions, and custom categories",
+              ],
+              link: "https://github.com/ntietje1/dnd-notes-tool",
+              imageSrc: wizard_archive_preview,
+              imageAlt: "The Wizard's Archive",
+              skills: [
+                "React",
+                "TypeScript",
+                "Convex",
+                "Blocknote.js",
+                "Tailwind CSS",
+                "Tanstack Query",
+                "Shadcn/UI",
+              ],
+            },
+            {
               title: "LifeLinked: A MTG Life Tracking App",
               descriptions: [
-                "Engineered and launched a cross-platform mobile app, attracting over 3000 installs across Google Play and App Store",
+                "Engineered and launched a cross-platform mobile app, attracting over 8000 installs across Google Play and App Store",
                 "Leveraged Compose Multiplatform to share both native UI and back-end logic between iOS and Android platforms",
                 "Adhered to Android/iOS design and quality standards by performing beta testing and applying clean architecture techniques",
               ],
